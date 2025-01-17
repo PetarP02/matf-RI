@@ -431,7 +431,7 @@ Metaheuristike na osnovu broja rešenja dele se na:
 ## 8.1 Trajectory methods (S - Metaheuristics):
 U ovu grupu spadaju sve one metaheuristike koje se bave jednim rešenjem koje unapređuju vremenom.
 
-Jedan od poznatih metaheuristika ovog tipa jeste VNS ili Variable neighborhood search, koji funkcioniše po sledećem principu:
+Jedan od poznatih metaheuristika ovog tipa jeste VNS ili Variable neighborhood search , koji funkcioniše po sledećem principu:
 1. Izabere neko pseudo nasumično rešenje
 2. Odredi njegov kvalitet
 3. Vršimo **Shake** operaciju koja od našeg sadašnjeg rešenja pravi nova rešenja u njegovoj okolini. 
@@ -910,3 +910,32 @@ U prvoj iteraciji za svaku pčelu vršimo sve tri faze.
 | iter > 5                       | iter > 20                       | iter > 30                      |
 | ------------------------------ | ------------------------------- | ------------------------------ |
 | ![](slike/SI/ABC/ABCfirst.png) | ![](slike/SI/ABC/ABCsecond.png) | ![](slike/SI/ABC/ABCthird.png) |
+
+# 11. S - Metaheuristike:
+Prethodno opisani kao metaheuristike koje se bave jednim rešenjem koje konstantno unapređuju.
+U poglavlju 8.1 opisna je VNS metaheuristika, a ovde ćemo dodatno opisati Simulirano kaljenje (Simulated Annealing) i Tabu pretragu (Tabu search).
+
+# 11.1 Simulated Annealing (SA):
+U obradi čelika teknika **kaljenja** funkcioniše po principu zagrevanja, čestice bro menjaju kristalnu rešetku i svoje pozicije, i ponovnog hlađenja, čestice zauzimaju pozicije, čelika. Ovaj proces, sporog hlađenja, dovodi do ojačavanja tvrdoće čelika.
+
+Po uzoru na ovaj proces nastala je i optimizacija Simuliranog kaljenja. 
+Na početku algoritma "temperatura" sistema je podešena na 1 koja se vremenom smanjuje.
+Temperatura u optimizaciji predstavlja verovatnoću uzimanja lošijeg rešenja, kako se temperatura smanjuje vremenom ta verovatnoća se smanjuje, što simulira proces kaljenja.
+
+### Pseudokod SA:
+- generiši rešenje $x_{local}$
+- definišemo i = 0, $x_{best}$
+- **while** nisu ispunjen uslovi:
+	- $x_{i+1} = move(x_{local})$ 
+		- **if** $f(x_{i+1}) < f(x_{best})$:
+			- $x_{best} = x_{i+1}$
+			- $x_{local} = x_{i+1}$
+		- **else if** $random() < temp$(i):
+			- $x_{local} = x_{i+1}$
+		- **end**
+	- i = i + 1
+- **end**
+
+
+
+# 11.2 Tabu Search (TS):
