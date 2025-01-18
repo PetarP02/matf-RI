@@ -936,6 +936,44 @@ Temperatura u optimizaciji predstavlja verovatnoću uzimanja lošijeg rešenja, 
 	- i = i + 1
 - **end**
 
+**Primer:** Tražimo minimum funkcije $f(x, y) = 20 + (x^2 - 10\cos(2\pi x) + y^2 - 10\cos(2\pi y))$ poznata i kao ["Rastrigin function"](https://en.wikipedia.org/wiki/Rastrigin_function), tražimo rešenje na $-5.12 \leq x,y \leq 5.12$. 
 
+Hladnije boje na grafu pretstavljaju niže vrednosti a toplije prtstavljaju više vrednosti.
+
+Na samom početku programa pravimo neko pseudo-nasumično rešenje, postavljamo to rešenje kao najbolje i brojač iteracija.
+
+U našem kodu kao uslov zaustavljanja biramo broj iteracija, mada bi možda u ovom primeru bilo bolje da posmatramo kada je razlika najboljeg i trenutnog novog rešenja $< \epsilon$. 
+
+Na slikama crvena tačka predstavlja novo nađeno bolje rešenje, dok će crne tačke predstavljati rešenje koje je uzeto a koje je lošije nego najbolje.
+
+| Funkcija                           | 0-ta iteracija                 |
+| ---------------------------------- | ------------------------------ |
+| ![](slike/SMeta/SA/SAfunction.png) | ![](slike/SMeta/SA/SAinit.png) |
+
+U sledećem koraku biramo novu tačku u okolini sadašnje tačke koju posmatramo. Sam proces nalaženja nove tačke može se raditi na različite načine u zavisnosti od problema. 
+U našem slučaju koristili smo pomeraj po uniformnoj raspodeli na intervalu [-1, 1], odnosno:\
+$$x_{i+1,j} = x_{local,j} + U(-1, 1), j\in[0, n)$$\
+gde je **n** veličina prostora u kom stražimo rešenje.
+
+Kada smo našli novo rešenje moramo da vidimo da li je ono bolje ili lošije od prethodnog najboljeg. U slučaju da je bolje čuvamo to repešenje kao najbolje povećavamo brojač i = i+1 zatim tražimo sledeće rešenje preko iste funkcije **move()**. 
+U slučaju lošijeg rešenja koristimo **temperaturu** da bi odredili da li uzimamo rešenje ili ne.
+Temperatura može da bude bilo koja opadajuća funkcija, neke navedene su:
+- Logaritamska:\
+$$temp(i) = T_0*\frac{ln(2)}{ln(i+1)}$$\
+- Brzo kaljenje:\
+$$temp(i) = \frac{T_0}{i+1}$$\
+
+Ove funkcije na početku tolerišu sva lošija rešenja dok se kasnije, kako prolaze iteracije, ta tolerancija smanjuje. Ovaj princip u isto vreme na samom početku praktikuje eksporaciju a kasnije i eksploataciju prostora rešenja.
+
+| iter = 1                        | iter > 20                        | iter > 50                        |
+| ------------------------------- | -------------------------------- | -------------------------------- |
+| ![](slike/SMeta/SA/SAiter1.png) | ![](slike/SMeta/SA/SAiter20.png) | ![](slike/SMeta/SA/SAiter50.png) |
+
+Vidimo da iako je lošije rešenje u često algoritam izabere to rešenje dok se to kasnije menja.
+U poslednjim iteracijama:
+
+| iter > 150                        | iter final                          |
+| --------------------------------- | ----------------------------------- |
+| ![](slike/SMeta/SA/SAiter150.png) | ![](slike/SMeta/SA/SAiterFinal.png) |
 
 # 11.2 Tabu Search (TS):
