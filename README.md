@@ -20,6 +20,8 @@ Nezvanični materijali za kurs Računarske inteligencije, četvrte godine Matema
 	10.1 [Particle Swarm Optimization (PSO)](SkriptaRI.md/#101--particle-swarm-optimization-pso)\
 	10.2 [Ant Colony Optimization (ACO)](SkriptaRI.md/#102-ant-colony-optimization-aco)\
  	10.3 [Artificial Bee Colony (ABC)](SkriptaRI.md/#103-artificial-bee-colony-abc)
+11. [S-Metaheuristike](SkriptaRI.md/#11-s---metaheuristike)\
+	11.1[Simulated Annealing (SA)](SkriptaRI.md/#111-simulated-annealing-sa)
 
 Interaktivna verzija skripte, [notebook](notebooks/SkriptaRI.ipynb).
 Kratko uputstvo:
