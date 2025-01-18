@@ -915,7 +915,7 @@ U prvoj iteraciji za svaku pčelu vršimo sve tri faze.
 Prethodno opisani kao metaheuristike koje se bave jednim rešenjem koje konstantno unapređuju.
 U poglavlju 8.1 opisna je VNS metaheuristika, a ovde ćemo dodatno opisati Simulirano kaljenje (Simulated Annealing) i Tabu pretragu (Tabu search).
 
-# 11.1 Simulated Annealing (SA):
+## 11.1 Simulated Annealing (SA):
 U obradi čelika teknika **kaljenja** funkcioniše po principu zagrevanja, čestice bro menjaju kristalnu rešetku i svoje pozicije, i ponovnog hlađenja, čestice zauzimaju pozicije, čelika. Ovaj proces, sporog hlađenja, dovodi do ojačavanja tvrdoće čelika.
 
 Po uzoru na ovaj proces nastala je i optimizacija Simuliranog kaljenja. 
@@ -959,9 +959,9 @@ Kada smo našli novo rešenje moramo da vidimo da li je ono bolje ili lošije od
 U slučaju lošijeg rešenja koristimo **temperaturu** da bi odredili da li uzimamo rešenje ili ne.
 Temperatura može da bude bilo koja opadajuća funkcija, neke navedene su:
 - Logaritamska:\
-$$temp(i) = T_0*\frac{ln(2)}{ln(i+1)}$$\
+$$temp(i) = T_0*\frac{ln(2)}{ln(i+1)}$$
 - Brzo kaljenje:\
-$$temp(i) = \frac{T_0}{i+1}$$\
+$$temp(i) = \frac{T_0}{i+1}$$
 
 Ove funkcije na početku tolerišu sva lošija rešenja dok se kasnije, kako prolaze iteracije, ta tolerancija smanjuje. Ovaj princip u isto vreme na samom početku praktikuje eksporaciju a kasnije i eksploataciju prostora rešenja.
 
