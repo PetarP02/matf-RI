@@ -989,12 +989,34 @@ Najvažniji deo tabu pretrage jeste definisanje načina pronalaženja susednih r
 
 ### Pseudokod TS:
 - generiši rešenje $x_{local}$
-- definiši $x_{best}$ i $T$
+- definiši $x_{best}$ i $T.append(x_{local})$
 - **while** nisu ispunjeni uslovi
-	- $x_{i} = neighbour(x_{local})$
-	- **if** $f(x_{i})$ < $f(x_{best})$
-		- $x_{best} = x_{i}$
+	- $x_{local} = neighbour(T, x_{local})$
+	- **if** $f(x_{local})$ < $f(x_{best})$
+		- $x_{best} = x_{local}$
 	- **end**
 	- $T.append(x_{local})$
-	- $x_{local} = x_i$
 - **end**
+
+**Primer:** Tražimo minimum funkcije $f(x, y) = 10 + (x^2 - 10\cos(2\pi x)$ poznata i kao ["Rastrigin function"](https://en.wikipedia.org/wiki/Rastrigin_function), tražimo rešenje na $-5.12 \leq x \leq 5.12$.
+
+Po početku algortima inicijalizujemo početno rešenje:
+
+| Funkcija                           | iter = 0                       |
+| ---------------------------------- | ------------------------------ |
+| ![](slike/SMeta/TS/TSfunction.png) | ![](slike/SMeta/TS/TSinit.png) |
+
+Na dalje tražimo sledeće rešenje koristeći se formulom kao u primeru za SA:\
+$$x_{i+1} = x_{local} + U(-1, 1)$$\
+Ono što dodatno proveravamo jeste da li je ovo rešenje u listi $T$ (tabu lista), ako jeste tražimo sledeće rešenje po istoj formuli. Možemo dodati dodatan uslov da, mada rešenje nije u tabu listi, ako je lošije od rešenja u tabu listi ipak ne bude izabrano.
+Kako ovde može doći do beskonačne petlje uvodimo dodatan uslov šanse da se ipak uzme tabu rešenje.
+
+| inter = 10                       | iter = 30                        | iter = 60                        |
+| -------------------------------- | -------------------------------- | -------------------------------- |
+| ![](slike/SMeta/TS/TSiter10.png) | ![](slike/SMeta/TS/TSiter30.png) | ![](slike/SMeta/TS/TSiter60.png) |
+
+Vidimo da su tačke iz starijih iteracija obrisane. Ne želimo da čuvamo previše informacija pa brišemo sve tačke koje su starije od **m** iteracija.
+
+| iter = 100                        | iter = 350                        |
+| --------------------------------- | --------------------------------- |
+| ![](slike/SMeta/TS/TSiter100.png) | ![](slike/SMeta/TS/TSiter350.png) |
