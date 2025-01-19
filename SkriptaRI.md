@@ -977,3 +977,24 @@ U poslednjim iteracijama:
 | ![](slike/SMeta/SA/SAiter150.png) | ![](slike/SMeta/SA/SAiterFinal.png) |
 
 # 11.2 Tabu Search (TS):
+Tabu pretraga temelji se na samom značenju reči "tabu", što u ovom kontekstu označava nešto sveto ili zabranjeno. Termin potiče iz jezika naroda Tonge.
+
+Slično ovoj definiciji, i algoritam tabu pretrage funkcioniše tako što nameće ograničenja koja sprečavaju izbor određenih rešenja tokom pretrage. Ključni aspekt ovog pristupa jeste korišćenje memorije, kratkoročne ili dugoročne, koja pamti već posećena rešenja i na taj način sprečava njihovo ponavljanje. Ove strukture se nazivaju **tabu liste**, i upravo one čine ovaj algoritam specifičnim.
+
+Zabranom povratka na prethodno posećena rešenja, algoritam je prisiljen da istražuje nove oblasti u prostoru rešenja, čime povećava šanse za pronalaženje boljeg rešenja. Međutim, zbog velikog broja potencijalnih rešenja, nije praktično pamtiti sva posećena. Umesto toga, u praksi se najčešće pamte samo ključne tačke ili se koristi ograničena memorija koja evidentira samo nekoliko poslednjih rešenja.
+
+Važno zapažanje kod ovog algoritma jeste potreba da se u određenim trenucima prekrše tabu pravila. Ova praksa, poznata kao **kriterijum težnje** (**aspiration criteria**), omogućava izbor rešenja koje je označeno kao tabu, ali koje nudi značajno bolje rezultate od trenutnog najboljeg rešenja. Ovaj pristup osigurava fleksibilnost algoritma i pomaže u izbegavanju lokalnih minimuma.
+
+Najvažniji deo tabu pretrage jeste definisanje načina pronalaženja susednih rešenja i odabira odgovarajućeg regiona za pretragu. Ove definicije su specifične za svaki problem i ključne su za uspešno funkcionisanje algoritma.
+
+### Pseudokod TS:
+- generiši rešenje $x_{local}$
+- definiši $x_{best}$ i $T$
+- **while** nisu ispunjeni uslovi
+	- $x_{i} = neighbour(x_{local})$
+	- **if** $f(x_{i})$ < $f(x_{best})$
+		- $x_{best} = x_{i}$
+	- **end**
+	- $T.append(x_{local})$
+	- $x_{local} = x_i$
+- **end**
