@@ -1000,6 +1000,8 @@ Najvažniji deo tabu pretrage jeste definisanje načina pronalaženja susednih r
 
 **Primer:** Tražimo minimum funkcije $f(x, y) = 10 + (x^2 - 10\cos(2\pi x)$ poznata i kao ["Rastrigin function"](https://en.wikipedia.org/wiki/Rastrigin_function), tražimo rešenje na $-5.12 \leq x \leq 5.12$.
 
+Ljubičastom bojom predstavljamo trenutno lokalno rešenje, crvenom bojom najbolje rešenje i sivom prethodna rešenja.
+
 Po početku algortima inicijalizujemo početno rešenje:
 
 | Funkcija                           | iter = 0                       |
