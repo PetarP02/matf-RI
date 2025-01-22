@@ -1,5 +1,33 @@
-# 1. Uvod
-## 1.1 Napredni alati:
+# 1. Uvod:
+## 1.1 Analitika:
+Analitika podataka predstavlja **istraživanje**, **interpretaciju** i **komunikaciju** izmežu podataka u cilju pronalaženja šablona u podacima. (prilikom istraživanja koristimo se statistikom)
+Ono što analitika obuhvata jeste istraživanje starih podataka radi pronalaženja ***trendova***, kako bi se videla reakcija na odluke ili dešavanja. 
+Želimo da popravimo rezultate tako što učimo nad starim događajima.
+
+Analitika se deli na:
+- **Deskriptivnu** - sumira statistike, vizualizuje ih i klasteruje podatke u cilju primećivanja njihove povezanosti. Opisuje glaven osobine podataka.
+- **Prediktivna** - koristeći podatke iz prošlosti  grade se modeli koji mogu da predvide rezultate. Koristi se Linearna regresija, ML modeli, Logistićkaregresija, CART... Direktno se nadovezuje na deskriptivnu analitiku, predviđa buduća ponašanja.
+- **Preskriptivni** - daje predlog kako dobiti najbolje rezultate. Direktno se nadovezuje na prediktivnu analitiku, određuje šta treba da se desi i šta treba uraditi kako bi se to ispunilo. Simulacije, nelinearno, linearno i celobrojno programiranje...
+
+## 1.2 Odlučivanje:
+Cilj odljučivanja je dolazak do nekog rezulatat.
+Odlučivanje se deli na:
+- **Nestruktuirani problemi** - problemi koji su novi ili neobični, informacije su nepodpune.
+- **Neprogramirane odluke** - unikatne i koje se ne ponavljaju često.
+- **Struktuirani problemi** - cilj je jasan, poznat (problem je nastajao predhodno), potpuno su definisani.
+- **Programirane odluke** - odluka koja nastaje često i za koju postoje rutinski pristupi.
+
+Odluke se prave kada je ispunjeno neko od sledeća dva uslova:
+- **Sigurnost** - situacija u kojoj znamo sve moguće posledice, možemo napraviti tačne odluke.
+- **Nesigurnost (Rizik)** - situacija u kojoj ne možemo garantovati posledice, možemo samo definisati verovatnoću posledice.
+
+**Model odluka** - mora imati osobinu da predviđa posledice određene odluke.
+
+## 1.3 Optimizacija:
+Maksimizovanje ili minimizovanje neke funkcije relatino sa nekim drugim rešenjima, uz dodatna ograničenja. 
+Dodatno pričamo o ovome u 4. poglavlju
+
+## 1.4 Napredni alati:
  1. **Deskriptivni alati:** 
 Fokusiraju se na analizu onoga što se već dogodilo ili šta se trenutno dešava. Izveštavaju i daju uvid u prošle i trenutne performanse sistema ili poslovanja. Primeri uključuju analize prodaje u prethodnim kvartalima, podatke o prometu na web stranicama, ili izveštaje o korisničkom zadovoljstvu.
 
@@ -9,13 +37,13 @@ Koriste statističke tehnike i algoritme mašinskog učenja za predviđanje budu
  3. **Preskriptivni alati:** 
 Ovi alati idu korak dalje od predikcije jer ne samo da govore šta će se dogoditi, već i sugerišu šta treba preduzeti kako bi se postigli željeni rezultati. Oni koriste optimizacione algoritme i simulacije kako bi preporučili najbolje akcije ili odluke, npr. optimizacija zaliha u trgovini ili kreiranje efikasnih ruta za dostavu.
 
-## 1.2 Mašinsko učenje:
+## 1.5 Mašinsko učenje:
 Grana veštačke inteligencije koja omogućava sistemima da uče iz podataka bez eksplicitnog programiranja.\
 **Prediktivna analitika** je ključna primena mašinskog učenja, jer se koristi za analizu i predviđanje budućih trendova. Ovo uključuje rad sa ogromnim količinama podataka, obično u realnom vremenu, gde se model trenira na istorijskim podacima kako bi prepoznao obrasce i pravio predviđanja.\
 Kako podaci postaju zastareli, zrelost modela opada što znači da modeli postaju manje tačni i efikasni vremenom.
 
 # 2. Paradigme u veštačkoj inteligenciji:
- 
+
  Osnovne paradigme: 
 1. Veštačke neuronske mreže (ANN)  
 2. Evolutivna izračunavanja (EC) 
@@ -99,6 +127,7 @@ Logika nije strogo binarna (0 ili 1), već vrednosti mogu biti između 0.0 i 1.0
 Fazi logika dozvoljava rad sa nepreciznim, nejasnim ili nepotpunim informacijama, simulirajući ljudsko rasuđivanje u takvim uslovima. Koriste se u oblasti kontrole, kao što su pametni termostati ili sistemi za navigaciju.
 
 # 3. Veliki jezički modeli (LLM): 
+
 Složeni algoritmi zasnovani na ANN, kao što su chat roboti, koji su trenirani na velikim količinama podataka kako bi mogli da razumeju i odgovaraju na pitanja u prirodnom jeziku. Ovi modeli koriste prethodno analizirane i ispitane podatke, i primenjuju se u specifičnim, užim domenima, ali su dovoljno fleksibilni da odgovaraju na različite upite u okviru svog znanja. Velika baza podataka omogućava im da analiziraju i razumeju pitanja, a zatim generišu odgovore koristeći tehnike generisanja prirodnog jezika (NLG - Natural Language Generation).
 
 #### Način rada LLM-a:
@@ -137,6 +166,7 @@ LLM i transformer se danas tretiraju kao sinonimi usled velike zasnovanosti LLM-
 4. **Etika: (iz predhodne tri tačke)** Odluke i odgovori koje generišu LLM modeli zavise od podataka na kojima su obučeni, što može voditi do etičkih dilema, kao što su širenje netačnih informacija ili diskriminatornih stavova.
 
 # 4. Optimizacioni algoritmi: 
+
 Specifična vrsta algoritama koji pripadaju grupi pretrage, a njihov glavni cilj je da pronađu optimalno rešenje za datu ciljnu funkciju, koja može biti minimizacija ili maksimizacija, uz određeni skup ograničenja.
 
 ## 4.1 Osnovni pojmovi:
@@ -291,6 +321,7 @@ Grafovi su primenljivi u različitim oblastima, kao što su **lingvistika** (ana
 **Drvo** je specijalna vrsta grafa koja ima sve čvorove povezane tako da ne sadrži cikluse. Sastoji se od čvorova i grana i karakteriše se time što postoji tačno jedan put između svakih parova čvorova. Drveće se često koristi u informatici za organizaciju podataka (npr. u pretraživačkim algoritmima) jer omogućava strukturu sa efikasnim pretragama i manipulacijama podacima.
 
 # 6. Linearno programiranje (LP):
+
 **Linearno programiranje (LP)** predstavlja optimizaciju linearne funkcije sa ograničenjima koja su izražena kao nejednakosti. Na primer, farmer ima ograničene resurse za sadnju povrća, linearno programiranje može mu pomoći da maksimizira profit unutar tih ograničenja.
 
 ## 6.1 Pogodan region (Feasible Region):
@@ -408,7 +439,9 @@ Postavka zadatka je sledeća:
 	max($19 * o_1 + 17 * o_2 + 30 * o_3 + 13 * o_4 + 25 * o_5 + 29 * o_6 + 23 * o_8 + 10 * o_8$)\
 	Radi lepšeg ispisa možemo zameniti sve ove promenljive vektorima.
 
-# 8. Metaheuristike:
+# 8. Nelinearna programiranje (NLP):
+
+# 9. Metaheuristike:
 
 **Heuristika** je metod koji "navodi" algoritam ka potencijalno dobrom rešenju, bez garancije da će pronaći optimalno rešenje. Ovi pristupi često služe za rešavanje problema gde je kompletna pretraga prostora rešenja nepraktična zbog vremenskih ili računarskih ograničenja.
 
@@ -428,7 +461,7 @@ Metaheuristike na osnovu broja rešenja dele se na:
 1. **S-Metaheuristike (S - Single)** - algoritam se vrši nad jednim rešenjem koje unapređujemo vremenom. (VNS, Simulated annealing, gradijent ...)
 2. **P-Metaheuristike (P - Population)** - algoritam se bavi populacijom rešenja gde svaka jedinka se kreće ka rešenju. (GA, ACO, PSO ...)
 
-## 8.1 Trajectory methods (S - Metaheuristics):
+## 9.1 Trajectory methods (S - Metaheuristics):
 U ovu grupu spadaju sve one metaheuristike koje se bave jednim rešenjem koje unapređuju vremenom.
 
 Jedan od poznatih metaheuristika ovog tipa jeste VNS ili Variable neighborhood search , koji funkcioniše po sledećem principu:
@@ -472,7 +505,7 @@ Koristeći VNS mogli bi da rešimo i problem ranca, jedina razlika bi bila u pre
 
 Na osnovu toga vidimo da je VNS zaista metaheuristika.
 
-## 8.2 Population-based (P - Metaheuristika):
+## 9.2 Population-based (P - Metaheuristika):
 U ovu grupu spadaju sve one metaheuristike koje se bave unapređivanjem više rešenja njihovim simultanim evoluiranjem.
 
 Primer ovakvih algoritama je algoritam jata ptica (Bird flocking PSO), funkcioniše po sledećem principu:
@@ -508,7 +541,8 @@ Koačno ono što moramo da proverimo posle svake iteracije jeste da li je neko o
 
 Primetimo da se vremenom sve tačke skupljaju u jednu tačku, ta tačka je zapravo minimum naše funkcije.
 
-# 9. Evolutivna izračunavanja:
+# 10. Evolutivna izračunavanja:
+
 Evolutivno izračunavanje predstavlja proces poboljšavanja organizama ili sistema kroz takmičarsko okruženje, gde se najuspešnije jedinke prilagođavaju i prenose svoje karakteristike na buduće generacije. Poznati kao **Evolutivni algoritmi**.
 **Evolutivni algoritmi (EA)** pripadaju **P-Metaheuristici**.
 
@@ -589,7 +623,7 @@ Postoje dva osnovna pristupa selekciji:
 
 ![](slike/EA/rouletteTournament.png)
 
-## 9.1 Genetski algoritmi (GA):
+## 10.1 Genetski algoritmi (GA):
 Glavna primena u diskretnom domenu. 
 Mada su spori, ovi algoritmi su odlični za rešavanje kombinaornih problema.
 
@@ -673,7 +707,7 @@ Sličan razlog kao kod mutacija, ako bi koristili standardno ukrštanje nastala 
 2. **Delimično ukrštanje (PMX)**: Odaberemo segment hromozoma prvog roditelja. Gledajući početak ovog segmenta idemo redom kroz isti segment drugog roditelja i gledamo u koji broj se broj drugog roditelja slika, posmatramo u koji se broj taj broj slika u drugom roditelju, postupak ponavljamo dok ne izađemo iz segmenta, ili ne prođemo sve elemente segmenta preko kog pišemo iz drugog roditelja. Nakon ovoga prepisujemo na slobodne pozicije brojeve iz drugog roditelja. Slično za drugo dete.\
 	![](slike/EA/GA/ukrstanjePMXPermutation.png)
 
-## 9.2 Genetsko programiranje (GP):
+## 10.2 Genetsko programiranje (GP):
 Osmišljen od strane **John R. Koza**, ovaj algoritam je inspirisan idejom da ako se računaru daju ulazni i izlazni parametri on bi trebalo da zna da napravi program koji rešava dati problem. Koristi princip GA, generacijska evolucija rešenja, odnosno GP je nadovezan na GA.
 
 Idejno ovaj algoritam radi nad stablima, odnosno **Apstraktnim Sintaksnim Stablima (AST)**. Svaki program može se zapisati u sintaksnom stablu, primer može da bude neka jednačina $x^2 + 5x - 1 = 0$ drugačije zapisana i kao $xx + 5x - 1 = 0$, njeno sintaksno stablo bi izgledalo:\
@@ -728,7 +762,8 @@ U ovom primeru, pretpostavimo da smo implementirali sve operacije kao binarno st
 Ovo nije magičan broj već znamo da ako stablo ima **n** listova onda znamo da maksimalan broj čvorova nivoa iznad je n/2, nivoa iznad n/4 .... 1 dakle formula popunjenog binarnog stabla bi bila $2n - 1$.
 Samim tim ne bi želeli da nam GP pravi bilo koja stabla čiji je ukupan broj čvorova veći od 11.
 
-# 10. Inteligencija grupa (SI - Swarm Intelligence):
+# 11. Inteligencija grupa (SI - Swarm Intelligence):
+
 Inteligencija grupa predstavlja proces u kojem jedinke istražuju svoja lokalna rešenja dok istovremeno komuniciraju i sarađuju sa ostalim članovima grupe. 
 Kroz ovu interakciju dolazi do globalnog ponašanja, što omogućava grupi da kolektivno pronađe optimalno rešenje problema ili se prilagodi promenljivim uslovima u okruženju.
 
@@ -751,7 +786,7 @@ Neki primeri:
 
 Još jedna korist SI algoritama jeste u izgradnji trodimenzionalnih tela na osnovu nekih pravila.
 
-## 10.1  Particle Swarm Optimization (PSO):
+## 11.1  Particle Swarm Optimization (PSO):
 U osnovnom PSO (Particle Swarm Optimization) algoritmu imamo grupu čestica, tako nazvanih zbog osobine da svaka jedinka ima brzinu i ubrzanje, u svakoj iteraciji se računa nova pozicija svake čestice. 
 Inspirisani su kretanjem jata ptica i jatom riba.
 
@@ -782,7 +817,7 @@ Bitna je vrednost $c_i$ jer omogućava kontrolu intenzifikacije i diverzifikacij
 
 Detaljno objašnjenje Algoritam jata prica (Birds flocking PSO) predstvaljeno je u 8.2.
 
-## 10.2 Ant Colony Optimization (ACO):
+## 11.2 Ant Colony Optimization (ACO):
 Inspirisan ponašanjem kolonije mrava. Kada pronađu neku hranu mravi traže najoptimalniji, tj. najkraći put do te hrane. 
 
 Prilikom kretanja kroz odabrani put svaki mrav iza sebe ostavlja feromone,  koji vremenom isparavaju. Drugi mravi imaju opciju da prate one puteve čiji su feromoni jači.
@@ -850,7 +885,7 @@ Primetimo da one grane koje su češće posećivane se više ističu.
 Samim tim odabirom najboljih rešenja, taj put će se na samom kraju najviše istaći.
 
 
-## 10.3 Artificial Bee Colony (ABC):
+## 11.3 Artificial Bee Colony (ABC):
 Algoritam je zasnovan na ponašanju pčela prilikom traženja polena. 
 Pčele komuniciraju plesom, kojim govore ostalim pčelama gde se nalazi više polena, odnosno gde je kvalitetnije rešenje.
 
@@ -911,11 +946,12 @@ U prvoj iteraciji za svaku pčelu vršimo sve tri faze.
 | ------------------------------ | ------------------------------- | ------------------------------ |
 | ![](slike/SI/ABC/ABCfirst.png) | ![](slike/SI/ABC/ABCsecond.png) | ![](slike/SI/ABC/ABCthird.png) |
 
-# 11. S - Metaheuristike:
+# 12. S - Metaheuristike:
+
 Prethodno opisani kao metaheuristike koje se bave jednim rešenjem koje konstantno unapređuju.
 U poglavlju 8.1 opisna je VNS metaheuristika, a ovde ćemo dodatno opisati Simulirano kaljenje (Simulated Annealing) i Tabu pretragu (Tabu search).
 
-## 11.1 Simulated Annealing (SA):
+## 12.1 Simulated Annealing (SA):
 U obradi čelika teknika **kaljenja** funkcioniše po principu zagrevanja, čestice bro menjaju kristalnu rešetku i svoje pozicije, i ponovnog hlađenja, čestice zauzimaju pozicije, čelika. Ovaj proces, sporog hlađenja, dovodi do ojačavanja tvrdoće čelika.
 
 Po uzoru na ovaj proces nastala je i optimizacija Simuliranog kaljenja. 
@@ -976,7 +1012,7 @@ U poslednjim iteracijama:
 | --------------------------------- | ----------------------------------- |
 | ![](slike/SMeta/SA/SAiter150.png) | ![](slike/SMeta/SA/SAiterFinal.png) |
 
-# 11.2 Tabu Search (TS):
+## 12.2 Tabu Search (TS):
 Tabu pretraga temelji se na samom značenju reči "tabu", što u ovom kontekstu označava nešto sveto ili zabranjeno. Termin potiče iz jezika naroda Tonge.
 
 Slično ovoj definiciji, i algoritam tabu pretrage funkcioniše tako što nameće ograničenja koja sprečavaju izbor određenih rešenja tokom pretrage. Ključni aspekt ovog pristupa jeste korišćenje memorije, kratkoročne ili dugoročne, koja pamti već posećena rešenja i na taj način sprečava njihovo ponavljanje. Ove strukture se nazivaju **tabu liste**, i upravo one čine ovaj algoritam specifičnim.

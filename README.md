@@ -10,19 +10,20 @@ Nezvanični materijali za kurs Računarske inteligencije, četvrte godine Matema
 5. [Grafovi](SkriptaRI.md/#5-grafovi) - u izradi
 6. [Linearno programiranje (LP)](SkriptaRI.md/#6-linearno-programiranje-lp)
 7. [Celobrojno programiranje (ILP)](SkriptaRI.md/#7-celobrojno-programiranje-ilp)
-8. [Metaheuristike](SkriptaRI.md/#8-metaheuristike)\
-    8.1. [S-Metaheuristike](SkriptaRI.md/#81-trajectory-methods-s---metaheuristics)\
-    8.2. [P-Metaheuristike](SkriptaRI.md/#82-population-based-p---metaheuristika)
-9. [Evolutivna izračunavanja](SkriptaRI.md/#9-evolutivna-izračunavanja)\
-    9.1. [Genetski algoritmi GA](SkriptaRI.md/#91-genetski-algoritmi-ga)\
-    9.2. [Genetsko programiranje GP](SkriptaRI.md/#92-genetsko-programiranje-gp)
-10. [Inteligencija grupa (SI - Swarm Intelligence)](SkriptaRI.md/#10-inteligencija-grupa-si---swarm-intelligence)\
-	10.1. [Particle Swarm Optimization (PSO)](SkriptaRI.md/#101--particle-swarm-optimization-pso)\
-	10.2. [Ant Colony Optimization (ACO)](SkriptaRI.md/#102-ant-colony-optimization-aco)\
- 	10.3. [Artificial Bee Colony (ABC)](SkriptaRI.md/#103-artificial-bee-colony-abc)
-11. [S-Metaheuristike](SkriptaRI.md/#11-s---metaheuristike)\
-	11.1. [Simulated Annealing (SA)](SkriptaRI.md/#111-simulated-annealing-sa)\
-    	11.2. [Tabu Search (TS)](SkriptaRI.md/#112-tabu-search-ts)
+8. [Nelinearno programiranje (NLP)](SkriptaRI.md/#8-nelinearna-programiranje-nlp)
+9. [Metaheuristike](SkriptaRI.md/#9-metaheuristike)\
+    9.1. [S-Metaheuristike](SkriptaRI.md/#91-trajectory-methods-s---metaheuristics)\
+    9.2. [P-Metaheuristike](SkriptaRI.md/#92-population-based-p---metaheuristika)
+10. [Evolutivna izračunavanja](SkriptaRI.md/#10-evolutivna-izračunavanja)\
+    10.1. [Genetski algoritmi GA](SkriptaRI.md/#101-genetski-algoritmi-ga)\
+    10.2. [Genetsko programiranje GP](SkriptaRI.md/#102-genetsko-programiranje-gp)
+11. [Inteligencija grupa (SI - Swarm Intelligence)](SkriptaRI.md/#11-inteligencija-grupa-si---swarm-intelligence)\
+	11.1. [Particle Swarm Optimization (PSO)](SkriptaRI.md/#111--particle-swarm-optimization-pso)\
+	11.2. [Ant Colony Optimization (ACO)](SkriptaRI.md/#112-ant-colony-optimization-aco)\
+ 	11.3. [Artificial Bee Colony (ABC)](SkriptaRI.md/#113-artificial-bee-colony-abc)
+12. [S-Metaheuristike](SkriptaRI.md/#12-s---metaheuristike)\
+	12.1. [Simulated Annealing (SA)](SkriptaRI.md/#121-simulated-annealing-sa)\
+    12.2. [Tabu Search (TS)](SkriptaRI.md/#122-tabu-search-ts)
 
 Interaktivna verzija skripte, [notebook](notebooks/SkriptaRI.ipynb).
 Kratko uputstvo:
