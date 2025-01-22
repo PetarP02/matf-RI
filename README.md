@@ -3,7 +3,7 @@ Nezvanični materijali za kurs Računarske inteligencije, četvrte godine Matema
 # [Skripta](SkriptaRI.md):
 [Skripta (pdf)](SkriptaRI.pdf)
 ## Trenutno obuhvaćene oblasti:
-1. [Uvod](SkriptaRI.md/#1-uvod) - u izradi
+1. [Uvod](SkriptaRI.md/#1-uvod)
 2. [Paradigme u veštačkoj inteligenciji](SkriptaRI.md/#2-paradigme-u-veštačkoj-inteligenciji) - u izradi
 3. [Veliki jezički modeli (LLM)](SkriptaRI.md/#3-veliki-jezički-modeli-llm) - u izradi
 4. [Optimizacioni algoritmi](SkriptaRI.md/#4-optimizacioni-algoritmi) - u izradi
