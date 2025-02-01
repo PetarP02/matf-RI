@@ -519,15 +519,15 @@ Zaključak je da je mana algoritma njegova brzina, što smo bliži nuli funkcije
 
 Kod **njutnove metode** slično kao u prethodnoj bitno nam je da znamo početne tačke i da ispunjavaju isti prvi uslov.
 Algoritam se izvršava na sledeći način:
-5. Pre svega funkcija mora biti diferencijabilna
-6. $f(x_l)f(x_r) < 0$
-7. Na izabranom intervalu funkcija mora biti konstantno rastuća ili opadajuća
+1. Pre svega funkcija mora biti diferencijabilna
+2. $f(x_l)f(x_r) < 0$
+3. Na izabranom intervalu funkcija mora biti konstantno rastuća ili opadajuća
 	$sgn(f') = const$ 
 	$sgn(f'') = const$ 
-8. Mora da važi:\
+4. Mora da važi:\
 	$$f(x_0)f''(x_0) > 0$$
 	
-9. Svaku sledeću nulu računamo na osnovu formule:\
+5. Svaku sledeću nulu računamo na osnovu formule:\
 	$$x_{n + 1} = x_{n} - \frac{f(x_n)}{f^`(x_n)}$$
 Formulu koju smo dobili za računanje sledeće tačke je dobijena Tejlorovim razvojem, ali moguće je do iste formule doći geometrijskim putem.\
 $$f(x_n + (x^* - x_n)) = f(x_n) + \frac{f^`(x_n)}{1!}(x^* - x_n) + o(1)$$
@@ -577,9 +577,9 @@ Ostatak algortima je isti kao u algortimu za pronalženje nule funkcije.
 **Heuristika** je metod koji "navodi" algoritam ka potencijalno dobrom rešenju, bez garancije da će pronaći optimalno rešenje. Ovi pristupi često služe za rešavanje problema gde je kompletna pretraga prostora rešenja nepraktična zbog vremenskih ili računarskih ograničenja.
 
 **Metaheuristike** (meta - apstrakcija) su generalizovane heuristike koje se primenjuju na širi spektar problema, pružajući okvir za rešavanje sličnih problema. One koriste apstraktne principe koji mogu da se prilagode specifičnostima konkretnog problema i time "navedu" pretragu u dobrom smeru. Dakle: 
-10. Nisu specifične za dati problem već skup problema
-11. Podpomaže algoritmu da se ne zaglavi na lokalnim rešenjima i time efikasnije istraže prostor rešenja
-12. Nisu determinističke
+6. Nisu specifične za dati problem već skup problema
+7. Podpomaže algoritmu da se ne zaglavi na lokalnim rešenjima i time efikasnije istraže prostor rešenja
+8. Nisu determinističke
 
 Primeri metaheuristika su: Genetski algoritmi (GA), Simulirano kaljenje (Simulated annealing), Optimizacija kolonije mrava (Ant colony optimization ACO), Optimizacija grupe čestica (Partical sworm optimization PSO), Variable neighborhood search (VNS) ...
 
@@ -589,20 +589,20 @@ Kako nisu rešenja egzaktnog problema uglavnom se koriste u kombinaciji sa egzak
 Relativno je nova oblast koja nije bazirana ni na jednom dokazu,  teoremi.
 
 Metaheuristike na osnovu broja rešenja dele se na:
-13. **S-Metaheuristike (S - Single)** - algoritam se vrši nad jednim rešenjem koje unapređujemo vremenom. (VNS, Simulated annealing, gradijent ...)
-14. **P-Metaheuristike (P - Population)** - algoritam se bavi populacijom rešenja gde svaka jedinka se kreće ka rešenju. (GA, ACO, PSO ...)
+9. **S-Metaheuristike (S - Single)** - algoritam se vrši nad jednim rešenjem koje unapređujemo vremenom. (VNS, Simulated annealing, gradijent ...)
+10. **P-Metaheuristike (P - Population)** - algoritam se bavi populacijom rešenja gde svaka jedinka se kreće ka rešenju. (GA, ACO, PSO ...)
 
 ## 9.1 Trajectory methods (S - Metaheuristics):
 U ovu grupu spadaju sve one metaheuristike koje se bave jednim rešenjem koje unapređuju vremenom.
 
 Jedan od poznatih metaheuristika ovog tipa jeste VNS ili Variable neighborhood search , koji funkcioniše po sledećem principu:
-15. Izabere neko pseudo nasumično rešenje
-16. Odredi njegov kvalitet
-17. Vršimo **Shake** operaciju koja od našeg sadašnjeg rešenja pravi nova rešenja u njegovoj okolini. 
+11. Izabere neko pseudo nasumično rešenje
+12. Odredi njegov kvalitet
+13. Vršimo **Shake** operaciju koja od našeg sadašnjeg rešenja pravi nova rešenja u njegovoj okolini. 
 	- prvo se predstavljaju sva rešenja dobijena izmenom jednog parametra prethodnog rešenja
 	- ukoliko nije nađeno bolje rešenje povećavamo broj parametara koji smeju da se izmene i ponavljamo prethodni korak
 	- ukoliko smo našli bolje rešenje, ili više nemamo parametre koje možemo da izmenimo, prekidamo postupak
-18. Sada bolje dobijeno rešenje, ukoliko je takvo nađeno, postavljamo kao novo optimalno rešenje i ovaj postupak ponavljamo dok ne istekne broj iteracija ili neko vremensko ograničenje.
+14. Sada bolje dobijeno rešenje, ukoliko je takvo nađeno, postavljamo kao novo optimalno rešenje i ovaj postupak ponavljamo dok ne istekne broj iteracija ili neko vremensko ograničenje.
 
 **Primer**: tražimo $x$ za koje funkcija (slika Funkcija) dostiže minimum. Kako se ovde bavimo jednom promenljivom shake funkcija ce biti malo drugačija, ali ideja je slična. 
 Funkciju **Shake** možemo predstaviti kao funkciju koja pravi od našeg trenutnog rešenja $x_{local}$ dva rešenja $x_{left}$ i $x_{right}$ koji se izračunavaju kao:
@@ -640,12 +640,12 @@ Na osnovu toga vidimo da je VNS zaista metaheuristika.
 U ovu grupu spadaju sve one metaheuristike koje se bave unapređivanjem više rešenja njihovim simultanim evoluiranjem.
 
 Primer ovakvih algoritama je algoritam jata ptica (Bird flocking PSO), funkcioniše po sledećem principu:
-19. Izaberemo pseudo nasumično **n** rešenja, svako rešenje predstavlja pticu u prostoru rešenja koja se kreće ka optimalnom rešenju
-20. Rešenja međusobno komuniciraju i prilagođavaju svoju putanju na sonovu:
+15. Izaberemo pseudo nasumično **n** rešenja, svako rešenje predstavlja pticu u prostoru rešenja koja se kreće ka optimalnom rešenju
+16. Rešenja međusobno komuniciraju i prilagođavaju svoju putanju na sonovu:
 	- svoje najbolje pozicije 
 	- najbolje pozicije grupe 
 	- inercije
-21. Vremenom rešenja konvergira ka najboljem rešenju, a iscrtavanjem ovog algoritma rešenja izgledaju kao jato pica.
+17. Vremenom rešenja konvergira ka najboljem rešenju, a iscrtavanjem ovog algoritma rešenja izgledaju kao jato pica.
 
 **Primer**: Tražimo minimum funkcije $f(x, y) = -20e^{-0.2\sqrt{0.5(x^2 + y^2)}} -e^{0.5(\cos{2\pi x} + \cos{2\pi y})} + e + 20$ poznata i kao ["Ackley function"](https://en.wikipedia.org/wiki/Ackley_function), tražimo rešenje na domenu $-5 \leq x,y \leq 5$. 
 Uzimamo ovakvu funkciju pošto se ova vrsta algoritma uglavnom koristi za probleme sa **kontinualnim** domenom.
@@ -682,11 +682,11 @@ Očigledno inspirisano nekim istorijskim idejama o evoluciji:
 - **Darvinov pristup** - Evolucija se odvija kroz prirodnu selekciju, gde samo najprilagođenije jedinke ("survival of the fittest") opstaju, dok se njihove karakteristike propagiraju kroz populaciju ukrštanjem i mutacijom.
 
 ### **Osnovni pojmovi:**
-22. **Hromozom/Jedinka** - kodirano rešenje, uglavnom pseudo nasumično generisano, uglavnom u vidu niza bitova i slično. (kod genetskog programiranja GP, rešenja mogu biti stabla)
-23. **Populacija** - skup više hromozoma
-24. **Selekcija** - odabir jedinki koje će graditi sledeću generaciju
-25. **Ukrštanje (Crossover)** - mešanje hromozoma neke dve jedinke
-26. **Mutacija** - stohastička izmena delova hromozoma u nadi da izmene dodaju neke inovacije u populaciju
+18. **Hromozom/Jedinka** - kodirano rešenje, uglavnom pseudo nasumično generisano, uglavnom u vidu niza bitova i slično. (kod genetskog programiranja GP, rešenja mogu biti stabla)
+19. **Populacija** - skup više hromozoma
+20. **Selekcija** - odabir jedinki koje će graditi sledeću generaciju
+21. **Ukrštanje (Crossover)** - mešanje hromozoma neke dve jedinke
+22. **Mutacija** - stohastička izmena delova hromozoma u nadi da izmene dodaju neke inovacije u populaciju
 
 ### **Pseudokod EA:**
  - **generiši inicijalnu populaciju** $P_{0}(n)$
@@ -699,13 +699,13 @@ Očigledno inspirisano nekim istorijskim idejama o evoluciji:
 Algoritam se završava ukoliko dođe do maksimalnog broja iteracija $t_{max}$, nađemo neko optimalno rešenje, nađemo rešenje i slično.
 
 ### **Algoritmi zasnovani na EA:**
-27. **Genetski algoritmi GA** - genetski kod u obliku niza bitova
-28. **Genetsko programiranje GP** - genetski kod u obliku stabla
-29. **Evolutivno programiranje EP** - koristi samo mutaciju prilikom pravljenja sledeće generacije
-30. **Evolutivne strategije ES** - gradi novu privremenu populaciju (drugačije veličine u odnosu na prethodnu generaciju), nad njom vrši ukrštanje i mutaciju i tek onda rangira sva rešenja i na osnovu njih gradi populaciju $P_{t+1}$. Rešenja u obliku niza realnih brojeva.
-31. **Diferencijalna evolucija DE** - ne koristi optimizaciju gradijenta, pa funkcije ne moraju biti neprekidne ili diferencijabilne, već za svaku jedinku bira približne tri tačke a, b i c nasumično, koje ne smeju biti iste, i gradi novu tačku po formuli $x_{new} = a + F \times (v - c)$.
-32. **Kulturna evolucija (CA)** - pored populacije sadrži dodatnu komponentu **belief space**, ta verovanja jedinke prihvataju ali i utiču na populaciju
-33. **Koevolucija** - ne postoji evaluacija rešenja, već su rešenja ograničenja nekim drugim populacijma i njihovim ponašanjima.
+23. **Genetski algoritmi GA** - genetski kod u obliku niza bitova
+24. **Genetsko programiranje GP** - genetski kod u obliku stabla
+25. **Evolutivno programiranje EP** - koristi samo mutaciju prilikom pravljenja sledeće generacije
+26. **Evolutivne strategije ES** - gradi novu privremenu populaciju (drugačije veličine u odnosu na prethodnu generaciju), nad njom vrši ukrštanje i mutaciju i tek onda rangira sva rešenja i na osnovu njih gradi populaciju $P_{t+1}$. Rešenja u obliku niza realnih brojeva.
+27. **Diferencijalna evolucija DE** - ne koristi optimizaciju gradijenta, pa funkcije ne moraju biti neprekidne ili diferencijabilne, već za svaku jedinku bira približne tri tačke a, b i c nasumično, koje ne smeju biti iste, i gradi novu tačku po formuli $x_{new} = a + F \times (v - c)$.
+28. **Kulturna evolucija (CA)** - pored populacije sadrži dodatnu komponentu **belief space**, ta verovanja jedinke prihvataju ali i utiču na populaciju
+29. **Koevolucija** - ne postoji evaluacija rešenja, već su rešenja ograničenja nekim drugim populacijma i njihovim ponašanjima.
 
 ### Kodiranje (hromozomi):
 U prirodi hromozomi predstavljaju ceo DNK neke jedinke prilikom deobe ćelije. 
@@ -736,14 +736,14 @@ Faza u kojoj se se dešava odabir potomka. Ideja je da se onim boljim rešenjima
 Pa bi najniži selekcioni pritisak bio da izmešamo populaciju i nasumično biramo jedinke.
 
 Postoje dva osnovna pristupa selekciji:
-34. **Turnir**:
+30. **Turnir**:
 	Ideja ovog pristupa jeste da izaberemo neki deo populacije, jedinke tog izabranog dela rangiramo, prema fitness-u, i izaberemo dve najbolje jedinke.
 	U zavisnosti od veličine izabranog broja jedinki za turnir (k), koji može biti jednak ili manji od veličine populacije (n), imamo sledeće ishode:
 	- k = 1: praktično je nasumičan odabir jedinki za crossover.
 	- k < n: najbolji pristup, pošto i one dobre i one loše jedinke imaju šansu da budu izabrane.
 	- k = n: u ovom slučaju uvek će biti izabrane one jedinke koje su najbolje u celoj populaciji, pa će se uniformna populacija steći jako brzo.
 	Primetimo da što je veće **k** to je selekcioni pritisak veći.
-35. **Rulet**:
+31. **Rulet**:
 	Zamišljamo ruletski točak gde je svaka pozicija u koju loptica može da upadne jedna jedinka. 
 	Veličina pozicije za svaku jedinku je proporcijalna fitness vrednosti jedinke, ovo pretstavlja verovatnoću njenog odabira. Kako verovatnoća svih mogućih događaja mora da bude jednaka 1, moramo normalizovati sve verovatnoće. 
 	Pa u populaciji sa $n$ jedinki, za svaku jedinku računamo njenu verovatnoću:\
@@ -783,9 +783,9 @@ Ideja ukrštanja u smislu pronalaženja rešenja predstavlja intezifikaciju. Dru
 Mana ukrštanja je da ukoliko je optimalno rešenje "van dometa" trenutnog prostora rešenja nikada ga nećemo naći. Kako je "van dometa" određene osobine tog rešenja ne postoje ni u jednom od rešenja koja se nalaze u trenutnoj populaciji (lokalni minimum). 
 
 **Crossover** u zavisnosti od problma može biti drugačiji ali se uglavnom izvršava na neki od sledećih načina:
-36.  **Uniformno** - svaki gen jendog roditelja ima jednake šanse da se swapuje sa genom na istoj poziciji drugog roditelja.
-37. **Jednopoziciono** - bira jednu poziciju, pa se prvi deo hromozoma prenosi od jednog roditelja, a drugi deo od drugog.
-38.  **n - Poziciono** - bira više pozicija i deli oba gena na n+1 celinu nakon čega radi "cik-cak" swap delova gena.
+32.  **Uniformno** - svaki gen jendog roditelja ima jednake šanse da se swapuje sa genom na istoj poziciji drugog roditelja.
+33. **Jednopoziciono** - bira jednu poziciju, pa se prvi deo hromozoma prenosi od jednog roditelja, a drugi deo od drugog.
+34.  **n - Poziciono** - bira više pozicija i deli oba gena na n+1 celinu nakon čega radi "cik-cak" swap delova gena.
 
 ![](slike/EA/GA/crossover.png)
 
@@ -803,13 +803,13 @@ Drugim rečima, mutacija pokušava da proširi prostor rešenja koja imamo do sa
 
 Kao što smo naveli već, mutacija kod kodiranja bitovima je flipovanje vrednosti bita.
 Kada kodiramo realnim brojevima, neke od čestih mutacija:
-39. **Dodavanje šuma (Gaussian mutation)**:
+35. **Dodavanje šuma (Gaussian mutation)**:
 	Na broj dodajemo šum dobijen iz standardne normalne raspodele. 
 	Računamo novo x na sledeći način: $x' = x + N(0, \sigma)$
-40. **Uniformna mutacija**:
+36. **Uniformna mutacija**:
 	Svakom genu je dodeljen opseg i nova vrednost mu se dodeljuje uniformno iz tog opsega. 
 	Računamo novo x na sledeći način: $x' = U(a, b)$
-41. **Menjanje gena za korak**
+37. **Menjanje gena za korak**
 Ima više metoda ali ove su neke osnovne.
 
 ### Problem trgovačkog putnika (TSP):
@@ -823,19 +823,19 @@ Niz celih brojeva, gde svaki broj predstavlja drugačiji grad u grafu, a redosle
 
 Pošto moramo da posetimo sve gradove znamo da standardna mutacija neće raditi u našem slučaju, jer mutacija može da zameni neki broj nekim drugim, takvo rešenje je nama nedopustivo.
 **Mutacija**:
-42. **Umetanje**: Izaberemo neka dva gena i drugi umećemo tako da stoji odmah posle prvog, svi ostali geni se pomeraju.
-43. **Zamena**: Izaberemo dva gena i swapujemo ih.
-44. **Inverzija**: Izaberemo segment hromozoma nad kojom vršimo inverziju
-45. **Mešanje**: Izaberemo segment hromozoma i izmešamo gene unutar segmenta.
+38. **Umetanje**: Izaberemo neka dva gena i drugi umećemo tako da stoji odmah posle prvog, svi ostali geni se pomeraju.
+39. **Zamena**: Izaberemo dva gena i swapujemo ih.
+40. **Inverzija**: Izaberemo segment hromozoma nad kojom vršimo inverziju
+41. **Mešanje**: Izaberemo segment hromozoma i izmešamo gene unutar segmenta.
 
 ![](slike/EA/GA/mutationPermutation.png)
 
 Sličan razlog kao kod mutacija, ako bi koristili standardno ukrštanje nastala bi nedopustiva rešenja koja mogu imati duple gradove.
 **Ukrštanja**:
-46. **Ukrštanje prvog reda**: Odaberemo segment hromozoma prvog roditelja, iskopiramo dati segment u prvo dete, nastavljamo desno od kopiranog segmenta i upisujemo sve one brojeve koji se nisu još pojavili u prvom detetu, sve dok se ne popune sve pozicije. Slično i za drugo dete.\
+42. **Ukrštanje prvog reda**: Odaberemo segment hromozoma prvog roditelja, iskopiramo dati segment u prvo dete, nastavljamo desno od kopiranog segmenta i upisujemo sve one brojeve koji se nisu još pojavili u prvom detetu, sve dok se ne popune sve pozicije. Slično i za drugo dete.\
 	![](slike/EA/GA/ukrstanjePrvogRedaPermutation.png)
 
-47. **Delimično ukrštanje (PMX)**: Odaberemo segment hromozoma prvog roditelja. Gledajući početak ovog segmenta idemo redom kroz isti segment drugog roditelja i gledamo u koji broj se broj drugog roditelja slika, posmatramo u koji se broj taj broj slika u drugom roditelju, postupak ponavljamo dok ne izađemo iz segmenta, ili ne prođemo sve elemente segmenta preko kog pišemo iz drugog roditelja. Nakon ovoga prepisujemo na slobodne pozicije brojeve iz drugog roditelja. Slično za drugo dete.\
+43. **Delimično ukrštanje (PMX)**: Odaberemo segment hromozoma prvog roditelja. Gledajući početak ovog segmenta idemo redom kroz isti segment drugog roditelja i gledamo u koji broj se broj drugog roditelja slika, posmatramo u koji se broj taj broj slika u drugom roditelju, postupak ponavljamo dok ne izađemo iz segmenta, ili ne prođemo sve elemente segmenta preko kog pišemo iz drugog roditelja. Nakon ovoga prepisujemo na slobodne pozicije brojeve iz drugog roditelja. Slično za drugo dete.\
 	![](slike/EA/GA/ukrstanjePMXPermutation.png)
 
 ## 10.2 Genetsko programiranje (GP):
@@ -851,11 +851,11 @@ Znajući ovo evolucija programa bi se zasnivala kao i kod GA na crossover-u i mu
 Prilikom mutacija nije dozvoljeno da list mutiramo tako da on postane neki od funkcija, operatora i slično...
 
 Osnovni koraci:
-48. Definisati skup **terminala**
-49. Definisati skup **funkcija**
-50. **Fitness** funkcija
-51. Parametri kontrolisanja izvršavanja (veličina populacije, šansa mutacija, elitizam i slično)
-52. Definisati kad se vrši **zaustavljanje** 
+44. Definisati skup **terminala**
+45. Definisati skup **funkcija**
+46. **Fitness** funkcija
+47. Parametri kontrolisanja izvršavanja (veličina populacije, šansa mutacija, elitizam i slično)
+48. Definisati kad se vrši **zaustavljanje** 
 
 **Fitness**:
 Funkcija čija nam vrednost predstavlja kvalitet sadačnjeg koda. U vrednost, odnosno kvalitet, ulazi i da li se sam kod kompajlira, koliko ima grešaka i slično.
@@ -873,11 +873,11 @@ U ovom slučaju kao i kod permutacija mormao da osmislimo pogodnu mutaciju, odno
 Kao što smo prethodno primetili, listovi AST su promenljive i konstante, dok su unutrašnji čvorovi kao i koren čvora su funkcije, operacije i slično.
 
 Unajući ovo neke dozvoljene mutacije bi bile:
-53. **Mutacija listova**: kada znamo da je čvor list onda:
+49. **Mutacija listova**: kada znamo da je čvor list onda:
 	- **Konstanta**: vrednost možemo da uvećamo ili smanjimo, zamenimo novim brojem ili zamenimo promenljivom...
 	- **Promenljiva**: promenljivu možemo zameniti drugom promenljivom, uvođenjem nove promenljive ili zamenom promenljive konstantom...
-54. **Mutacija unutračnjeg čvora**: zamenimo dati čvor drugom funkcijom, operacijom i slično, naravno moramo da zadržimo sintaksnu tačnost.
-55. **Mutacija umetanjem novih podstabala**: poznato kao i **Grow**, jeste da dopustimo programu da izgradi pliće podstablo i da ga umetnemo na neku poziciju unutar AST-a programa.
+50. **Mutacija unutračnjeg čvora**: zamenimo dati čvor drugom funkcijom, operacijom i slično, naravno moramo da zadržimo sintaksnu tačnost.
+51. **Mutacija umetanjem novih podstabala**: poznato kao i **Grow**, jeste da dopustimo programu da izgradi pliće podstablo i da ga umetnemo na neku poziciju unutar AST-a programa.
 
 | Mutacija listova               | Mutacija  operacije            |
 | ------------------------------ | ------------------------------ |
@@ -906,14 +906,14 @@ Ovi algortimi pripadaju **P - Metaheuristikama**, i često se koriste na problem
 Razlika ovih algoritama od EA jeste u činjenici da jedinke ovde rade zajedno, tj. kreću se zajedno u smeru rešenja.
 
 Razmena informacija unutar grupa može se vršiti na dva načina:
-56. **Direktna** - jedinke moraju da interaguju na ličnom nivou sa drugim.
-57. **Indirektno** - individulano ponašanje menja okruženje bez lične interackcije.
+52. **Direktna** - jedinke moraju da interaguju na ličnom nivou sa drugim.
+53. **Indirektno** - individulano ponašanje menja okruženje bez lične interackcije.
 
 Neki primeri:
-58. **Particle Swarm Optimization (PSO)**  - svaka čestica računa novu inerciju poštovaći najbolje rešenje grupe + njeno najbolje rešenje + kao i njenu staru inerciju.
-59. **Ant colony optimization (ACO)** - svaki mrav ostavlja feromone prilikom traženja hrane, jačina feromona predstavlja kvalitet rešenja koji drugi mravi mogu i ne moraju da prate.
-60. **Artificial Bee Colony (ABC)** - inspirisan grupama pčela u potrazi za nektarom, postoje tri vrste pčela **izviđači** (diverzifikacija), **zaposleni** (traže lokalna rešenja) i **posmatrači** (intenzivikacija, biraju gde će se vršiti istraživanje).
-61. **Bacterial foraging optimization (BFO)** - bakterije se razmnožavaju u onim delovima gde je najbolje rešenje, u svakoj generaciji se odstranjuje polovina rešenja.
+54. **Particle Swarm Optimization (PSO)**  - svaka čestica računa novu inerciju poštovaći najbolje rešenje grupe + njeno najbolje rešenje + kao i njenu staru inerciju.
+55. **Ant colony optimization (ACO)** - svaki mrav ostavlja feromone prilikom traženja hrane, jačina feromona predstavlja kvalitet rešenja koji drugi mravi mogu i ne moraju da prate.
+56. **Artificial Bee Colony (ABC)** - inspirisan grupama pčela u potrazi za nektarom, postoje tri vrste pčela **izviđači** (diverzifikacija), **zaposleni** (traže lokalna rešenja) i **posmatrači** (intenzivikacija, biraju gde će se vršiti istraživanje).
+57. **Bacterial foraging optimization (BFO)** - bakterije se razmnožavaju u onim delovima gde je najbolje rešenje, u svakoj generaciji se odstranjuje polovina rešenja.
 
 Još jedna korist SI algoritama jeste u izgradnji trodimenzionalnih tela na osnovu nekih pravila.
 
@@ -927,10 +927,10 @@ Dok se glovalno pamti i po potrebi menja **najbolja pozicija grupe ($p_{global}$
 Formula po kojoj se računa nova inercija čestice:\
 $$v_i = c_iv_i + c_{local}r_{local}v_{local} + c_{global}r_{global}v_{global}$$\
 gde su:
-62. $v_{global} = p_{global} - p_{pos}$ **vektor ka najboljem rešenju grupe**,
-63. $v_{local} = p_{local} - p_{pos}$ **vektor ka ličnom najboljem rešenju**
-64. $r_{global}$, $r_{local}$ brojevi između 0 i 1 koji uvode stohastičnost
-65. $c_{local}$, $c_{global}$ i $c_{i}$ **konstante ubrzanja**, odnosno koliko će se stare vrednosti koristiti u računanju novog momentuma. 
+58. $v_{global} = p_{global} - p_{pos}$ **vektor ka najboljem rešenju grupe**,
+59. $v_{local} = p_{local} - p_{pos}$ **vektor ka ličnom najboljem rešenju**
+60. $r_{global}$, $r_{local}$ brojevi između 0 i 1 koji uvode stohastičnost
+61. $c_{local}$, $c_{global}$ i $c_{i}$ **konstante ubrzanja**, odnosno koliko će se stare vrednosti koristiti u računanju novog momentuma. 
 
 Bitna je vrednost $c_i$ jer omogućava kontrolu intenzifikacije i diverzifikacije:
 - $c_i \geq 1$ - brzina stalno raste i grupa divergira
@@ -959,10 +959,10 @@ Ovakavo ponašanje možemo da iskoristimo u problemima sa grafovima, najbolji pr
 U fazi inicijalizacije, **svakom mravu** je dodeljen **drugačiji čvor** kao početni, kako bi se izbeglo favoritizovanje rešenja na osnovu heuristike. Takođe
 
 Svaki mrav čuva: 
-66. **početnu poziciju (dodeljeni čvor)** - uvek kreće od ovog čvora
-67. **trenutno rešenje (niz čvorova)** - resetuje se na početku svake nove iteracije
-68. **dužinu puta** - resetuje se na početku svake nove iteracije
-69. **depozit feromona (Q)** - konstanta koja se deli sa dužinom puta mrava, na osnovu čega se određuje količina feromona koja se ostavlja na tom putu.
+62. **početnu poziciju (dodeljeni čvor)** - uvek kreće od ovog čvora
+63. **trenutno rešenje (niz čvorova)** - resetuje se na početku svake nove iteracije
+64. **dužinu puta** - resetuje se na početku svake nove iteracije
+65. **depozit feromona (Q)** - konstanta koja se deli sa dužinom puta mrava, na osnovu čega se određuje količina feromona koja se ostavlja na tom putu.
 
 Globalno se čuva **količina feromona na svim granama**.
 ### Pseudokod ACO:
@@ -981,8 +981,8 @@ Inicijalizujemo i količinu feromona na svim granama:
 ![](slike/SI/ACO/nodes.png)
 
 Nakon inicijalizacije, započinjemo petlju:
-70. **resetSolution()** - nakon svake iteracije je potrebno da se resetuje rešenje, kako bi moglo da se nađe novo
-71. **findSolution()** - mrav traži novo rešenje, odnosno novi put na osnovu feromona i odabrane heuristike. Proces odabira puta je sledeći:\
+66. **resetSolution()** - nakon svake iteracije je potrebno da se resetuje rešenje, kako bi moglo da se nađe novo
+67. **findSolution()** - mrav traži novo rešenje, odnosno novi put na osnovu feromona i odabrane heuristike. Proces odabira puta je sledeći:\
 	Svaki mrav bira sledeći čvor dok nije posetio sve čvorove. Gledajući čvor na kom se trenutno nalazi ($i$ - čvor), mrav posmatra sve one koji su susedni i neposećeni ($j = susedi(i)$), bira put koji će preći na osnovu sledeće formule:\
 	$$p_{i, j} = \dfrac{\tau_{i, j}^{\alpha}n_{i, j}^{\beta}}{\sum_{k = susedi(i)}^{n}{\tau_{i, k}^{\alpha}n_{i, k}^{\beta}}}$$
 	\
@@ -993,7 +993,7 @@ Nakon inicijalizacije, započinjemo petlju:
 	- $\beta$ - stepen koji odlučuje koliko će heuristika za optimalnost dužine puta uticati na verovatnoću odabirata tog čvora. Uglavnom uzima vrednost između $[2, 5]$.
 	U odnosu na verovatnoće dobijene prethodnom formulom za sve susede, mrav stohastićki bira sledeći čvor. 
 	Nakon odabira čvora, on se dodaje na rešenje i dužina puta se povećava za pređeni put.
-72. **updatePheromones()** - na kraju svake iteracije $pheromones(m)$ se ažurira sledećom formulom:\
+68. **updatePheromones()** - na kraju svake iteracije $pheromones(m)$ se ažurira sledećom formulom:\
 	$$pheromones(i, j) = (1 - p)pheromones(i, j) + \sum_{k = 1}^{n}{\Delta\tau_{i, j}^k}$$
 	\
 	U prethodnoj formuli:
@@ -1021,9 +1021,9 @@ Algoritam je zasnovan na ponašanju pčela prilikom traženja polena.
 Pčele komuniciraju plesom, kojim govore ostalim pčelama gde se nalazi više polena, odnosno gde je kvalitetnije rešenje.
 
 Pčele su podeljene na tri grupe:
-73. **Employed bees (Zaposlene)** - ove pčele imaju dužnost da "iscrpljuju" resurs koje su one našle kao optimalan.
-74. **Onlooker bees (Posmatrači)** - ove pčele na osnovu kvaliteta ostalih pčela i njihovog "plesa" biraju da li će nastaviti da iscrpljuju svoje resurse ili će preći na neki bolji resurs populacije.
-75. **Scout bees (Izviđači)** - ovo su pčele koje nakon što su iscrpile svoj resurs biraju neki sledeći neistraženi resurs.
+69. **Employed bees (Zaposlene)** - ove pčele imaju dužnost da "iscrpljuju" resurs koje su one našle kao optimalan.
+70. **Onlooker bees (Posmatrači)** - ove pčele na osnovu kvaliteta ostalih pčela i njihovog "plesa" biraju da li će nastaviti da iscrpljuju svoje resurse ili će preći na neki bolji resurs populacije.
+71. **Scout bees (Izviđači)** - ovo su pčele koje nakon što su iscrpile svoj resurs biraju neki sledeći neistraženi resurs.
 
 Dakle ideja je sledeća, zaposlene pčele prikuljaju polen (poboljšava lokalno svoje rešenje , tj. eksploatacija), dok pčele posmatrači nadgledaju i traže one pčele koje su našle najviše polena i šalju druge pčele da rade na tim pozicijama (konvergencija rešenja) i na kraju pčele istraživači traže druge izvore polena (eksploracija).
 
@@ -1059,18 +1059,18 @@ Pravimo $n$ pčela na dopuštenom domenu, { $(x, y) | -5 \leq x,y \leq 5$ }.
 | ![](slike/SI/ABC/ABCfunction.png) | ![](slike/SI/ABC/ABCinit.png) |
 
 U prvoj iteraciji za svaku pčelu vršimo sve tri faze. 
-76. **Employed Phase**:\
+72. **Employed Phase**:\
 	Pčela istražuje okolinu svog trenutnog rešenja koristeći trenutno najbolje globalno rešenje pouplacije:\
 	$$p_{new} = p_{old} + \phi_i (p_{localBest} - p_{random})$$
 	\
 	u ovoj formuli $\phi_i$ je vrednost između -1 i 1, koja uvodi stohastičnost u celu pretragu, a $p_{random}$ pretstavlja pseudo-nasumičnu poziciju neke od pčela iz populacije. 
 	Ukoliko je novonađena pozicija kvalitetnija, pored izmene najboljeg lokalnog rešenja, proverava se da li je globalno bolja.
-77. **Onlooker Phase**:\
+73. **Onlooker Phase**:\
 	Pčela bira neku od pčela po principu ruleta, gde svaka od pčela ima šansu da bude izabrana na osnovu sledeće formule:\
 	$$p_i = \dfrac{f_i}{\sum_{i = 1}^n f_i}$$
 	\
 	Ukoliko je vrednost najboljeg rešenja izabrane pčele bolja od nabolje vrednosti pčele posmatrača, pčela posmatrač odbacuje sve resurse i prebacuje se na izabranu pčelu, inače ništa se ne dešava.
-78. **Scout Phase**:\
+74. **Scout Phase**:\
 	Ukoliko se kvalitet rešenja pčele nije poboljšalo predodređen broj iteracija pčela bira neku nasumičnu poziciju unutar domena.
 
 | iter > 5                       | iter > 20                       | iter > 30                      |
