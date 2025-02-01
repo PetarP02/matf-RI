@@ -474,13 +474,13 @@ $$a_0 \leq a_1 \leq a_2 \leq ... \leq a_n \leq x_0 \leq b_n \leq ... \leq b_2 \l
  imamo dva opadajuća niza sa obe strane $x_0$ ($x_0$ je prava nula funkcije), samim tim konvergiraju ka $x_0$ pa možemo da zaključimo da važi $\lim_{n \to \infty}{b_n} = x_0$, isto važi za $a_n$. 
 
 Odavde možemo izvesti još jednu formulu, pomoću koje računamo potreban broj iteracija da bi greška rešenja bila manja od nekog zadatog $\epsilon$. 
-Ono što znamo iz formule za odabir sledećeg intervala jeste da je svaki novi niz pola dužine starog intervala. Iz ovog zapažanja možemo da zaključimo sledeće (sa $x^*$ označavamo približnu vrednost nule):\
-$$|x^* - x_0| \leq \frac{1}{2}|b_n - a_n|$$
+Ono što znamo iz formule za odabir sledećeg intervala jeste da je svaki novi niz pola dužine starog intervala. Iz ovog zapažanja možemo da zaključimo sledeće (sa $x^{\ast}$ označavamo približnu vrednost nule):\
+$$|x^{\ast} - x_0| \leq \frac{1}{2}|b_n - a_n|$$
 \
 $$\frac{1}{2}|b_n - a_n| = \frac{1}{2^{n+1}}|b_0 - a_0|$$
 \
-Želimo da ograničimo da razlika ova $x_0$ i $x^*$ bude manje od nekog $\epsilon$:\
-$$|x^* - x_0| \leq \frac{1}{2^{n+1}}|b_0 - a_0| < \epsilon$$
+Želimo da ograničimo da razlika ova $x_0$ i $x^{\ast}$ bude manje od nekog $\epsilon$:\
+$$|x^{\ast} - x_0| \leq \frac{1}{2^{n+1}}|b_0 - a_0| < \epsilon$$
 \
 $$b_0 - a_0 < 2^{n+1}\epsilon$$
 \
@@ -490,7 +490,7 @@ $$\ln{\frac{b_0 - a_0}{\epsilon}} < (n+1)\ln{2}$$
 \
 $$\frac{\ln{\frac{b_0 - a_0}{\epsilon}}}{\ln{2}} - 1 < n$$
 \
-Koristeći se konačnom formulom možemo unapred znati koliko nam je potrebno iteracija da bi dobili rezultat koji je tačnosti $|x^* - x_0| < \epsilon$.
+Koristeći se konačnom formulom možemo unapred znati koliko nam je potrebno iteracija da bi dobili rezultat koji je tačnosti $|x^{\ast} - x_0| < \epsilon$.
 
 **Primer:** Želimo da nađemo nulu funkcije $f(x) = x^2 - 2$, poprilično je jasno da je nula $x_0 = \sqrt{2}$.
 U prvoj iteraciji ovog algoritma postavljamo da su mu granice $[1, 2]$. 
@@ -523,24 +523,24 @@ Algoritam se izvršava na sledeći način:
 2. $f(x_l)f(x_r) < 0$
 3. Na izabranom intervalu funkcija mora biti konstantno rastuća ili opadajuća
 	$sgn(f') = const$ 
-	$sgn(f'') = const$ 
+	$sgn(f^") = const$ 
 4. Mora da važi:\
-	$$f(x_0)f''(x_0) > 0$$
+	$$f(x_0)f^"(x_0) > 0$$
 	
 5. Svaku sledeću nulu računamo na osnovu formule:\
 	$$x_{n + 1} = x_{n} - \frac{f(x_n)}{f^`(x_n)}$$
 \
 Formulu koju smo dobili za računanje sledeće tačke je dobijena Tejlorovim razvojem, ali moguće je do iste formule doći geometrijskim putem.\
-$$f(x_n + (x^* - x_n)) = f(x_n) + \frac{f^`(x_n)}{1!}(x^* - x_n) + o(1)$$
+$$f(x_n + (x^{\ast} - x_n)) = f(x_n) + \frac{f^`(x_n)}{1!}(x^{\ast} - x_n) + o(1)$$
 \
-Kako važi $f(x_n + (x^* - x_n)) = f(x^*) = 0$, dobijamo:\
-$$0 = f(x_n) + f^`(x_n)(x^* - x_n)$$\
-$$f(x_n) = -f^`(x_n)(x^* - x_n)$$
+Kako važi $f(x_n + (x^{\ast} - x_n)) = f(x^{\ast}) = 0$, dobijamo:\
+$$0 = f(x_n) + f^`(x_n)(x^{\ast} - x_n)$$\
+$$f(x_n) = -f^`(x_n)(x^{\ast} - x_n)$$
 \
-$$-\frac{f(x_n)}{f^`(x_n)} = x^* - x_n$$
+$$-\frac{f(x_n)}{f^`(x_n)} = x^{\ast} - x_n$$
 \
 Konačno:\
-$$x^* = x_n -\frac{f(x_n)}{f^`(x_n)}$$
+$$x^{\ast} = x_n -\frac{f(x_n)}{f^`(x_n)}$$
 \
 Algoritam radi tako što u svakoj iteraciji gradi tangentu na trenutno tačku $(x_i, f(x_i))$ na krivi (linearno aproksimira funkciju u datoj tački), posmatramo ono x gde je vrednost funkcije tangente 0, čime dobijamo novo x.
 
