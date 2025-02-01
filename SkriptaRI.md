@@ -522,25 +522,25 @@ Algoritam se izvršava na sledeći način:
 1. Pre svega funkcija mora biti diferencijabilna
 2. $f(x_l)f(x_r) < 0$
 3. Na izabranom intervalu funkcija mora biti konstantno rastuća ili opadajuća
-	$sgn(f') = const$ 
+	$sgn(f{'}) = const$ 
 	$sgn(f^{"}) = const$ 
 4. Mora da važi:\
 	$$f(x_0)f^{"}(x_0) > 0$$
 	
-5. Svaku sledeću nulu računamo na osnovu formule:\
-	$$x_{n + 1} = x_{n} - \frac{f(x_n)}{f^`(x_n)}$$
+5. Svaku sledeću nulu računamo na osnovu formule:\ 
+	$$x_{n + 1} = x_{n} - \frac{f(x_n)}{f^{'}(x_n)}$$
 \
 Formulu koju smo dobili za računanje sledeće tačke je dobijena Tejlorovim razvojem, ali moguće je do iste formule doći geometrijskim putem.\
-$$f(x_n + (x^{\ast} - x_n)) = f(x_n) + \frac{f^`(x_n)}{1!}(x^{\ast} - x_n) + o(1)$$
+$$f(x_n + (x^{\ast} - x_n)) = f(x_n) + \frac{f^{'}(x_n)}{1!}(x^{\ast} - x_n) + o(1)$$
 \
 Kako važi $f(x_n + (x^{\ast} - x_n)) = f(x^{\ast}) = 0$, dobijamo:\
-$$0 = f(x_n) + f^`(x_n)(x^{\ast} - x_n)$$\
-$$f(x_n) = -f^`(x_n)(x^{\ast} - x_n)$$
+$$0 = f(x_n) + f^{'}(x_n)(x^{\ast} - x_n)$$\
+$$f(x_n) = -f^{'}(x_n)(x^{\ast} - x_n)$$
 \
-$$-\frac{f(x_n)}{f^`(x_n)} = x^{\ast} - x_n$$
+$$-\frac{f(x_n)}{f^{'}(x_n)} = x^{\ast} - x_n$$
 \
 Konačno:\
-$$x^{\ast} = x_n -\frac{f(x_n)}{f^`(x_n)}$$
+$$x^{\ast} = x_n -\frac{f(x_n)}{f^{'}(x_n)}$$
 \
 Algoritam radi tako što u svakoj iteraciji gradi tangentu na trenutno tačku $(x_i, f(x_i))$ na krivi (linearno aproksimira funkciju u datoj tački), posmatramo ono x gde je vrednost funkcije tangente 0, čime dobijamo novo x.
 
@@ -566,7 +566,7 @@ Kako inače tražimo maximum ili minimum funkcije?
 Tako što uzimamo izvod te funkcije i pokušavamo da je izjednačimo sa nulom. 
 Možemo da uočimo da nalik formuli koju smo koristili za nalaženje nule možemo napraviti i formulu za pronalaženje minimuma/maksimuma (ustvari gradimo kvadratnu aproksimaciju funkcije).
 Formula se dobija na identičan način, razlika je što razvijamo izvod funkcije:\
-$$x_{n+1} = x_n - \frac{f^`(x_n)}{f^{``}(x_n)}$$
+$$x_{n+1} = x_n - \frac{f^{'}(x_n)}{f^{"}(x_n)}$$
 \
 Ostatak algortima je isti kao u algortimu za pronalženje nule funkcije.
 
