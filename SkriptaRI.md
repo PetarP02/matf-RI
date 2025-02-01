@@ -523,9 +523,9 @@ Algoritam se izvršava na sledeći način:
 2. $f(x_l)f(x_r) < 0$
 3. Na izabranom intervalu funkcija mora biti konstantno rastuća ili opadajuća
 	$sgn(f') = const$ 
-	$sgn(f^") = const$ 
+	$sgn(f^{"}) = const$ 
 4. Mora da važi:\
-	$$f(x_0)f^"(x_0) > 0$$
+	$$f(x_0)f^{"}(x_0) > 0$$
 	
 5. Svaku sledeću nulu računamo na osnovu formule:\
 	$$x_{n + 1} = x_{n} - \frac{f(x_n)}{f^`(x_n)}$$
