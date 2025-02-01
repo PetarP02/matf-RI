@@ -439,7 +439,134 @@ Postavka zadatka je sledeća:
 	max($19 * o_1 + 17 * o_2 + 30 * o_3 + 13 * o_4 + 25 * o_5 + 29 * o_6 + 23 * o_8 + 10 * o_8$)\
 	Radi lepšeg ispisa možemo zameniti sve ove promenljive vektorima.
 
-# 8. Nelinearna programiranje (NLP):
+# 8. Nelinearno programiranje (NLP):
+
+Kada se bavimo problemima koji se definiše kao nelinearne funkcije, ili ograničenja pogodnog regiona su definisana kao nelinearne funkcije, tada se bavimo **nelinearnim programiranjem**. 
+Sa druge strane sam princip zadavanja probelma i njihovih ograničenja je isti kao kod LP i ILP, jer sam solver rešava ovo umesto nas.
+Problem kod ovih sistema jesu lokalni optimumi, jer sam NLP solver može da se zaustavi na lokalnom optimumu. Početna pozicija utiče na rešenje.
+
+**Kada NLP solver nadje rešenje to rešenje ne mora biti optimalno!**
+
+Načini za rešavanje ovakvih probelma može biti analitički, koristeči se znanjem izvoda možemo pronaći minimum/maximum neke funkcije. 
+Koliko god analitički način bio dobar on ne može da radi uvek, neke funkcije mogu biti mnogo kompleksnije za rešavanje. U tim situacijama koristimo se numeričkom matematikom.
+
+## 8.1 Polovljenje intervala (Bisection Method):
+
+Jedan od osnovnih algoritama pronalaženja nule neke funkcije jeste **Polovljenje intervala**.
+Algoritam se izvodi na sledeći način:
+1. Biramo dve tačke na intervalu za koje važi $f(x_{l})f(x_{r}) < 0$
+2. Nula funkcije je na sredini ovog intervala odnosno $x_0 = \frac{x_l+x_r}{2}$ 
+3. Posmatrajući sada intervale $[x_l, x_0]$ i $[x_0, x_r]$ koristeći formulu iz koraka 1, određujemo novi interval. 
+4. Onog momenta kada je formula iz 1. = 0 zaustavljamo algoritam. Alternativa i mnogo jeftinija vremenski jeste korišćenje aproksimirane greške $|\epsilon_{a}|$. Rećićemo da prihvatamo samo grešku koja je ispod nekog procenta i radimo algoritam sve dok greška nije manja ili jednaka izabranom procentu. 
+	$$|\epsilon_{a}| = |\frac{x_0^{new} - x_0^{old}}{x_0^{new}}|$$
+
+Ideja algoritma jeste da interval u kom se nalazi nula konstantno smanjujemo, ali pritom da samu nulu ne izgubimo, odnosno ceo interval konvergira ka rešenju.
+Smanjivanje intervala postižemo njegovim polovljenjem, poštovajući korak 1. postižemo da sama nula bude uvek unutar tog intervala i dobijamo sledeći niz intervala:\
+$$a_0 \leq x_0 \leq b_0$$\
+$$a_1 \leq x_0 \leq b_1$$\
+$$a_2 \leq x_0 \leq b_2$$\
+$$...$$\
+$$a_n \leq x_0 \leq b_n$$
+Iz ovog niza intervala zaključujemo sledeće:\
+$$a_0 \leq a_1 \leq a_2 \leq ... \leq a_n \leq x_0 \leq b_n \leq ... \leq b_2 \leq b_1 \leq b_0$$
+
+ imamo dva opadajuća niza sa obe strane $x_0$ ($x_0$ je prava nula funkcije), samim tim konvergiraju ka $x_0$ pa možemo da zaključimo da važi $\lim_{n \to \infty}{b_n} = x_0$, isto važi za $a_n$. 
+
+Odavde možemo izvesti još jednu formulu, pomoću koje računamo potreban broj iteracija da bi greška rešenja bila manja od nekog zadatog $\epsilon$. 
+Ono što znamo iz formule za odabir sledećeg intervala jeste da je svaki novi niz pola dužine starog intervala. Iz ovog zapažanja možemo da zaključimo sledeće (sa $x^*$ označavamo približnu vrednost nule):\
+$$|x^* - x_0| \leq \frac{1}{2}|b_n - a_n|$$
+\
+$$\frac{1}{2}|b_n - a_n| = \frac{1}{2^{n+1}}|b_0 - a_0|$$
+Želimo da ograničimo da razlika ova $x_0$ i $x^*$ bude manje od nekog $\epsilon$:\
+$$|x^* - x_0| \leq \frac{1}{2^{n+1}}|b_0 - a_0| < \epsilon$$
+\
+$$b_0 - a_0 < 2^{n+1}\epsilon$$
+\
+$$\frac{b_0 - a_0}{\epsilon} < 2^{n+1}$$
+\
+$$\ln{\frac{b_0 - a_0}{\epsilon}} < (n+1)\ln{2}$$
+\
+$$\frac{\ln{\frac{b_0 - a_0}{\epsilon}}}{\ln{2}} - 1 < n$$
+Koristeći se konačnom formulom možemo unapred znati koliko nam je potrebno iteracija da bi dobili rezultat koji je tačnosti $|x^* - x_0| < \epsilon$.
+
+**Primer:** Želimo da nađemo nulu funkcije $f(x) = x^2 - 2$, poprilično je jasno da je nula $x_0 = \sqrt{2}$.
+U prvoj iteraciji ovog algoritma postavljamo da su mu granice $[1, 2]$. 
+
+| f-ja                              | iter = 1                   |
+| --------------------------------- | -------------------------- |
+| ![](slike/NLP/nulaNLFunkcija.png) | ![](slike/NLP/BMiter1.png) |
+
+U prvoj iteraciji smo prepolobili interval i odabrali novu tačku kao nulu funkcije, međutim kao što se vidi na slici ta nula idalje nije dovoljno blizu, odnosno greška je prevelika.
+
+| iter = 2                   | iter = 3                   | iter = 4                   |
+| -------------------------- | -------------------------- | -------------------------- |
+| ![](slike/NLP/BMiter2.png) | ![](slike/NLP/BMiter3.png) | ![](slike/NLP/BMiter4.png) |
+
+Ono što se primećuje sa ovih slika jeste da rešenje relativno brzo konvergira ka rešenju. Ova brzina se odrzava na početu međutim vrlo brzo se usporava:
+
+| iter = 7                   | iter = 8                   | final                          |
+| -------------------------- | -------------------------- | ------------------------------ |
+| ![](slike/NLP/BMiter7.png) | ![](slike/NLP/BMiter8.png) | ![](slike/NLP/BMfinalIter.png) |
+
+Po testiranju koda ovog algoritma, bilo je potrebno ukupno 36 iteracija da se postigne željena tačnost rešenja ($\epsilon = 10^{-12}$). Posmatranjem slika možemo primetiti da je razlika dužine intervala u prvih 8 iteracija mnogo značajnija od onoga postignuto nakon 8 iteracija.
+
+Zaključak je da je mana algoritma njegova brzina, što smo bliži nuli funkcije rešenje sporije konvergira. 
+
+## 8.2 Njutnov metod:
+
+Kod **njutnove metode** slično kao u prethodnoj bitno nam je da znamo početne tačke i da ispunjavaju isti prvi uslov.
+Algoritam se izvršava na sledeći način:
+1. Pre svega funkcija mora biti diferencijabilna
+2. $f(x_l)f(x_r) < 0$
+3. Na izabranom intervalu funkcija mora biti konstantno rastuća ili opadajuća
+	$sgn(f') = const$ 
+	$sgn(f'') = const$ 
+4. Mora da važi:\
+	$$f(x_0)f''(x_0) > 0$$
+	
+5. Svaku sledeću nulu računamo na osnovu formule:\
+	$$x_{n + 1} = x_{n} - \frac{f(x_n)}{f^`(x_n)}$$
+Formulu koju smo dobili za računanje sledeće tačke je dobijena Tejlorovim razvojem, ali moguće je do iste formule doći geometrijskim putem.\
+$$f(x_n + (x^* - x_n)) = f(x_n) + \frac{f^`(x_n)}{1!}(x^* - x_n) + o(1)$$
+\
+Kako važi $f(x_n + (x^* - x_n)) = f(x^*) = 0$, dobijamo:\
+$$0 = f(x_n) + f^`(x_n)(x^* - x_n)$$\
+$$f(x_n) = -f^`(x_n)(x^* - x_n)$$
+\
+$$-\frac{f(x_n)}{f^`(x_n)} = x^* - x_n$$
+\
+Konačno:\
+$$x^* = x_n -\frac{f(x_n)}{f^`(x_n)}$$
+Algoritam radi tako što u svakoj iteraciji gradi tangentu na trenutno tačku  $(x_i, f(x_i))$ na krivi (linearno aproksimira funkciju u datoj tački), posmatramo ono x gde je vrednost funkcije tangente 0, čime dobijamo novo x.
+
+**Primer:** Koristimo isti primer kao za **BM**, $f(x) = x^2 - 2$. Tražena greška biće ista kao kod **BM** primera ($\epsilon = 10^{-12}$).
+
+U nultoj iteraciji imamo funkciju i odabrano početno $x_0$:
+
+| f - ja                            | iter = 0                   |
+| --------------------------------- | -------------------------- |
+| ![](slike/NLP/nulaNLFunkcija.png) | ![](slike/NLP/NMiter0.png) |
+
+Koristeći se novim $x_0 = x_1$ koje smo dobili nastavljamo građenje tangenti na krivu, odnosno u tački $(x_1, f(x_1))$:
+
+| iter = 1                   | iter = 2                   | final                          |
+| -------------------------- | -------------------------- | ------------------------------ |
+| ![](slike/NLP/NMiter1.png) | ![](slike/NLP/NMiter2.png) | ![](slike/NLP/NMfinalIter.png) |
+
+Po pokretanju ovog koda sa traženom greškom istom kao u primeru testiranja **BM** algoritma, rešenje je dobijeno u 7 iteracija.
+
+Kako možemo ovaj algoritam iskoristiti za pronalaženje **minimuma funkcije**? 
+Formulu koju smo koristili koristi se za pronalaženje nule funkcije, koja je gradila tangentu (koja je takođe linearna aproksimacija funckije čiju nulu tražimo) koristimo tu tangentu da vidimo kada seče x-osu i tu poziciju koristimo kao novu nulu funkcije.
+Kako inače tražimo maximum ili minimum funkcije? 
+Tako što uzimamo izvod te funkcije i pokušavamo da je izjednačimo sa nulom. 
+Možemo da uočimo da nalik formuli koju smo koristili za nalaženje nule možemo napraviti i formulu za pronalaženje minimuma/maksimuma (ustvari gradimo kvadratnu aproksimaciju funkcije).
+Formula se dobija na identičan način, razlika je što razvijamo izvod funkcije:\
+$$x_{n+1} = x_n - \frac{f^`(x_n)}{f^{``}(x_n)}$$
+\
+Ostatak algortima je isti kao u algortimu za pronalženje nule funkcije.
+
+## 8.3 Gradijentni spust:
+
 
 # 9. Metaheuristike:
 
@@ -1036,7 +1163,7 @@ Najvažniji deo tabu pretrage jeste definisanje načina pronalaženja susednih r
 
 **Primer:** Tražimo minimum funkcije $f(x, y) = 10 + (x^2 - 10\cos(2\pi x)$ poznata i kao ["Rastrigin function"](https://en.wikipedia.org/wiki/Rastrigin_function), tražimo rešenje na $-5.12 \leq x \leq 5.12$.
 
-Ljubičastom bojom predstavljamo trenutno lokalno rešenje, crvenom bojom najbolje rešenje i sivom prethodna rešenja.
+Ljubičastom bojom predstavljamo trenutno lokalno rešenje, crvenom bojom najbolje nađeno rešenje i sivom prethodna rešenja.
 
 Po početku algortima inicijalizujemo početno rešenje:
 
@@ -1046,7 +1173,7 @@ Po početku algortima inicijalizujemo početno rešenje:
 
 Na dalje tražimo sledeće rešenje koristeći se formulom kao u primeru za SA:\
 $$x_{i+1} = x_{local} + U(-1, 1)$$\
-Ono što dodatno proveravamo jeste da li je ovo rešenje u listi $T$ (tabu lista), ako jeste tražimo sledeće rešenje po istoj formuli. Možemo dodati dodatan uslov da, mada rešenje nije u tabu listi, ako je lošije od rešenja u tabu listi ipak ne bude izabrano.
+Ono što dodatno proveravamo jeste da li je ovo rešenje u listi $T$ (tabu lista), ako jeste tražimo sledeće rešenje po istoj formuli. Možemo dodati dodatan uslov da, iako rešenje nije u tabu listi, ako je lošije od ostalih rešenja u tabu listi ipak ne bude izabrano.
 Kako ovde može doći do beskonačne petlje uvodimo dodatan uslov šanse da se ipak uzme tabu rešenje.
 
 | inter = 10                       | iter = 30                        | iter = 60                        |
