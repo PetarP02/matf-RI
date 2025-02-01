@@ -529,6 +529,7 @@ Algoritam se izvršava na sledeći način:
 	
 5. Svaku sledeću nulu računamo na osnovu formule:\
 	$$x_{n + 1} = x_{n} - \frac{f(x_n)}{f^`(x_n)}$$
+\
 Formulu koju smo dobili za računanje sledeće tačke je dobijena Tejlorovim razvojem, ali moguće je do iste formule doći geometrijskim putem.\
 $$f(x_n + (x^* - x_n)) = f(x_n) + \frac{f^`(x_n)}{1!}(x^* - x_n) + o(1)$$
 \
