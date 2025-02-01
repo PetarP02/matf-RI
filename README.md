@@ -10,11 +10,13 @@ Nezvanični materijali za kurs Računarske inteligencije, četvrte godine Matema
 5. [Grafovi](SkriptaRI.md/#5-grafovi) - u izradi
 6. [Linearno programiranje (LP)](SkriptaRI.md/#6-linearno-programiranje-lp)
 7. [Celobrojno programiranje (ILP)](SkriptaRI.md/#7-celobrojno-programiranje-ilp)
-8. [Nelinearno programiranje (NLP)](SkriptaRI.md/#8-nelinearna-programiranje-nlp)
+8. [Nelinearno programiranje (NLP)](SkriptaRI.md/#8-nelinearno-programiranje-nlp)\
+   8.1. [Polovljenje intervala](SkriptaRI.md/#81-polovljenje-intervala-bisection-method)\
+   8.2. [Njutnov metod](SkriptaRI.md/#82-njutnov-metod)
 9. [Metaheuristike](SkriptaRI.md/#9-metaheuristike)\
     9.1. [S-Metaheuristike](SkriptaRI.md/#91-trajectory-methods-s---metaheuristics)\
     9.2. [P-Metaheuristike](SkriptaRI.md/#92-population-based-p---metaheuristika)
-10. [Evolutivna izračunavanja](SkriptaRI.md/#10-evolutivna-izračunavanja)\
+11. [Evolutivna izračunavanja](SkriptaRI.md/#10-evolutivna-izračunavanja)\
     10.1. [Genetski algoritmi GA](SkriptaRI.md/#101-genetski-algoritmi-ga)\
     10.2. [Genetsko programiranje GP](SkriptaRI.md/#102-genetsko-programiranje-gp)
 11. [Inteligencija grupa (SI - Swarm Intelligence)](SkriptaRI.md/#11-inteligencija-grupa-si---swarm-intelligence)\
