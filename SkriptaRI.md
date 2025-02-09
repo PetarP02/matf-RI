@@ -568,10 +568,25 @@ Možemo da uočimo da nalik formuli koju smo koristili za nalaženje nule možem
 Formula se dobija na identičan način, razlika je što razvijamo izvod funkcije:\
 $$x_{n+1} = x_n - \frac{f^{'}(x_n)}{f^{"}(x_n)}$$
 \
-Ostatak algortima je isti kao u algortimu za pronalženje nule funkcije.
+Uzimamo one vrednosti koje su manje od prethodne najbolje vrednosti, ostatak algortima je isti kao u algortimu za pronalženje nule funkcije.
 
 ## 8.3 Gradijentni spust:
+U slučaju funkcija sa više promenljivih lakše je koristiti **gradijentni spust**.
+Ideja prilikom istraživanja prostora jeste da nađemo njegov minimum/maksimum, odnosno da idemo u onom smeru u kom se funkcija najbrže menja.
+Gradijent nam daje smer u kom funkcija najbrže raste. Odavde možemo zaključiti da ako želimo da nađemo minimum neke funkcije, dovoljno je da gledamo suprotan smer u odnosu na gradijent.
 
+Algoritam se koristi gradijentom u svakoj iteraciji, uz dodatnu funkciju koja nam omogućava da algoritam zaustavimo.
+Uslov zaustavljanja je najčešće onda kada je razlika prethodne i sadašnje vrednosti funkcije rešenja manja od neke konstante vrednosti.
+
+### **Pseudokod Gradijentni spust:**
+- generišemo rešenje $x_i$
+- **while** nije ispunjen uslov:
+	- descentVector = -gradientF($x_i$)
+	- $x_{i+1} = x_i + alpha(x_i){*}descentVector$
+	- i = i + 1
+- **end**
+
+Funkcija $alpha(x_i)$ traži minimum  $\frac{df(x_i + \alpha_i{*}descentVector)}{d\alpha_i} = 0$, minimum se traži korišćenjem nekih od tehnika koje se bave jednom promenljivom kao što je NM ili BM.
 
 # 9. Metaheuristike:
 
