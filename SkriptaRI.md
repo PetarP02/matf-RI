@@ -571,7 +571,7 @@ $$x_{n+1} = x_n - \frac{f^{'}(x_n)}{f^{"}(x_n)}$$
 Uzimamo one vrednosti koje su manje od prethodne najbolje vrednosti, ostatak algortima je isti kao u algortimu za pronalženje nule funkcije.
 
 ## 8.3 Gradijentni spust:
-U slučaju funkcija sa više promenljivih lakše je koristiti **gradijentni spust**.
+U slučaju funkcija sa više promenljivih možemo koristiti **gradijentni spust** ili malo izmenjenu njutnovu metodu koju ćemo kasnije objasniti.
 Ideja prilikom istraživanja prostora jeste da nađemo njegov minimum/maksimum, odnosno da idemo u onom smeru u kom se funkcija najbrže menja.
 Gradijent nam daje smer u kom funkcija najbrže raste. Odavde možemo zaključiti da ako želimo da nađemo minimum neke funkcije, dovoljno je da gledamo suprotan smer u odnosu na gradijent.
 
@@ -586,7 +586,35 @@ Uslov zaustavljanja je najčešće onda kada je razlika prethodne i sadašnje vr
 	- i = i + 1
 - **end**
 
-Funkcija $alpha(x_i)$ traži minimum  $\frac{df(x_i + \alpha_i{*}descentVector)}{d\alpha_i} = 0$, minimum se traži korišćenjem nekih od tehnika koje se bave jednom promenljivom kao što je NM ili BM.
+Funkcija $alpha(x_i)$ računa $\frac{df(x_i + \alpha_i{*}descentVector)}{d\alpha_i} = 0$, minimum se traži korišćenjem nekih od tehnika koje se bave jednom promenljivom kao što je NM ili BM.
+
+
+## 8.4 Njutnov metod za više promenljivih (Multiple variable NM):
+Kao i u njutnovoj metodi sa jednom promenljivom, koristimo Tejlorov razvoj za $f(x_k + \Delta x)$, gde je $\Delta x = x_{k+1} - x_k$ nepoznata promenljiva, njutnov korak. 
+Pitamo se u kom smeru treba da se pomerimo od tačke $x_k$ da bi našli sledeće bolje rešenje u njenoj blizini.\
+$$f(x_k + \Delta x) \approx f(x_k) + \nabla f(x_k)\Delta x + \Delta xH(x_k)\Delta x$$\
+> $\nabla f$ predstavlja **gradijent**
+> $H$ predstavlja Hesijan matricu, kvadratna matrica parcijalnih izvoda drugog reda
+
+Nas zanima vrednost $\Delta x$ pa tražimo optimalnu vrednost preko:\
+$$\frac{\partial f(x_k + \Delta x)}{\partial \Delta x} = 0$$\
+Kako su sve vrednosti konstante sem $\Delta x$ izvod je:\
+$$\frac{\partial(f(x_k) + \nabla f(x_k)\Delta x + \Delta xH(x_k)\Delta x)}{\partial \Delta x} = 0$$\
+$$0 + \nabla f(x_k) + H(x_k)\Delta x = 0$$\
+$$H(x_k)\Delta x = -\nabla f(x_k)$$\
+$$\Delta x = -H(x_k)^{-1}\nabla f(x_k)$$\
+Dobili smo formulu za njutnov korak, kako je on $\Delta x = x_{k+1} - x_k$ dobijamo iterativnu formulu:\
+$$x_{k+1} = x_k - H(x_k)^{-1}\nabla f(x_k)$$
+
+Zaustavljanje slično kao u prethodnom algortimu.
+## Pseudokod MVNM:
+- generišemo početno rešenje x_i
+- **while** nije ispunjen uslov:
+	- izračunah $H(x_i)$ i $\nabla f(x_i)$
+	- $x_{i+1} = x_i - H(x_i)^{-1}\nabla f(x_i)$
+- **end**
+
+Kako se ovde koristi Hesijan za kompleksnije funkcije je bolje koristiti gradijenti spust.
 
 # 9. Metaheuristike:
 
