@@ -1,5 +1,15 @@
 # 1. Uvod:
-## 1.1 Analitika:
+
+Nalazimo se u vremenu velike količine podataka, sve te podatke čoveku je protrebno mnogo vremena da obradi, a sam proces pronalaženja nekog paterna, ili mesta za poboljšanje je težak posao koji zahteva velike količine analize...
+Danas imamo razne sisteme koji te podatke, uz smernice, brže obrade i sami nađu rešenja koja mogu biti pritom mnogo kvalitetnija od onih nađenih od strane čoveka.\
+Sama naziv ovog predmeta "Računarska inteligencija", kao i oblast kojima pripadaju sistemi koje obrađujemo na ovom predmetu "Veštačka inteligencija", pominju **inteligenciju** u svojim nazivima što stvara pogrešnu ideju.\
+Mada se kaže veštačka inteligencija, inteligencija nije stvarno ono što je u pozadini ovih sistema... naravno zavisi kako se na inteligenciju gleda, ali ono što najbolje predstavlja **inteligenciju**, kakvu mi ljudi posedujemo, jeste sposobnost da iz starog znanja gradimo novo znanje u vidu ideja, umetnosti i sl... Iz ove ideje je i sama oblast nastala, "posmatramo ljude kao mašine" i pokušamo da to rekreiramo. Postoje sistemi koji automacki dokazuju teoreme i rešavaju ih nalik čoveku, problem nastaje kod skalabilnosti zadataka, zbog čega se praktikuje drugačiji pristup.\
+Sami principi rada, mnogih algoritama koje obrađujemo, zasnovani su na **prirodnim pojavama**, kao što je kretanje mrava (ACO), organizovanost pčela (ABC), interakcija čestica (PSO) ili sama evolucija inspirišu ove algoritme. Sam princip rada ovih algoritama (**metaheuristika**) svodi se na istraživanju prostora rešenja, odnosno pronalaženju što optimalnijeg rešenja, koristeći heuristike kao "smernice".\
+Mašinsko učenje, inspirisano radom neurona, svodi se na izgradnju modela, koji su velike kompleksne funkcije koje posmatrajući podatke podešavaju težine parametara i konstante unutar svakog nerurona, ovi modeli se kasnije koriste za rešavanje problema nalik onim nad kojima su učeni. Za razliku od algoritama koji koriste logiku, heuristiku, kao glavni način pronalaženja rešenja, sistemi kao što je mašinsko učenje koriste se statistikom koju su stekli posmatranjem velikog broja podataka.\
+Za rad ovakvih sistema potrebna je dobra analiza podataka, zatim određuejmo kakav je problem, njegovu kompleksnost, način kako ćemo rešiti probleme i naravno koje alate koristimo. Nijedan probelm nije rešiv na jedan način i jednim algoritmom, svaki probelm možemo rešiti na više načina jedino je bitno naći onaj pristup koji najviše odgovara probelmu i koji daje najbolje rezultate.
+
+### Analitika:
+
 Analitika podataka predstavlja **istraživanje**, **interpretaciju** i **komunikaciju** izmežu podataka u cilju pronalaženja šablona u podacima. (prilikom istraživanja koristimo se statistikom)
 Ono što analitika obuhvata jeste istraživanje starih podataka radi pronalaženja ***trendova***, kako bi se videla reakcija na odluke ili dešavanja. 
 Želimo da popravimo rezultate tako što učimo nad starim događajima.
@@ -9,7 +19,8 @@ Analitika se deli na:
 - **Prediktivna** - koristeći podatke iz prošlosti  grade se modeli koji mogu da predvide rezultate. Koristi se Linearna regresija, ML modeli, Logistićkaregresija, CART... Direktno se nadovezuje na deskriptivnu analitiku, predviđa buduća ponašanja.
 - **Preskriptivni** - daje predlog kako dobiti najbolje rezultate. Direktno se nadovezuje na prediktivnu analitiku, određuje šta treba da se desi i šta treba uraditi kako bi se to ispunilo. Simulacije, nelinearno, linearno i celobrojno programiranje...
 
-## 1.2 Odlučivanje:
+### Odlučivanje:
+
 Cilj odljučivanja je dolazak do nekog rezulatat.
 Odlučivanje se deli na:
 - **Nestruktuirani problemi** - problemi koji su novi ili neobični, informacije su nepodpune.
@@ -22,27 +33,35 @@ Odluke se prave kada je ispunjeno neko od sledeća dva uslova:
 - **Nesigurnost (Rizik)** - situacija u kojoj ne možemo garantovati posledice, možemo samo definisati verovatnoću posledice.
 
 **Model odluka** - mora imati osobinu da predviđa posledice određene odluke.
+### Optimizacija:
 
-## 1.3 Optimizacija:
 Maksimizovanje ili minimizovanje neke funkcije relatino sa nekim drugim rešenjima, uz dodatna ograničenja. 
-Dodatno pričamo o ovome u 4. poglavlju
+Dodatno pričamo o ovome u 4. poglavlju.
+### Napredni alati:
+Podela:
+ 1. **Deskriptivni alati:**\
+	Fokusiraju se na analizu onoga što se već dogodilo ili šta se trenutno dešava. Izveštavaju i daju uvid u prošle i trenutne performanse sistema ili poslovanja. Primeri uključuju analize prodaje u prethodnim kvartalima, podatke o prometu na web stranicama, ili izveštaje o korisničkom zadovoljstvu.
+ 2. **Prediktivni alati:**\
+	Koriste statističke tehnike i algoritme mašinskog učenja za predviđanje budućih događaja ili ponašanja na osnovu istorijskih podataka. Na primer, predviđanje potražnje za proizvodima, prognoze vremenskih uslova, ili predviđanje kvarova na mašinama.
+ 3. **Preskriptivni alati:**\
+	Ovi alati idu korak dalje od predikcije jer ne samo da govore šta će se dogoditi, već i sugerišu šta treba preduzeti kako bi se postigli željeni rezultati. Oni koriste optimizacione algoritme i simulacije kako bi preporučili najbolje akcije ili odluke, npr. optimizacija zaliha u trgovini ili kreiranje efikasnih ruta za dostavu.
 
-## 1.4 Napredni alati:
- 1. **Deskriptivni alati:** 
-Fokusiraju se na analizu onoga što se već dogodilo ili šta se trenutno dešava. Izveštavaju i daju uvid u prošle i trenutne performanse sistema ili poslovanja. Primeri uključuju analize prodaje u prethodnim kvartalima, podatke o prometu na web stranicama, ili izveštaje o korisničkom zadovoljstvu.
-
- 2. **Prediktivni alati:**
-Koriste statističke tehnike i algoritme mašinskog učenja za predviđanje budućih događaja ili ponašanja na osnovu istorijskih podataka. Na primer, predviđanje potražnje za proizvodima, prognoze vremenskih uslova, ili predviđanje kvarova na mašinama.
-
- 3. **Preskriptivni alati:** 
-Ovi alati idu korak dalje od predikcije jer ne samo da govore šta će se dogoditi, već i sugerišu šta treba preduzeti kako bi se postigli željeni rezultati. Oni koriste optimizacione algoritme i simulacije kako bi preporučili najbolje akcije ili odluke, npr. optimizacija zaliha u trgovini ili kreiranje efikasnih ruta za dostavu.
-
-## 1.5 Mašinsko učenje:
-Grana veštačke inteligencije koja omogućava sistemima da uče iz podataka bez eksplicitnog programiranja.\
 **Prediktivna analitika** je ključna primena mašinskog učenja, jer se koristi za analizu i predviđanje budućih trendova. Ovo uključuje rad sa ogromnim količinama podataka, obično u realnom vremenu, gde se model trenira na istorijskim podacima kako bi prepoznao obrasce i pravio predviđanja.\
 Kako podaci postaju zastareli, zrelost modela opada što znači da modeli postaju manje tačni i efikasni vremenom.
 
 # 2. Paradigme u veštačkoj inteligenciji:
+
+Paradigme, u veštačkoj inteligencijij, možemo podeliti na one koje se koriste različitim heuristikama u cilju pronalaženja rezultata i one paradigme koje se koriste statistikama.\
+Oblast veštačke inteligencije je počela kao nauka zasnovana na algoritmima, koji oponašaju neke pojave u svetu oko nas. Pa tako svako otkriće u oblasti je bilo pronalaženje nove heuristike, algoritma koji bi proširio načine rešavanja problema.\
+Danas kada se kaže veštačka inteligencija uglavnom se misli na **velike jezičke modele** (**LLM** - Large Language Models), najpoznatiji je ChatGPT (OpenAI), po pisanju ove skripte veliku popularnost stiče i DeepSeek zbog ubedljivo manje uloženih novčanih sredstava za izgradnju samog modela, kao i činjenica da je open-source.\
+Ovakvi modeli rade po principu statistika, odnosno posmatrajući velike količine odabranih podataka grade svoje "znanje", što im omogućava razumevanje teksta kao i generisanje samog teksta. Kompanija OpenAI je izbacila i AI model Sora koji je trenutno predvodeći u generisanju videa.\
+Ovakvi modeli, mada funkcionišu, ne doprinose preterano razvoju ove oblasti, za razliku od prethodno aktuelnih paradigmi koje su radile po principu algoritama, svakim nastankom novog LLM modela, ne nastaje nikakvo novo otkriće, pošto njihov kvalitet zavisi isključivo od količine i kvaliteta podataka koje su dostupne modelu prilikom njegovog razvića.  
+
+| ChatGPT                           | DeepSeek                           |
+| --------------------------------- | ---------------------------------- |
+| ![](/slike/paradigme/chatGPT.png) | ![](/slike/paradigme/deepseek.png) |
+
+Na ovom predmetu bavimo se i paradigmama koje su zasnovane na logici, posmatranju sveta oko nas kao i onim paradigama koje su zasnovane na statistici i podacima.
 
  Osnovne paradigme: 
 1. Veštačke neuronske mreže (ANN)  
@@ -54,16 +73,18 @@ Kako podaci postaju zastareli, zrelost modela opada što znači da modeli postaj
 O svim paradigmama biće dodatno rečeno. Svaka od paradigmi ima svoje podparadigme zasnovane/inspirisane istim principima.
 
 ## 2.1 Veštačke neuronske mreže (ANN):
+
 Ove mreže oponašaju način na koji ljudski mozak obrađuje informacije, koristeći veštačke neurone koji obrađuju informacije kroz slojeve. Svaki neuron prima ulazne podatke (npr. informacije iz okruženja ili drugih neurona), množi ih odgovarajućim težinama (w1, w2, w3…) i primenjuje aktivacionu funkciju kako bi odlučio da li će poslati signal i sa kojom snagom. ANN se široko koriste u oblastima kao što su prepoznavanje zvuka (npr. u glasovnim asistentima), prepoznavanje oblika (npr. u računalnoj viziji), i kontrola robota.
+Spada u paradigme statistike i podataka.
 
 Ovi koncepti i alati su ključni za razumevanje savremenih tehnika veštačke inteligencije i mašinskog učenja, posebno u kontekstu njihovih praktičnih primena i sposobnosti.
 
 ![](slike/paradigme/neuronANN.png)
 
-## 2.2 Evolutivna izračunavanja (EC)
+## 2.2 Evolutivna izračunavanja (EC):
 Evolutivna izračunavanja su metoda optimizacije zasnovana na simulaciji prirodne selekcije, gde se jedinke koje su bolje prilagođene okruženju "preživljavaju" i prenose svoje "gene" (karakteristike) na sledeće generacije. Oni koji se lošije prilagode ne prenose svoje gene, što omogućava da populacija u celini postane bolja vremenom. Rekombinacija gena preživelih jedinki stvara nova rešenja, simulirajući prirodni evolucioni proces. Na ovaj način, evolutivni algoritmi "uče" kroz generacije kako da dođu do optimalnog rešenja za zadati problem.
 
-#### Ključni koncepti:
+Ključni koncepti:
 - **Populacija:** Skup potencijalnih rešenja (jedinki) u algoritmu.
 - **Fitnes funkcija:** Funkcija koja ocenjuje koliko je svaka jedinka uspešna u rešavanju problema.
 - **Selektivni pritisak:** Jedinke sa boljim karakteristikama imaju veću šansu da prenesu svoje gene na sledeće generacije.
@@ -71,16 +92,16 @@ Evolutivna izračunavanja su metoda optimizacije zasnovana na simulaciji prirodn
 ### 2.2.1 Genetski algoritmi (GA):
 Genetski algoritmi su najpoznatija forma evolutivnih izračunavanja i funkcionišu tako što predstavljaju rešenja problema kao nizove binarnih vrednosti (0 i 1), poznate kao "hromozomi". Svaki hromozom predstavlja jedan mogući način rešavanja problema. Algoritam zatim koristi operacije kao što su **rekombinacija (ukrštanje)** i **mutacija** kako bi stvorio nove jedinke (nove nizove 0 i 1) u svakoj generaciji. Ove nove jedinke se zatim testiraju pomoću fitnes funkcije, a one koje daju bolje rezultate imaju veće šanse da budu zadržane i dalje evoluiraju.
 
-#### Ključne operacije u GA:
+Ključne operacije u GA:
 - **Ukrštanje (Crossover):** Dva roditeljska rešenja se kombinuju da bi se kreirala nova rešenja.
 - **Mutacija:** Nasumična promena vrednosti unutar rešenja, koja obezbeđuje raznolikost i izbegava lokalne minimume.
 
 ![](slike/paradigme/GA.png)
 
 ### 2.2.2 Genetsko programiranje (GP):
-Genetsko programiranje je posebna vrsta evolutivnog algoritma koja ne evoluira nizove brojeva ili binarne kodove kao u genetskim algoritmima, već evoluira **programe**. Svaki jedinka je računski program koji se optimizuje kroz generacije. Cilj je stvoriti program koji na najbolji način rešava zadati problem. Kroz generacije, GP koristi rekombinaciju, mutacije i selekciju kako bi kreirao sve efikasnije programe.
+Genetsko programiranje je posebna vrsta evolutivnog algoritma koja ne evoluira nizove brojeva ili binarne kodove kao u genetskim algoritmima, već evoluira **programe**. Svaka jedinka je računski program koji se optimizuje kroz generacije. Cilj je stvoriti program koji na najbolji način rešava zadati problem. Kroz generacije, GP koristi rekombinaciju, mutacije i selekciju kako bi kreirao sve efikasnije programe.
 
-#### Glavne karakteristike GP:
+Glavne karakteristike GP:
 - Evoluira se **struktura programa**.
 - Može se koristiti za automatizovano generisanje koda, kreiranje strategija ili predikcionih modela.
 - Primene uključuju dizajn algoritama, modeliranje i predikciju, kao i automatizaciju zadataka.
@@ -88,7 +109,7 @@ Genetsko programiranje je posebna vrsta evolutivnog algoritma koja ne evoluira n
 ### 2.2.3 Evolutivno programiranje (EP):
 Evolutivno programiranje se razlikuje od genetskih algoritama po tome što se ne fokusira na rekombinaciju gena, već se promene vrše na individualnim jedinkama kroz stohastičke mutacije. U EP, populacija je skup rešenja koja se optimizuju kroz promenu pojedinih karakteristika (članova niza) rešenja. Cilj EP je pronaći optimalno rešenje kroz iterativno prilagođavanje rešenja bez direktne rekombinacije.
 
-#### Ključne karakteristike EP:
+Ključne karakteristike EP:
 - Promene su stohastičke i odnose se na pojedinačne elemente niza.
 - Fokus je na mutaciji i evoluciji kroz generacije.
 - Koristi se u rešavanju problema optimizacije i modeliranja složenih sistema.
@@ -96,26 +117,26 @@ Evolutivno programiranje se razlikuje od genetskih algoritama po tome što se ne
 ### 2.2.4 Koevolucija:
 Koevolucija opisuje proces u kojem različite populacije evoluiraju u međusobnoj interakciji. Ovo znači da evolucija jedne populacije zavisi od evolucije druge. Primer su predatori i plen u prirodi: kako plen postaje brži i spretniji, tako predatori moraju evoluirati da bi ih i dalje hvatali. U kontekstu algoritama, to može uključivati "parazite" ili ometajuće faktore koji usporavaju ili komplikuju evolucioni proces, čineći zadatak težim za optimizaciju.
 
-#### Ključne karakteristike koevolucije:
+Ključne karakteristike koevolucije:
 - Evolucija se dešava u međusobno zavisnim populacijama.
 - "Paraziti" mogu ometati ili izazivati osnovnu populaciju da se prilagođava.
 - Koristi se u problemima gde postoji višestruka interakcija između različitih elemenata, kao što su igre sa više igrača, tržišne simulacije, ili optimizacija mreža.
 
-### 2.2.5 Koristi evolutivnih izračunavanja:
-#### Evolutivna izračunavanja se najčešće koriste kada:
-
+Evolutivna izračunavanja se najčešće koriste kada:
 1. **Ne postoji deterministički algoritam** koji može u prihvatljivom vremenu dati rešenje za problem. Na primer, složeni problemi optimizacije ili NP-teški problemi ne mogu se efikasno rešiti determinističkim algoritmima.
 2. **Klasifikacija podataka** je potrebna, mada mašinsko učenje često nudi bolja rešenja za ove zadatke. Ipak, evolutivni algoritmi mogu biti korisni kada je problem specifičan ili ne može lako da se modelira korišćenjem tradicionalnih tehnika mašinskog učenja. 
 
 Evolutivni algoritmi pružaju fleksibilnost i mogu istraživati veliki prostor rešenja, često pronalazeći neintuitivna, ali efikasna rešenja za složene probleme.
 
 ## 2.3 Inteligencija grupa (Swarm Intelligence - SI):
+
 Odnosi se na sposobnost grupa organizama, poput ptica, mrava ili pčela, da pokažu složeno ponašanje kroz jednostavne individualne interakcije. Ovi organizmi funkcionišu prema pravilima kolektivnog ponašanja, gde svaka jedinka donosi jednostavne odluke, ali zajedno postižu inteligentne rezultate bez centralizovane kontrole. U domenu veštačke inteligencije, SI se koristi za optimizaciju i rešavanje složenih problema, imitirajući ovu vrstu grupne koordinacije.
 
 ### 2.3.1 PSO (Particle Swarm Optimization):
 PSO je metoda optimizacije koja se zasniva na kolektivnom ponašanju jata ptica. U ovom algoritmu, ptice (ili čestice) se kreću kroz višedimenzioni prostor podataka, tražeći optimalno rešenje problema. Svaka čestica u PSO algoritmu prilagođava svoju poziciju na osnovu sopstvenog iskustva i iskustva drugih čestica iz jata. Kako se ptice kreću kroz prostor, privlače jedna drugu ka boljim rešenjima, pa su veće šanse da će se kretati ka optimalnom rešenju. Na sličan način funkcionišu i algoritmi zasnovani na ponašanju mrava (ACO - Ant Colony Optimization), gde mravi tragaju za optimalnim rešenjem problema zasnovanim na lokalnim interakcijama i ponašanju grupe.
 
-## 2.4 Rasplinuti (fuzzy) sistemi: 
+## 2.4 Rasplinuti (fuzzy) sistemi:
+
 Ovo su sistemi koji mogu raditi sa nejasnim, nepotpunim ili dvosmislenim informacijama. 
 Umesto da koriste striktna pravila kao klasični sistemi, rasplinuti sistemi omogućavaju "sive zone", gde se odluke donose na osnovu verovatnoće ili približnih vrednosti.
 Logika nije strogo binarna (0 ili 1), već vrednosti mogu biti između 0.0 i 1.0. U ovim sistemima, odluke se donose na osnovu stepena pripadnosti određenim skupovima, što omogućava fino podešavanje odluka i ponašanja u situacijama koje nisu strogo definisane. 
@@ -126,17 +147,15 @@ Logika nije strogo binarna (0 ili 1), već vrednosti mogu biti između 0.0 i 1.0
 
 Fazi logika dozvoljava rad sa nepreciznim, nejasnim ili nepotpunim informacijama, simulirajući ljudsko rasuđivanje u takvim uslovima. Koriste se u oblasti kontrole, kao što su pametni termostati ili sistemi za navigaciju.
 
-# 3. Veliki jezički modeli (LLM): 
+# 3. Veliki jezički modeli (LLM):
 
 Složeni algoritmi zasnovani na ANN, kao što su chat roboti, koji su trenirani na velikim količinama podataka kako bi mogli da razumeju i odgovaraju na pitanja u prirodnom jeziku. Ovi modeli koriste prethodno analizirane i ispitane podatke, i primenjuju se u specifičnim, užim domenima, ali su dovoljno fleksibilni da odgovaraju na različite upite u okviru svog znanja. Velika baza podataka omogućava im da analiziraju i razumeju pitanja, a zatim generišu odgovore koristeći tehnike generisanja prirodnog jezika (NLG - Natural Language Generation).
 
-#### Način rada LLM-a:
+Način rada LLM-a:
 1. **Analiza podataka pomoću dubokog učenja:** Ovaj proces uključuje obradu i razumevanje velikih količina podataka kako bi LLM model mogao da nauči zakonitosti ljudskog jezika.
-
 2. **Generisanje odgovora na osnovu podataka (NLG):** Nakon što LLM razume pitanje, koristi svoju bazu znanja da generiše koherentan i relevantan odgovor.
 
-#### Proces pravljenja LLM-a:
-
+Proces pravljenja LLM-a:
 1. **Priprema:** U ovoj fazi vrši se tokenizacija (razbijanje teksta na manje delove ili tokene), uzorkovanje podataka i umetanje tokena koji su relevantni za dalje učenje modela.
 2. **Mehanizam pažnje (attention mechanism):** Fokusira se na specifične delove ulaznih podataka kako bi generisao specifične delove izlaznih odgovora, omogućavajući modelu da efikasnije procesira relevantne informacije. Dve popularne kategorije su **instruction** i **classification** fine-tuning.
     - **Instruction fine-tuning** : podaci sadrže instrukcije i već predodređena rešenja.
@@ -146,9 +165,10 @@ Složeni algoritmi zasnovani na ANN, kao što su chat roboti, koji su trenirani 
 5. **Fino obučavanje:** Nakon inicijalnog treniranja, model se dodatno usavršava na specifičnim skupovima podataka, kako bi bio prilagođen za određene domene i zadatke (na primer, pravni savetnici, medicinski asistenti).
 
 ## 3.1 Transformer arhitektura:
-Većina LLM-ova se oslanja na transformer arhitekturu, NNA predstavljen 2017, prvo korišćen za mehanizam prevođenja engleskog teksta u tekst na nemačkom ili francuskom. \
-Sastavljen iz dva modula:\
-	- **enkoder**: procesuira uneti tekst i predstavlja ga u vidi vektora sa numeričkim vrednostima koji predstavlja kontekst teksta.\
+
+Većina LLM-ova se oslanja na transformer arhitekturu, NNA predstavljen 2017, prvo korišćen za mehanizam prevođenja engleskog teksta u tekst na nemačkom ili francuskom.\
+Sastavljen iz dva modula:
+	- **enkoder**: procesuira uneti tekst i predstavlja ga u vidi vektora sa numeričkim vrednostima koji predstavlja kontekst teksta.
 	- **dekoder**: vektor enkodera se daje dekoderu koji dekodira dobijeni vektor i gradi rečenicu u izabranom jeziku.
 
 Izgrađeni na ovom konceptu su:
@@ -165,135 +185,109 @@ LLM i transformer se danas tretiraju kao sinonimi usled velike zasnovanosti LLM-
 3. **Zdrav razum:** Iako mogu simulirati razumevanje jezika, LLM-ovi nemaju zdrav razum kakav ljudi poseduju, što znači da mogu generisati odgovore koji su logički tačni, ali nemaju smisla u realnim situacijama.
 4. **Etika: (iz predhodne tri tačke)** Odluke i odgovori koje generišu LLM modeli zavise od podataka na kojima su obučeni, što može voditi do etičkih dilema, kao što su širenje netačnih informacija ili diskriminatornih stavova.
 
-# 4. Optimizacioni algoritmi: 
+# 4. Optimizacioni algoritmi:
 
-Specifična vrsta algoritama koji pripadaju grupi pretrage, a njihov glavni cilj je da pronađu optimalno rešenje za datu ciljnu funkciju, koja može biti minimizacija ili maksimizacija, uz određeni skup ograničenja.
+Veštačka inteligencija se najviše koristi kao alat za pronalaženje rešenja onih probleme koji imaju velike prostore pretrage, odnosno problemi koji poseduju veliki broj rešenja.\
+Kada kažemo da želimoda optimizujemo problem, mislimo na pronaženje njegovog minimuma odnosno maksimumu, tražimo najbolje rešenje našeg probelma.\
+Pa možemo reći da je optimizacioni algoritam specifična vrsta algoritama koji pripadaju grupi pretrage, a njihov glavni cilj je da pronađu optimalno rešenje za datu ciljnu funkciju, koja može biti minimizacija ili maksimizacija, uz određeni skup ograničenja.
 
-## 4.1 Osnovni pojmovi:
-**Funkcija cilja:** Ovo je funkcija koja mapira prostor rešenja (S) u realne brojeve (R). Oblik funkcije može biti (f: S -> R). Kada se govori o minimizaciji, cilj je pronaći takvu vrednost **x** da je f(x) minimalna. U isto vreme, maksimizacija funkcije f može se izraziti kao minimizacija njene negacije, tj. (-f). Ovde **x** predstavlja nezavisne promenljive koje utiču na vrednost funkcije cilja.
-**Skup ograničenja:** Ovaj skup definiše zavisnosti između nezavisnih promenljivih. Ograničenja mogu biti postavljena na način da definišu dozvoljene vrednosti za promenljive, kao i odnose među njima. Ograničenja mogu biti zasnovana na jednakostima (npr. $g(x) = 0$) i/ili nejednakostima (npr. $h(x) \leq 0$).
+## 4.1 Uvod u optimizacione algoritme:
 
-**Globalni minimum** je najmanja vrednost funkcije u celokupnom prostoru rešenja. 
-**Lokalni minimumi** su minimalne vrednosti funkcije unutar određenih područja prostora rešenja. 
+Prilikom definisanja bilo kog problema, potrebno je definisati **prostor rešenja** (feasible region), odnosno moramo definisati koja rešenja su dozvoljena koristeći **skup ograničenja**, definišemo zavisnosti između nezavisnih promenljivih.\
 
-U mnogim slučajevima, algoritmi optimizacije mogu naići na lokalne minimume koji nisu globalni, što može otežati postizanje optimalnog rešenja.
-
-## 4.2 Optimizacione metode:
-Optimizacione metode imaju za cilj da pronađu optimum u prostoru dozvoljenih rešenja. Rešenja su dozvoljena ako su zadovoljena postavljena ograničenja. 
-
-**Klasifikacija metoda:**
-1. **Pretraga:** Metode se mogu deliti na **lokalne** i **globalne** metode pretrage. Lokalne metode traže rešenja u blizini trenutnog rešenja, dok globalne metode pretražuju širi prostor rešenja kako bi pronašle najbolja moguća rešenja.
-2. **Pristup pretrage:** Postoje **stohastičke** metode (poput Monte Karlo) koje koriste nasumične uzorke da bi istražile prostor rešenja, i **determinističke** metode koje koriste unapred definisane strategije i pravila. 
-	Cesto se koriste kombinacije stohastičkog i determinističkog pristupa.
-
-## 4.3 Ograničenja:
 Ograničenja u optimizaciji mogu se primenjivati na sledeće načine:
-
 1. **Odbacivanje:** Nedozvoljena rešenja se jednostavno odbacuju.
-2. **Dodeljivanje penala:** Nedozvoljenim rešenjima se dodeljuju
-kazneni bodovi, što ih čini manje atraktivnim tokom pretrage.
+2. **Dodeljivanje penala:** Nedozvoljenim rešenjima se dodeljuju kazneni bodovi, što ih čini manje atraktivnim tokom pretrage.
 3. **Smanjivanje na bez ograničenja:** Rešenja se prvo optimizuju bez ograničenja, a zatim se dodaju ograničenja kako bi se izabrala dopustiva rešenja.
 4. **Održavanje dopustivosti:** Tokom pretrage, održava se dopustivost rešenja tako što se stalno proveravaju ograničenja.
 5. **Uređivanje dopustivih rešenja:** Metode se koriste za generisanje i održavanje skupa dopustivih rešenja.
 6. **Popravljanje:** Ako se naiđe na nedozvoljeno rešenje, mogu se primeniti metode za njegovo ispravljenje kako bi postalo dozvoljeno.
 
-## 4.4 Prostor rešenja:
 Prostor rešenja u kojem se vrši optimizacija može se podeliti na:
-- **Kombinatornu optimizaciju:** Ova vrsta optimizacije se bavi problemima gde je prostor rešenja diskretan (npr. raspoređivanje, putnički problem, itd.).
+- **Kombinatornu optimizaciju:** Ova vrsta optimizacije se bavi problemima gde je prostor rešenja diskretan, a jedan od najpoznatijih primera je **problem trgovackog putnika (TSP - Traveling Salesman Problem)**.
 - **Globalnu optimizaciju:** Ova metoda se bavi problemima u kojima su rešenja kontinualna i gde se traži najbolja moguća vrednost funkcije cilja u celokupnom prostoru rešenja.
 
 Ove klasifikacije i principi igraju ključnu ulogu u razvoju i primeni optimizacionih algoritama u različitim oblastima, uključujući inženjering, ekonomiju, operativna istraživanja i mnoge druge.
 
-## 4.5 Kombinatorna oprimizacija:
-Predstavlja oblast optimizacije koja se fokusira na probleme u kojima je prostor rešenja diskretan, a jedan od najpoznatijih primera je **problem trgovackog putnika (TSP - Traveling Salesman Problem)**. 
+Definisanje problema i prostor rešenja je pola posla, sledeći deo jeste osmisliti funkciju kojom možemo da računamo kvalitet pronađenog rešenja.\
+Ovakva funkcija se naziva i **funkcija cilja** ili **fitness funkcija**, ona mapira prostor rešenja $\!S$ u realne brojeve $\!R$. Pa funkciju možemo definisati kao $f: \!S \rightarrow \!R$, onda ako je $x \epsilon \!R$ što je vrednost fitness funkcije manja, to je rešenje optimalnije. Minimum i maksimum ovakve funkcije može da se svede na isto, pošto važi da je maksimum od **f** isto sto i minimum od **-f**.
+Fitness funkcija nam pomaže kao alata za poređenje rešenja, kako bi se konstantno kretali kao nama optimalnom rešenju.\
+Ovde i stupa na snagu algoritam deo **optimizacionih algoritama**, svi algoritmi se razlikuju po principu nalaženja sledećeg rešenja ali rade po identičnom principu:
+- **while** nije ispunjen određeni cilj ili kriterijum:
+	- **Izračunaj vrednost:** Prvo se izračunava vrednost funkcije cilja za trenutno rešenje.
+	- **Izračunaj pravac i smer pretrage:** Na osnovu trenutne vrednosti, određuje se pravac u kojem će se nastaviti pretraga.
+	- **Izračunaj dužinu koraka pretrage:** Definiše se koliko daleko se ide u odabranom pravcu.
+	- **Pređi u naredno rešenje:** Na osnovu prethodnih koraka, prelazi se na sledeće rešenje u pretrazi.
+- **end**
 
-U ovom problemu, trgovac treba da obiđe određeni broj gradova tako da se vrati u početni grad, a cilj je minimizirati ukupnu udaljenost ili vreme putovanja.
-
-### 4.5.1 Opšta formula algoritma pretrage:
-**Dok nije zadovoljen kriterijum završetka:** 
-Algoritam se nastavlja dok se ne postigne određeni cilj ili kriterijum.
-1. **Izračunaj vrednost:** Prvo se izračunava vrednost funkcije cilja za trenutno rešenje.
-2. **Izračunaj pravac i smer pretrage:** Na osnovu trenutne vrednosti, određuje se pravac u kojem će se nastaviti pretraga.
-3. **Izračunaj dužinu koraka pretrage:** Definiše se koliko daleko se ide u odabranom pravcu.
-4. **Pređi u naredno rešenje:** Na osnovu prethodnih koraka, prelazi se na sledeće rešenje u pretrazi.
-
-### 4.5.2 Višeciljna optimizacija:
-Višeciljna optimizacija se koristi kada je potrebno zadovoljiti više kriterijuma (funkcija). Ovo je posebno važno u složenim situacijama kao što su ekonomija i transportni problemi, gde se često moraju razmatrati različiti faktori, poput troškova, vremena, kapaciteta i kvaliteta usluge.
-
-## 4.6 Pristupi rešavanju:
-#### Postoje dva glavna pristupa u rešavanju višeciljnih optimizacija:
+Sama fitness funkcija ne mora da bude jedna, već može da bude skup funkcija, kriterijuma. Ovakva optimizacija naziva se i **višeciljna optimizacija**. Uglvanom u složenijim situacijama kao što je ekonomija i transportni problemi, odnosno problemi u kojima se razmatraju različiti faktori, poput troškova, vremena, kapaciteta i kvaliteta usluge.\
+Postoje dva glavna pristupa u rešavanju višeciljnih optimizacija:
 1. **Pravljenje ponderisanih proseka (agregacija):** Ovaj pristup uključuje kombinovanje više ciljeva u jednu jedinstvenu funkciju cilja putem ponderisanja, što omogućava da se različiti kriterijumi tretiraju kao jedinstveni problem. Na taj način, svaki kriterijum se množi sa svojim težinskim faktorom, a zatim se sumiraju.
 2. **Pravljenje skupa Pareto-optimalnih rešenja:** Ovaj pristup identifikuje rešenja koja su optimalna u smislu Pareto efikasnosti, što znači da nijedno rešenje ne može biti poboljšano u jednom kriterijumu bez pogoršanja u drugom. Pareto-optimalna rešenja omogućavaju odlučivačima da biraju između različitih opcija u skladu sa svojim preferencama.
 
 Ovi pristupi su ključni za uspešno rešavanje složenih problema u optimizaciji, omogućavajući analizu i donošenje odluka u situacijama gde su zahtevi višestruki i često suprotstavljeni.
 
-## 4.7 Algoritam za rešavanje problema:
-Algoritam za rešavanje problema predstavlja metod kojim dolazimo do rešenja određenog zadatka ili zadatog problema. Svaki specifičan problem koji rešavamo naziva se **instanca problema**. Na primer, problem prelaska iz tačke A do tačke B može imati različite instance u zavisnosti od specifičnih početnih i krajnjih tačaka.
-
-### 4.7.1 Problem odlučivanja:
-Problem odlučivanja je tip problema gde je cilj potvrditi ili opovrgnuti određeno svojstvo. Ovi problemi pripadaju klasi **P** (polinomijalna složenost), što znači da se mogu rešavati algoritmima koji rade u polinomijalnom vremenu u odnosu na veličinu ulaznih podataka. 
-
-Većina problema može se svesti na oblik problema odlučivanja. Algoritmi koji rešavaju probleme u polinomijalnom vremenu smatraju se **optimalnim**, jer su vremenski efikasni i rešivi u razumnom vremenu za praktične ulaze.
-
-### 4.7.2 Pristupi rešavanju problema:
-1. **Egzaktno rešavanje:** Ovim pristupom se dolazi do garantovano optimalnog rešenja za problem. Koriste se algoritmi koji pružaju tačan odgovor, ali to može biti vremenski zahtevno za velike probleme.
-2. **Približno rešavanje:** Približni algoritmi, često bazirani na (meta)heuristikama, pružaju rešenja koja nisu nužno optimalna, ali su dovoljno dobra u praksi. Ovi pristupi su korisni kada je problem previše složen za egzaktno rešavanje u razumnom vremenu (NP ili eksponencijalne slozenosti).
-
-#### Vremenska složenost i O notacija:
-Vremenska složenost algoritma opisuje kako se vreme izvršavanja algoritma menja sa veličinom ulaznih podataka. **O notacija** koristi se za izražavanje gornje granice složenosti algoritma i omogućava klasifikaciju algoritama prema njihovoj efikasnosti.
-
-#### Eksponencijalni problemi:
-Vreme izvršavanja raste eksponencijalno sa veličinom ulaznih podataka. Primer eksponencijalnog problema je „pronalazak svih razapinjajućih stabala u potpunom grafu sa n čvorova“ ili „traženje najboljeg poteza u igri šaha“. Eksponencijalni problemi su računski vrlo zahtevni i obično nisu rešivi u razumnom vremenu za velike ulaze.
-
-#### Nedeterministički polinomski problemi (NP):
-**NP problemi** su problemi za koje je moguće proveriti rešenje u polinomijalnom vremenu, ali nije jasno da li ih možemo i rešiti u polinomijalnom vremenu za svaki slučaj. Za takve probleme nije poznato da li se mogu tačno rešiti u polinomijalnom vremenu.
-
-### 4.7.3 Redukcija problema:
-**Redukcija** se koristi za prevođenje problema na poznati oblik radi lakšeg rešavanja. Na primer, imamo problem $A_1$ za koji postoji poznat algoritam, dok problem $A_2$ predstavlja novi problem koji treba rešiti. Ako možemo prevesti problem $A_2$ u problem $A_1$ (koji već znamo da rešavamo), tada se problem $A_2$ može rešavati algoritmom za $A_1$.
-
-### 4.7.4 NP-potpunost:
-**NP-potpuni problemi** su specifični NP problemi za koje važi da, ako možemo napraviti algoritam koji ih rešava u polinomijalnom vremenu (P složenosti), svi NP problemi mogu se rešiti u polinomijalnom vremenu (ovo najverovatnije nije moguce, neki smatraju da su klase P i NP odvojene klase). NP-potpuni problemi su istovremeno najteži problemi u NP klasi i sinonim za NP-teške probleme.
-
-## 4.8 Optimizacija:
-Optimizacija se odnosi na proces pronalaženja najboljeg rešenja za zadati problem u prostoru mogućih rešenja. Glavni cilj optimizacije je minimizacija ili maksimizacija određene funkcije cilja, a razlikuju se lokalna i globalna optimizacija.
-
-### Lokalna optimizacija:
-**Lokalna optimizacija** se fokusira na pronalaženje najboljeg rešenja u neposrednom okruženju trenutnog rešenja, često nazivano **lokalni minimum**.\
-Nedostatak ovog pristupa je to što, čak i ako dođemo do lokalnog minimuma, možda ćemo propustiti bolje, globalno rešenje.
-
-Načina za proširenje pretrage:
-
-- **Povećanje koraka pretrage** – iako može pomoći u pronalaženju boljih rešenja, ne garantuje pronalazak globalnog minimuma.
-- **Nasumično ispitivanje tačaka** – nasumičnim pokušajima, tokom dugog trajanja pretrage, povećava se verovatnoća da ćemo pronaći globalni minimum.
+Optimizacioni algoritmi nam omogućavaju da nađemo što bolja rešenja postavljenih problema, međutim neće uvek vratiti najbolje rešenje **globalni minimum**, odnosno **globalni maksimum**. Najrealnije je očekivati od ovakvih algoritama da nam vrate vrednosti kao što su **lokalni minimum**, odnosno **lokalni maksimum**.\
+U mnogim slučajevima, algoritmi optimizacije mogu naići na lokalne minimume koji nisu globalni, što može otežati postizanje optimalnog rešenja.\
+Zbog ove osobine nastaje i dodatna podela po tome da li če algoritam pretrage, naći **egzaktno** ili **približno** rešenje:
+- **Egzaktno rešavanje:** Ovim pristupom se dolazi do garantovano optimalnog rešenja za problem. Koriste se algoritmi koji pružaju tačan odgovor, ali to može biti vremenski zahtevno za velike probleme.
+- **Približno rešavanje:** Približni algoritmi, često bazirani na (meta)heuristikama, pružaju rešenja koja nisu nužno optimalna, ali su dovoljno dobra u praksi. Ovi pristupi su korisni kada je problem previše složen za egzaktno rešavanje u razumnom vremenu (NP ili eksponencijalne slozenosti).
 
 ### Metaheuristike:
 Predstavljaju skup opštih metoda koje pružaju okvir za rešavanje optimizacionih problema, često na osnovu stohastičnih, odnosno nasumičnih, procesa. One su korisne kada nemamo precizne informacije o optimalnom rešenju. Uglavnom se baziraju na „slabim“ pretpostavkama ili čak na odsustvu pretpostavki o problemu, čineći ih fleksibilnim za različite primene.
 
+### Optimizacione metode:
+Optimizacione metode imaju za cilj da pronađu optimum u prostoru dozvoljenih rešenja. Rešenja su dozvoljena ako su zadovoljena postavljena ograničenja.\
+**Klasifikacija metoda:**
+1. **Pretraga:** Metode se mogu deliti na **lokalne** i **globalne** metode pretrage. Lokalne metode traže rešenja u blizini trenutnog rešenja, dok globalne metode pretražuju širi prostor rešenja kako bi pronašle najbolja moguća rešenja.
+2. **Pristup pretrage:** Postoje **stohastičke** metode (poput Monte Karlo) koje koriste nasumične uzorke da bi istražile prostor rešenja, i **determinističke** metode koje koriste unapred definisane strategije i pravila. 
+	Cesto se koriste kombinacije stohastičkog i determinističkog pristupa.
+
+Naravno ne susrećemo se uvek sa novim instancama probelma, ponekad problemi liče na one koje smo prethodno videli, u tim situacijama vršimo **redukciju probelma**.\
+**Redukcija** se koristi za prevođenje problema na poznati oblik radi lakšeg rešavanja. Na primer, imamo problem $A_1$ za koji postoji poznat algoritam, dok problem $A_2$ predstavlja novi problem koji treba rešiti. Ako možemo prevesti problem $A_2$ u problem $A_1$ (koji već znamo da rešavamo), tada se problem $A_2$ može rešavati algoritmom za $A_1$.
+
+## 4.2 Korist optimizacionih algoritama:
+
+Kada dođe do problema visoke vremenske složenosti, želimo da se koristimo optimizacionim algoritmima. Deja je da ako pokušavamo da prođemo sva moguća rešenja u prostoru rešenja, neki problemi bi se rešavali stotinama godina pa i više.
+Vremenska složenost algoritma opisuje kako se vreme izvršavanja algoritma menja sa veličinom ulaznih podataka. **O notacija** koristi se za izražavanje gornje granice složenosti algoritma i omogućava klasifikaciju algoritama prema njihovoj efikasnosti.
+Na osnovu vremenske složenosti, problemi koji su nejproblematičniji su:
+- **Eksponencijalni problemi:**\
+	Vreme izvršavanja raste eksponencijalno sa veličinom ulaznih podataka. Primer eksponencijalnog problema je „pronalazak svih razapinjajućih stabala u potpunom grafu sa n čvorova“ ili „traženje najboljeg poteza u igri šaha“. Eksponencijalni problemi su računski vrlo zahtevni i obično nisu rešivi u razumnom vremenu za velike ulaze.
+- **Faktorijalni problemi:**\
+	Vreme izvršavanja raste faktorijalno sa veličinom ulaza.
+
+Kako optimizacioni agoritmi zaobilaze pristup gde se svaka kombinacija rešenja proverava, većina ovih algoritama uvodi neku količinu stohastičnosti u rešavanje problema, dok se pritom i fokusiraju na trenutno rešenje u cilju njegovog "popravljanja". Pojavljuju se dva bitna pristupa u pronalaženju rešenja:
+- **Intenzifikacija (exploitation)** – fokusiramo se na pretragu u blizini trenutnog dobrog rešenja, oslanjajući se na postojeća dobra rešenja kako bismo dobili stabilne rezultate.
+- **Diverzifikacija (exploration)** – povremeno skrećemo sa utvrđenog puta kako bismo istražili nova rešenja i eventualno otkrili bolje mogućnosti, postižmo izabiranjem lošijeg rešenja.
+
+U pristup intenzifikacije se ubraja **lokalna optimizacija**. **Lokalna optimizacija** se fokusira na pronalaženje najboljeg rešenja u neposrednom okruženju trenutnog rešenja, često nazivano **lokalni minimum**.\
+Nedostatak ovog pristupa je to što, čak i ako dođemo do lokalnog minimuma, možda ćemo propustiti bolje, globalno rešenje.\
+Načina za proširenje pretrage koristeći se diverzifikacijom:
+- **Povećanje koraka pretrage** – iako može pomoći u pronalaženju boljih rešenja, ne garantuje pronalazak globalnog minimuma.
+- **Nasumično ispitivanje tačaka** – nasumičnim pokušajima, tokom dugog trajanja pretrage, povećava se verovatnoća da ćemo pronaći globalni minimum.
+
 ### Penjanje uzbrdo:
 **Penjanje uzbrdo** (eng. Hill Climbing) je tehnika koja se zasniva na **gradijentnom kretanju**. 
-
 Postupak je sledeći:
 1. Počnemo sa nekom vrednošću (rešenjem).
 2. Odredimo kvalitet tog rešenja pomoću fitnes funkcije.
 3. Blago promenimo početno rešenje, prelazeći u novu iteraciju, i uporedimo rezultate. Ako je novo rešenje bolje, usvajamo ga kao polaznu tačku za sledeću iteraciju.
 
-### Intenzifikacija i diverzifikacija:
-- **Intenzifikacija (exploitation)** – fokusiramo se na pretragu u blizini trenutnog dobrog rešenja, oslanjajući se na postojeća dobra rešenja kako bismo dobili stabilne rezultate.
-- **Diverzifikacija (exploration)** – povremeno skrećemo sa utvrđenog puta kako bismo istražili nova rešenja i eventualno otkrili bolje mogućnosti, postižmo izabiranjem lošijeg rešenja.
-
 ### Single-State globalna optimizacija:
 Uključuje niz koraka za pronalaženje najboljeg mogućeg rešenja iz globalne perspektive, tj. uzimajući u obzir ceo prostor mogućih rešenja.
-
 1. **Selection (Izbor)** – biranje trenutnog rešenja kao početne tačke.
 2. **Jump to Something New (Prelazak na novo)** – prelazak u različite oblasti prostora rešenja, omogućavajući izbegavanje lokalnih minimuma.
 3. **Use a Large Sample (Korišćenje velikog uzorka)** – istraživanje većeg broja mogućih rešenja kako bi se povećala šansa za pronalaženje globalnog optimuma.
+### Nedeterministički polinomski problemi (NP):
+**NP problemi** su problemi za koje je moguće proveriti rešenje u polinomijalnom vremenu, ali nije jasno da li ih možemo i rešiti u polinomijalnom vremenu za svaki slučaj. Za takve probleme nije poznato da li se mogu tačno rešiti u polinomijalnom vremenu.
+### NP-potpunost:
+**NP-potpuni problemi** su specifični NP problemi za koje važi da, ako možemo napraviti algoritam koji ih rešava u polinomijalnom vremenu (P složenosti), svi NP problemi mogu se rešiti u polinomijalnom vremenu (ovo najverovatnije nije moguce, neki smatraju da su klase P i NP odvojene klase). NP-potpuni problemi su istovremeno najteži problemi u NP klasi i sinonim za NP-teške probleme.
 
 # 5. Grafovi
 
 **Graf** je matematička struktura koja se koristi za modeliranje odnosa između objekata.
 
 Sastoji se od osnovnih komponenti:
-
 1. **Čvorovi (vertices)** – predstavljaju entitete u grafu (gradovi).
 2. **Grane (edges)** – povezuju čvorove, označavajući odnos između njih (putevi izmedju gradova).
 
@@ -588,7 +582,6 @@ Uslov zaustavljanja je najčešće onda kada je razlika prethodne i sadašnje vr
 
 Funkcija $alpha(x_i)$ računa $\frac{df(x_i + \alpha_i{*}descentVector)}{d\alpha_i} = 0$, minimum se traži korišćenjem nekih od tehnika koje se bave jednom promenljivom kao što je NM ili BM.
 
-
 ## 8.4 Njutnov metod za više promenljivih (Multiple variable NM):
 Kao i u njutnovoj metodi sa jednom promenljivom, koristimo Tejlorov razvoj za $f(x_k + \Delta x)$, gde je $\Delta x = x_{k+1} - x_k$ nepoznata promenljiva, njutnov korak. 
 Pitamo se u kom smeru treba da se pomerimo od tačke $x_k$ da bi našli sledeće bolje rešenje u njenoj blizini.\
@@ -694,7 +687,7 @@ Primer ovakvih algoritama je algoritam jata ptica (Bird flocking PSO), funkcioni
 **Primer**: Tražimo minimum funkcije $f(x, y) = -20e^{-0.2\sqrt{0.5(x^2 + y^2)}} -e^{0.5(\cos{2\pi x} + \cos{2\pi y})} + e + 20$ poznata i kao ["Ackley function"](https://en.wikipedia.org/wiki/Ackley_function), tražimo rešenje na domenu $-5 \leq x,y \leq 5$. 
 Uzimamo ovakvu funkciju pošto se ova vrsta algoritma uglavnom koristi za probleme sa **kontinualnim** domenom.
 
-Hladnije boje na grafu pretstavljaju niske vrednosti a toplije pretstvaljaju više vrednosti.
+Hladnije boje na grafu predstavljaju niske vrednosti a toplije pretstvaljaju više vrednosti.
 
 Prvo što smo rekli da želimo jeste da rasporedimo **n** ptica pseudo nasumično po  prostoru rešenja (domenu), dakle biramo $n$ pozicija { $(x, y) \| -5 \leq x,y \leq 5$ }. Dalje svakoj ptici izračunamo njenu lokalnu najbolju poziciju, njen vektor kretajna (inercija) i odredimo koje je to globalno najbolje rešenje (najbolje od svih lokalnih rešenje grupe).
 
@@ -789,7 +782,7 @@ Postoje dva osnovna pristupa selekciji:
 	Primetimo da što je veće **k** to je selekcioni pritisak veći.
 2. **Rulet**:
 	Zamišljamo ruletski točak gde je svaka pozicija u koju loptica može da upadne jedna jedinka. 
-	Veličina pozicije za svaku jedinku je proporcijalna fitness vrednosti jedinke, ovo pretstavlja verovatnoću njenog odabira. Kako verovatnoća svih mogućih događaja mora da bude jednaka 1, moramo normalizovati sve verovatnoće. 
+	Veličina pozicije za svaku jedinku je proporcijalna fitness vrednosti jedinke, ovo predstavlja verovatnoću njenog odabira. Kako verovatnoća svih mogućih događaja mora da bude jednaka 1, moramo normalizovati sve verovatnoće. 
 	Pa u populaciji sa $n$ jedinki, za svaku jedinku računamo njenu verovatnoću:\
 	$$p_x = \dfrac{f_x}{\sum_{i = 1}^n f_i}$$\
 	Ovakav način selekcije nije najbolji, jer kako one jedinke koje imaju bolji fitness imaju veće šanse da budu odabrane, one lošije jedinke će ređe biti odabrane.
@@ -1031,8 +1024,8 @@ Nakon inicijalizacije, započinjemo petlju:
 	$$p_{i, j} = \dfrac{\tau_{i, j}^{\alpha}n_{i, j}^{\beta}}{\sum_{k = susedi(i)}^{n}{\tau_{i, k}^{\alpha}n_{i, k}^{\beta}}}$$
 	\
 	U prethodnoj formuli:
-	- $\tau_{i, j}$ - pretstavlja količinu feromona na grani $(i, j)$ u globalnoj promenljivoj $pheromones(m)$ 
-	- $n_{i, j}$ - pretstavlja odabranu heuristiku koja će se koristiti za računanje udaljenosti čvora $i$ od $j$. (u primeru koristimo heuristiku $n_{i, j} = \dfrac{1}{distance[i][j]}$) 
+	- $\tau_{i, j}$ - predstavlja količinu feromona na grani $(i, j)$ u globalnoj promenljivoj $pheromones(m)$ 
+	- $n_{i, j}$ - predstavlja odabranu heuristiku koja će se koristiti za računanje udaljenosti čvora $i$ od $j$. (u primeru koristimo heuristiku $n_{i, j} = \dfrac{1}{distance[i][j]}$) 
 	- $\alpha$ - stepen koji odlučuje koliko će feromoni uticati na verovatnoću odabira tog čvora. Uglavnom uzima vrednost između $[1, 2]$.
 	- $\beta$ - stepen koji odlučuje koliko će heuristika za optimalnost dužine puta uticati na verovatnoću odabirata tog čvora. Uglavnom uzima vrednost između $[2, 5]$.
 	U odnosu na verovatnoće dobijene prethodnom formulom za sve susede, mrav stohastićki bira sledeći čvor. 
@@ -1058,7 +1051,6 @@ Primetimo da one grane koje su češće posećivane se više ističu.
 | ![](slike/SI/ACO/path3.png) | ![](slike/SI/ACO/path4.png) |
 
 Samim tim odabirom najboljih rešenja, taj put će se na samom kraju najviše istaći.
-
 
 ## 11.3 Artificial Bee Colony (ABC):
 Algoritam je zasnovan na ponašanju pčela prilikom traženja polena. 
@@ -1093,7 +1085,7 @@ Svaka pčela ima sledeće informacije i funkcije:
 
 **Primer**: Tražimo minimum funkcije $f(x, y) = 20 + (x^2 - 10\cos(2\pi x) + y^2 - 10\cos(2\pi y))$ poznata i kao ["Rastrigin function"](https://en.wikipedia.org/wiki/Rastrigin_function), tražimo rešenje na $-5.12 \leq x,y \leq 5.12$. 
 
-Hladnije boje na grafu pretstavljaju niže vrednosti a toplije prtstavljaju više vrednosti.
+Hladnije boje na grafu predstavljaju niže vrednosti a toplije prtstavljaju više vrednosti.
 
 U prvom koraku pseudokoda videli smo da postavljamo sve pčele na pseudo-nasumične pozicije, računamo redom fitness svake i uzimamo onu vrednost koja je globalno najbolja.
 Pravimo $n$ pčela na dopuštenom domenu, { $(x, y) | -5 \leq x,y \leq 5$ }. 
@@ -1107,7 +1099,7 @@ U prvoj iteraciji za svaku pčelu vršimo sve tri faze.
 	Pčela istražuje okolinu svog trenutnog rešenja koristeći trenutno najbolje globalno rešenje pouplacije:\
 	$$p_{new} = p_{old} + \phi_i (p_{localBest} - p_{random})$$
 	\
-	u ovoj formuli $\phi_i$ je vrednost između -1 i 1, koja uvodi stohastičnost u celu pretragu, a $p_{random}$ pretstavlja pseudo-nasumičnu poziciju neke od pčela iz populacije. 
+	u ovoj formuli $\phi_i$ je vrednost između -1 i 1, koja uvodi stohastičnost u celu pretragu, a $p_{random}$ predstavlja pseudo-nasumičnu poziciju neke od pčela iz populacije. 
 	Ukoliko je novonađena pozicija kvalitetnija, pored izmene najboljeg lokalnog rešenja, proverava se da li je globalno bolja.
 2. **Onlooker Phase**:\
 	Pčela bira neku od pčela po principu ruleta, gde svaka od pčela ima šansu da bude izabrana na osnovu sledeće formule:\
@@ -1149,7 +1141,7 @@ Temperatura u optimizaciji predstavlja verovatnoću uzimanja lošijeg rešenja, 
 
 **Primer:** Tražimo minimum funkcije $f(x, y) = 20 + (x^2 - 10\cos(2\pi x) + y^2 - 10\cos(2\pi y))$ poznata i kao ["Rastrigin function"](https://en.wikipedia.org/wiki/Rastrigin_function), tražimo rešenje na $-5.12 \leq x,y \leq 5.12$. 
 
-Hladnije boje na grafu pretstavljaju niže vrednosti a toplije prtstavljaju više vrednosti.
+Hladnije boje na grafu predstavljaju niže vrednosti a toplije prtstavljaju više vrednosti.
 
 Na samom početku programa pravimo neko pseudo-nasumično rešenje, postavljamo to rešenje kao najbolje i brojač iteracija.
 
@@ -1188,7 +1180,7 @@ U poslednjim iteracijama:
 | ![](slike/SMeta/SA/SAiter150.png) | ![](slike/SMeta/SA/SAiterFinal.png) |
 
 ## 12.2 Tabu Search (TS):
-Tabu pretraga temelji se na samom značenju reči "tabu", što u ovom kontekstu označava nešto sveto ili zabranjeno. Termin potiče iz jezika naroda Tonge.
+Tabu pretraga temelji se na samom značenju reči "tabu", što u ovom kontekstu označava nešto zabranjeno. Termin potiče iz jezika naroda Tonge.
 
 Slično ovoj definiciji, i algoritam tabu pretrage funkcioniše tako što nameće ograničenja koja sprečavaju izbor određenih rešenja tokom pretrage. Ključni aspekt ovog pristupa jeste korišćenje memorije, kratkoročne ili dugoročne, koja pamti već posećena rešenja i na taj način sprečava njihovo ponavljanje. Ove strukture se nazivaju **tabu liste**, i upravo one čine ovaj algoritam specifičnim.
 
@@ -1233,3 +1225,150 @@ Vidimo da su tačke iz starijih iteracija obrisane. Ne želimo da čuvamo previ�
 | iter = 100                        | iter = 350                        |
 | --------------------------------- | --------------------------------- |
 | ![](slike/SMeta/TS/TSiter100.png) | ![](slike/SMeta/TS/TSiter350.png) |
+
+# 13. Veštačke neuronske mreže (ANN):
+
+Ove mreže oponašaju način na koji ljudski mozak obrađuje informacije, koristeći veštačke neurone koji obrađuju informacije kroz slojeve.\
+Bioloski neuroni funkcionišu po principu primanja signala, a na osnovu snage tih signala odgovaraju i prenose signal dalje.\
+Prihvatanje signala vrši se specifičnim delom neurona **dendrita**, na dalje signal putuje kroz neuron, ili **akson**, a na dalje, ostalim neuronima, informacije se prenose putem **aksonskog završetka**. Tamo gde se dva neurona povezuju naziva se **sinapsa**.\
+Češćim aktiviranjem neurona vremenom dolazi do **sinaptičkog odsecanja** čime se odstranjuju nepotrebne veze i time smanjuje odliv snage signala.\
+
+Nalik biološkim neuronima, veštački neuroni se sastoje iz **ulaznih parametara**, ulazni signali, koji se uglavnom označavaju sa **x**, **težine** svakog pojedinačnog signala označavamo sa **w** (može se gledati kao pristrasnost neurona na određene signale), merilo da li je signal dovoljno jak za njegovu aktivaciju postavlja se korišćenjem posebne promenljive pristrasnosti (**bias**), dodatno sadrže i **aktivacionu funkciju** koja omogućava neuronu da oformi aproksimaciju koja nije linearna.\
+Izlaz neurona povezuje se na ulazne parametre svih neurona nakon njega, što se postiže njihovom podelom na slojeve.\
+Prvi sloj nazivamo **ulaznim (input layer)**, konačni nazivamo **izlaznim (output layer)** i među-sloj nazivamo **sakrivenim (hidden layer)**.
+
+![](slike/Neuroni/ANN.png)
+
+Za vreme treniranja modela koristimo se **trening** i **tester** skupovima. Ovi skupovi su disjunktni, a pojedinačno trening, kako sam naziv kaže, koristi se u periodu treniranja našeg modela da predvidi klase, dok test skup kao merilo kvaliteta istreniranog modela.
+
+## 13.1 Linearna regresija:
+
+Da bi razumeli osnovu veštačke neuronske mreže, moramo da razumemo kako radi neuron, a za to nam je potrebno poznavanje linearne regresije.\
+Linerna regresija najjednostavnije objašnjeno jeste postavljanje prave, hiperravni... tako da kasnije možemo predvideti vrednosti za neke nove parametre, a da pritom greška predviđene vrednosti bude što manja.\
+Radi lakše vizualizacije bavićemo se problemima sa jednim parametrom. (x1)\
+Ove formule grade se statističkom analizom neke velike baze podataka. Kako predstavljaju linearne funkcije, u našem slučaju pravu ($y = mx + k$) možemo ih predstaviti sledećom formulom:\
+$$y_i = \beta_0 + \sum_{j = 1}^n{\beta_jx_j} + \epsilon_i$$\
+Epsioln predstavlja grešku, odnosno koliko se $y_i$ nalazi daleko od trenutne aproksimacije, $\beta_0$ je slobodan parametar koji nam omogućava da pomeramo našu pravu, hiperravan.\
+Kako tražimo onu pravu koja nam razdvaja podatke na neke dve celine, očigledno je da želimo da ta prava greši što manje. Imajući ovo u vidu, cilj nam je da $\epsilon$, greška, bude što manja za svaki parametar. Želimo da minimizujemo grešku predviđene vrednosti ($y_p$) i njene realne vrednosti ($y$).\
+$$\epsilon_i = y_i - (\beta_0 + \beta_1x_i)$$\
+Ili lakši zapis:\
+$$\epsilon_i = y_i - y_{p, i}$$
+Da bi minimizovali grešku, zanima nas ukupna greša, za šta koristimo sumu kvadratnih greški:\
+$$SSE = \sum_{i=1}^n{(y_i - y_{p, i})^2}$$\
+Pošto nas zanima kada je greška najmanja, zanima nas za koje vrednosti $\beta_0$ i $\beta_1$, funkcija ima najmanju vrednost. Ovo možemo naći preko izvoda funkcije SSE, odnosno:\
+$$\frac{d SSE}{d\beta_0} = 0, \frac{d SSE}{d\beta_1} = 0$$\
+Kako je:\
+$$SSE = \sum_{i=1}^n{(y_i - \beta_0 - \beta_1x_i)^2}$$\
+I dobijamo sledeće dve formule:\
+$$-2\sum_{i=1}^n{(y_i - \beta_0 - \beta_1x_i)} = 0$$\
+$$-2\sum_{i=1}^n{x_i(y_i - \beta_0 - \beta_1x_i)} = 0$$\
+Sređivanjem funkcija dobijamo:\
+$$n\beta_0 + \beta_1\sum_{i=1}^n{x_i} = \sum_{i=1}^n{y_i}$$\
+$$\beta_1\sum_{i=1}^n{x_i^2} + \beta_0\sum_{i=1}^n{x_i} = \sum_{i=1}^n{x_iy_i}$$\
+Delimo sve sa ukupnim brojem podataka kako bi dobili prosek:\
+$$\beta_0 + \beta_1\overline{x} = \overline{y}$$\
+$$\beta_0\overline{x} + \beta_1\overline{x^2} = \overline{xy}$$\
+Pretvorili smo problem u sistem jednačina sa dve nepoznate, što umemo da rešimo.\
+
+**Primer:** Tražimo pravu koja najbolje aproksimira zavisnost siromašnosti i količine rođene dece u određenom periodu života, nas konkretno zanima između 15 i 17.
+
+Prvo računamo $\overline{x}, \overline{y}, \overline{xy}$ i $\overline{x^2}$, redom $\overline{x} = 13.11764, \overline{y} = 22.28235 , \overline{xy} = 316.92431, \overline{x^2} = 190.00863$.\
+Ostaje nam samo da izračunamo sledeći sistem jednačina:\
+$$\beta_0 + \beta_1{*}13.11764 = 22.28235$$\
+$$\beta_0{*}13.11764 + \beta_1{*}190.00863 = 316.92431$$\
+Konačne vrednosti $\beta_0 = 4.26729$ i $\beta_1 = 1.37335$.
+
+| postavka                                        | regresija                                        |
+| ----------------------------------------------- | ------------------------------------------------ |
+| ![](slike/LinearnaRegresija/postavkaTacaka.png) | ![](slike/LinearnaRegresija/regresijaTacaka.png) |
+
+### Pristup maksimalne verodostojnosti:
+Težina može se računati korišćenjem matrica. Kada pogledamo modele možemo ih zapisati na sledeći način:\
+$$Y = Xw + \epsilon$$\
+**Y** je matrica svih rešenja, **X** vrednosti svih parametara a prva kolona niz jedinica zbog slobodnog parametra i **w** su sve $\beta$ težine . Problem se svodi na:\
+$$min_{w}||Y - Xw||^2$$\
+Ideja od koje se ovde polazi jeste pretpostavka da oko naše aproksimacije, korišćenjem jedne linearne funkcije, su parametri najviše koncentrisani, pretpostavimo da su normalno raspoređeni. Naglasak na predpostavku koja može biti loša.\
+Kada pričamo o normalnoj raspodeli bitno je da znamo njen prosek ($\mu$) i devijaciju ($\sigma^2$). U našem slučaju pošto kažemo da postoji neka linija koja najbolje aproksimira podatke sam prosek se menja u odnosu na položaj i nagib te prave, odnosno $\mu = w\cdot x$.\
+Nas zanima kolike su šanse da podaci upadnu u našu raspodelu:\
+$$L(w) = P_{w}(y_1, y_2, y_3, ..., y_n | x_1, x_2, x_3, ..., x_n)$$\
+Što je proizvod svih šansi za pogodak vrednosti iz naših podataka:\
+$$L(w) = \prod_{i = 1}^{n}{P_w(y_i | x_i)}$$\
+Kako su sve vrednosti verovatnoće, koja može da uzme samo brojeve između [0, 1], ovo jako brzo ide ka nuli, zbog čega tražimo logaritam ovog prozvoda što ga svodi na sumu logaritama:\
+$$L(w) = \sum_{i = 1}^{n}{log(P_w(y_i | x_i))}$$\
+Pošto želimo da naš model bude što bolji želimo da ove šanse budu što veće zbog čega maksimizujemo ovu sumu. Ovo je isto kao da tražimo minimum $-L(w)$:
+$$min_w(-\sum_{i = 1}^{n}{log(P_w(y_i | x_i))})$$\
+Sada menjamo verovatnoću $P_w$ sa pretpostavljenom normalnom raspodelom, i uproštavamo:
+$$min_w(-\sum_{i = 1}^{n}{log(\frac{1}{\sqrt{2\pi\sigma^2}}e^{\frac{(-y_i - wx_i)^2}{2\sigma^2}})})$$\
+$$min_w(\frac{1}{2}\sum_{i = 1}^{n}{2\pi\sigma^2} + \sum_{i = 1}^{n}{\frac{(y_i - wx_i)^2}{2\sigma^2}})$$\
+Kako tražimo minimum za težine **w**, u dobijenoj formuli ničemu ne doprinosi prava suma, kao ni imenilac druge sume, pa možemo napisati da tražimo minimum sldeće funkcije:
+$$min_w(\sum_{i = 1}^{n}{(y_i - wx_i)^2}) \equiv min_w||Y - Xw||^2$$
+\
+Kako moramo da minimizujemo tražimo izvod formule:\
+$$\frac{\partial}{\partial w_j} = -2 \sum_{i = 1}^{n}{x_{i,j}(y_i - wx_i)} = 0$$
+\
+$x_{i, j}$ predstavlja svaki j-ti parametar podatka i, dalje vraćamo se na matrični oblik, izvodimo formulu za **w**.
+$$X^T(Y - Xw) = 0$$\
+$$X^TY = X^TXw$$\
+$$w = (X^TX)^{-1}X^TY$$\
+Ovo je i konačna formula za nalaženje svih težina **w**. Kako se ovde pojavljuje takozvani **pseudo inverz** ne moramo da brinemo o postojanju inverza matrice X.
+
+Naravno postoje slučajevi kada ovakva linerana funkcija nije dovoljno dobra za aproksimaciju podataka. U ovakvim situacijama parametre možemo ubacivati kao vrednosti odabranih elemetarnih funkcija, npr. :\
+$$y_i = \beta_0 + \beta_1(x_i)^2 + \epsilon_i$$\
+U tom slučaju formula za $\beta_1$ bi bila drugačija zbog kvadrata. Bitno je naglasiti da ovakav model idalje spada u linearan nebitno od toga što koristi nelinearnu funkciju.
+
+## 13.2 Veštački neuron (AN):
+
+Kao što smo već rekli neuron se sastoji iz **ulaznih parametara** $x_1, x_2, ..., x_n$ koji se množe njihovim dodeljenim **težinama** $w_1, w_2, ..., w_n$ i dodatni slobodan parametar koji određuje da li je neuron aktivan ili ne, pristrasnost **(bias)**. Primetimo da ovakav neuron je obična linearna regresija, pa bi ovakva ANN izgledala kao mnogo kompleksnija verzija linearne funkcija.\
+Kako bi se rešili linearnosti svaki neuron je obavijen nelinearnom funkcijom po izboru na određenim slojevima (isključivo neuronski slojevi unutar skrivenog sloja i izlaznog sloja).\
+$$y = g(\sum_{i=1}^n{w_ix_i + b})$$\
+Radi lakšeg zapisa od sad $w_0$ predstavlja slobodan član, odnosno pristrasnost, a $x_0$ uvek ima vrednost 1:\
+$$y = g(\sum_{i=0}^n{w_ix_i})$$\
+
+| Biološki | Veštački                                |
+| -------- | --------------------------------------- |
+|          | ![](slike/Neuroni/artificialNeuron.png) |
+
+Težine ulaznih parametara po inicijalizaciji neurona uzimaju vrednost iz standardne noramalne raspodele:\
+$$w_i\sim\!N(0, 1)$$\
+Vrdnosti pristrasnosti **b** postavljamo na 0.\
+Neke od aktivacionih funkcija su **sigmoidna funkcija**, **hiperbolički tangens** i **ispravljena linearna jedinica (ReLU)**, redom $\sigma(x) = \frac{1}{1 + e^{-x}}$, $tang(x) = \frac{e^{2x} - 1}{e^{2x} + 1}$ i $ReLU(x) = max(0, x)$.
+
+| $\sigma$                        | tanH                         | ReLU                         |
+| ------------------------------- | ---------------------------- | ---------------------------- |
+| ![](slike/Neuroni/sigmoidF.png) | ![](slike/Neuroni/tanHF.png) | ![](slike/Neuroni/ReLUF.png) |
+
+Ovo omogućava neuronskoj mreži da se bolje prilagodi podacima.
+
+Sigmoidna funkcija koristi se i u izlaznom sloju neuronske mreže, popularna je i softmax funkcija.
+
+Slojevi mreže prave se od više ovakvih neurona, sem u ulaznom sloju koji je predstavljen kao niz ulaznih parametara funkcije.
+
+## 13.3 Feed-Forward i Backpropagation koraci:
+
+**Feed-Forward korak** je ubacivanje parametara u model i posmatranje šta model vraća, za vreme treniranja modela.\
+Po inicijalizaciji mreže, kako su sve težine nasumično odabrane, model će grešiti. Kao merilo greške može se koristiti srednja kvadratna greška (**MSE**):\
+$$MSE = \frac{1}{n}\sum_{i = 1}^{n}{||o_i - t_i||^2}$$\
+U ovoj formuli $o_i$ predstavlja očekivanu vrednost za ulazne parametre, a $t_i$ dobijenu vrednost, u formuli se koristi euklidska udaljenost pošto neke modele treniramo da mogu prepoznati više različitih klasa. Ovom formulom računamo ukupnu grešku za one podatke sa kojim treniramo datu mrežu. Znajući ukupnu grešku, jasno je, da bi model pretpostavljao što bolje, moramo minimizovati ovu grešku, podesiti težine i pristrasnost svakog neurona na one koje daju najmanju grešku, odnosno minimizujemo svaki parametar. Minimizaciju izvodimo gradijentnim spustom:\
+$$\nabla MSE = (\frac{\partial MSE}{\partial w_1}, \frac{\partial MSE}{\partial w_2}, \frac{\partial MSE}{\partial w_3}, ..., \frac{\partial MSE}{\partial w_l})$$\
+$l$ je broj težina svakog neurona, zajedno sa pristrasnostima neurona (koje ovde predstavljamo kao $w_i$).\
+Izračunavanjem gradijenta vršimo gradijentni spust:\
+$$\Delta w_i = -\gamma \frac{\partial MSE}{\partial w_i}, i = 1, ..., l$$\
+$\gamma$ je brzina učenja (learning rate), koji definiše veličinu koraka u svakoj iteraciji.\
+Proces popravljanja promenljivih se naziva **backpropagation**.
+
+Pitanje je kako da efektivno računamo ovaj gradijent.\
+Imajmo u vidu da u neuronu imamo $l$ ulaznih parametara, isto toliko težina, vrednost linarne funkcije i vrednost aktivacione funkcije. Posmatrajmo sad izvod po nekom od težina, za ulazne podatke $x_1, x_2, ..., x_l$:\
+$$\frac{\partial MSE}{\partial w_{k}} = -\frac{2}{m}\sum_{i = 1}^{m}\pmatrix{{||o_{i} - t_{i}||}{\cdot}g^{'}(\sum_{j = 1}^{l}{w_{j}x_{i, j}}){\cdot}x_{i, k}} = 0$$\
+
+| Veštački neuron                         | B-diagram                       |
+| --------------------------------------- | ------------------------------- |
+| ![](slike/Neuroni/artificialNeuron.png) | ![](slike/Neuroni/BDiagram.png) |
+
+Sama vrednost izvoda funkcija se računa po prolasku kroz sam neuron za vreme feed-forward koraka, dok se za vreme backpropagation koraka ove vrednosti koriste.\
+Kada minimizujemo bilo koju težinu, jasno je da ostaje samo vrednost ulaznog parametra, pošto važi:\
+$$\frac{\partial(w_1x_1 + w_2x_2 + b)}{\partial w_1} = x1 + 0 + 0$$\
+pa je rešenje samo množenje izvoda aktivacione funkcije sa vrednošću ulaznog parametra. Sličon je i u slučaju minimizacije pristrasnosti jer je vrednost ulaznog parametra jednaka 1.\
+Za jedan neuron prvog sloja u koraku bakctracking-a, matrično ovo zapisujemo na sledeći način:\
+$$\pmatrix{w_{1}\\ w_{2}\\ w_{3}\\ {.}\\ {.}\\ b} = -\gamma\sum_{i = 1}^{m}\pmatrix{-{||o_{i} - t_{i}||}f^{'}I_{m\times m}\pmatrix{x_{i, 1} \\ x_{i, 2} \\ x_{i, 3} \\ {.}\\ {.}\\ {i, 1}}}$$\
+$m$ je oznaka za broj podataka sa kojim učimo 
+Imajmo u vidu da kako idemo unazad, množimo prethodno dobijenu vrednost $P = -\sum_{i = 1}^{m}{||o_i - t_i||}f^{'}$ sa izvodom aktivacione funkcije sloja na koji smo se spustili, nakon čega množimo jediničnu matricu.
