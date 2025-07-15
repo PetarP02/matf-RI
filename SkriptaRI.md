@@ -1230,7 +1230,7 @@ Vidimo da su tačke iz starijih iteracija obrisane. Ne želimo da čuvamo previ�
 
 Ove mreže oponašaju način na koji ljudski mozak obrađuje informacije, koristeći veštačke neurone koji obrađuju informacije kroz slojeve.\
 Bioloski neuroni funkcionišu po principu primanja signala, a na osnovu snage tih signala odgovaraju i prenose signal dalje.\
-Prihvatanje signala vrši se specifičnim delom neurona **dendrita**, na dalje signal putuje kroz neuron, ili **akson**, a na dalje, ostalim neuronima, informacije se prenose putem **aksonskog završetka**. Tamo gde se dva neurona povezuju naziva se **sinapsa**.\
+Prihvatanje signala vrši se specifičnim delom neurona **dendrita**, na dalje signal putuje kroz neuron, ili **akson**, koji se ostalim neuronima prenose putem **aksonskog završetka**. Tamo gde se dva neurona povezuju naziva se **sinapsa**.\
 Češćim aktiviranjem neurona vremenom dolazi do **sinaptičkog odsecanja** čime se odstranjuju nepotrebne veze i time smanjuje odliv snage signala.\
 
 Nalik biološkim neuronima, veštački neuroni se sastoje iz **ulaznih parametara**, ulazni signali, koji se uglavnom označavaju sa **x**, **težine** svakog pojedinačnog signala označavamo sa **w** (može se gledati kao pristrasnost neurona na određene signale), merilo da li je signal dovoljno jak za njegovu aktivaciju postavlja se korišćenjem posebne promenljive pristrasnosti (**bias**), dodatno sadrže i **aktivacionu funkciju** koja omogućava neuronu da oformi aproksimaciju koja nije linearna.\
@@ -1239,7 +1239,7 @@ Prvi sloj nazivamo **ulaznim (input layer)**, konačni nazivamo **izlaznim (outp
 
 ![](slike/Neuroni/ANN.png)
 
-Za vreme treniranja modela koristimo se **trening** i **tester** skupovima. Ovi skupovi su disjunktni, a pojedinačno trening, kako sam naziv kaže, koristi se u periodu treniranja našeg modela da predvidi klase, dok test skup kao merilo kvaliteta istreniranog modela.
+Za vreme treniranja modela koristimo se **trening** i **tester** skupovima. Ovi skupovi su disjunktni, a pojedinačno trening, kako sam naziv kaže, koristi se u periodu treniranja našeg modela da predvidi klase, dok test skup služi kao merilo kvaliteta istreniranog modela.
 
 ## 13.1 Linearna regresija:
 
@@ -1319,9 +1319,9 @@ U tom slučaju formula za $\beta_1$ bi bila drugačija zbog kvadrata. Bitno je n
 ## 13.2 Veštački neuron (AN):
 
 Kao što smo već rekli neuron se sastoji iz **ulaznih parametara** $x_1, x_2, ..., x_n$ koji se množe njihovim dodeljenim **težinama** $w_1, w_2, ..., w_n$ i dodatni slobodan parametar koji određuje da li je neuron aktivan ili ne, pristrasnost **(bias)**. Primetimo da ovakav neuron je obična linearna regresija, pa bi ovakva ANN izgledala kao mnogo kompleksnija verzija linearne funkcija.\
-Kako bi se rešili linearnosti svaki neuron je obavijen nelinearnom funkcijom po izboru na određenim slojevima (isključivo neuronski slojevi unutar skrivenog sloja i izlaznog sloja).\
+Kako bi se rešili linearnosti svaki neuron je obavijen nelinearnom funkcijom po izboru na određenim slojevima.\
 $$y = g(\sum_{i=1}^n{w_ix_i + b})$$\
-Radi lakšeg zapisa od sad $w_0$ predstavlja slobodan član, odnosno pristrasnost, a $x_0$ uvek ima vrednost 1:\
+Radi lakšeg zapisa od sad $w_0$ predstavlja slobodan član, odnosno **pristrasnost**, a $x_0$ uvek ima vrednost 1:\
 $$y = g(\sum_{i=0}^n{w_ix_i})$$\
 
 | Biološki | Veštački                                |
@@ -1348,7 +1348,7 @@ Slojevi mreže prave se od više ovakvih neurona, sem u ulaznom sloju koji je pr
 **Feed-Forward korak** je ubacivanje parametara u model i posmatranje šta model vraća, za vreme treniranja modela.\
 Po inicijalizaciji mreže, kako su sve težine nasumično odabrane, model će grešiti. Kao merilo greške može se koristiti srednja kvadratna greška (**MSE**):\
 $$MSE = \frac{1}{n}\sum_{i = 1}^{n}{||o_i - t_i||^2}$$\
-U ovoj formuli $o_i$ predstavlja očekivanu vrednost za ulazne parametre, a $t_i$ dobijenu vrednost, u formuli se koristi euklidska udaljenost pošto neke modele treniramo da mogu prepoznati više različitih klasa. Ovom formulom računamo ukupnu grešku za one podatke sa kojim treniramo datu mrežu. Znajući ukupnu grešku, jasno je, da bi model pretpostavljao što bolje, moramo minimizovati ovu grešku, podesiti težine i pristrasnost svakog neurona na one koje daju najmanju grešku, odnosno minimizujemo svaki parametar. Minimizaciju izvodimo gradijentnim spustom:\
+U ovoj formuli $o_i$ predstavlja očekivanu vrednost za ulazne parametre, a $t_i$ dobijenu vrednost, može se koristiti isključivo za regresiju pošto sama formula ne razlikuje klase. Ovom formulom računamo ukupnu grešku za one podatke sa kojim treniramo datu mrežu. Znajući ukupnu grešku, jasno je, da bi model pretpostavljao što bolje, moramo minimizovati ovu grešku, podesiti težine i pristrasnost svakog neurona na one koje daju najmanju grešku, odnosno minimizujemo svaki parametar. Minimizaciju izvodimo gradijentnim spustom:\
 $$\nabla MSE = (\frac{\partial MSE}{\partial w_1}, \frac{\partial MSE}{\partial w_2}, \frac{\partial MSE}{\partial w_3}, ..., \frac{\partial MSE}{\partial w_l})$$\
 $l$ je broj težina svakog neurona, zajedno sa pristrasnostima neurona (koje ovde predstavljamo kao $w_i$).\
 Izračunavanjem gradijenta vršimo gradijentni spust:\
@@ -1367,8 +1367,20 @@ $$\frac{\partial MSE}{\partial w_{k}} = -\frac{2}{m}\sum_{i = 1}^{m}\pmatrix{{||
 Sama vrednost izvoda funkcija se računa po prolasku kroz sam neuron za vreme feed-forward koraka, dok se za vreme backpropagation koraka ove vrednosti koriste.\
 Kada minimizujemo bilo koju težinu, jasno je da ostaje samo vrednost ulaznog parametra, pošto važi:\
 $$\frac{\partial(w_1x_1 + w_2x_2 + b)}{\partial w_1} = x1 + 0 + 0$$\
-pa je rešenje samo množenje izvoda aktivacione funkcije sa vrednošću ulaznog parametra. Sličon je i u slučaju minimizacije pristrasnosti jer je vrednost ulaznog parametra jednaka 1.\
+pa je rešenje samo množenje izvoda aktivacione funkcije sa vrednošću ulaznog parametra. Sličan je i u slučaju minimizacije pristrasnosti jer je vrednost ulaznog parametra jednaka 1.\
 Za jedan neuron prvog sloja u koraku bakctracking-a, matrično ovo zapisujemo na sledeći način:\
-$$\pmatrix{w_{1}\\ w_{2}\\ w_{3}\\ {.}\\ {.}\\ b} = -\gamma\sum_{i = 1}^{m}\pmatrix{-{||o_{i} - t_{i}||}f^{'}I_{m\times m}\pmatrix{x_{i, 1} \\ x_{i, 2} \\ x_{i, 3} \\ {.}\\ {.}\\ {i, 1}}}$$\
-$m$ je oznaka za broj podataka sa kojim učimo 
-Imajmo u vidu da kako idemo unazad, množimo prethodno dobijenu vrednost $P = -\sum_{i = 1}^{m}{||o_i - t_i||}f^{'}$ sa izvodom aktivacione funkcije sloja na koji smo se spustili, nakon čega množimo jediničnu matricu.
+$$\pmatrix{w_{0}\\ w_{1}\\ w_{2}\\ {.}\\ {.}\\ w_{l}} = -\gamma\sum_{i = 1}^{m}\pmatrix{-{||o_{i} - t_{i}||}f^{'}\pmatrix{{1} \\ x_{i, 1} \\ x_{i, 2} \\ {.}\\ {.}\\ x_{i, l}}}$$\
+$m$ je oznaka za broj podataka sa kojim učimo, tako da svako $x_{i, k}$ predstavlja ulaznu vrednost ovog neurona na k-tom ulazu za i-ti podatak. 
+Imajmo u vidu da u pravim mrežama nemamo samo jedan neuron i postoji proces vraćanja unazad kroz slojeve. Dakle kada izračunamo jedan sloj prelazimo, ako on postoji, na onaj pre njega i računamo na sličan način. Ono o čemu moramo da vodimo računa jeste da informacije sloja ispred prenosimo unazad, koristimo respektivno šta smo dobili za određenu težinu grane i preko te grane vraćamo na neuron pre da se koristi u daljem računanju. Odnosno ako bi postojao sloj pre neurona za koji smo napisali prošlu formulu, za neuron vezan za granu čija je težina ${w_{2}}$ formula za težine tog neurona na sloju pre bi bila:\
+$$\pmatrix{w_{0}\\ w_{1}\\ w_{2}\\ {.}\\ {.}\\ w_{j}} = -\gamma(-{||o_{i} - t_{i}||}f^{'}x_{i, 2})\sum_{i = 1}^{m}x_{i, 2}^{'}$$
+\
+kako svaki neuron ima istu strukturu jasno je da je $x_{i, 2}^{'} = g^{'}(\sum_{i=0}^j{w_ix_i})$.\
+Kako bi sve ovo preneli u matrično množenje sve izračunate vrednost jednog sloja prenosimo u onaj pre koristeći dijagonalnu matricu dimenzija $[j {\times} j]$, j je broj ulaznih parametara zajedno sa bias, koja po dijagonalama ima onu vrednost izvoda po težini grane asocirane sa tim neuronom u sloju iznad:\
+$$UpperLayer = \pmatrix{-{||o_{i} - t_{i}||}f^{'}x_{i, 1} & {0} & {.} & {.} & 0 \\ 0 & -{||o_{i} - t_{i}||}f^{'}x_{i, 1} & {.} & {.} & 0 \\ {.} & {.} & {.} & {.} & 0 \\ {.} & {.} & {.} & {.} & {.} \\ 0 & 0 & {.} & {.} & -{||o_{i} - t_{i}||}f^{'}x_{i, 1}}$$
+\
+Dalje u formulu moramo da uključimo izvod nelinearne funkcije ovog sloja, ali moramo imati na umu da je vrednost izvoda drugačija za svaki neuron. Za sloj sa kog smo sišli, jer smo gledali da ima samo jedan neuron o ovome nismo morali da razmisljamo:\
+$$UpperLayer{'} = g_{0}^{'}\pmatrix{-{||o_{i} - t_{i}||}f^{'}x_{i, 1} & {0} & {.} & {.} & 0 \\ 0 & -{||o_{i} - t_{i}||}f^{'}x_{i, 1} & {.} & {.} & 0 \\ {.} & {.} & {.} & {.} & 0 \\ {.} & {.} & {.} & {.} & {.} \\ 0 & 0 & {.} & {.} & -{||o_{i} - t_{i}||}f^{'}x_{i, 1}}$$
+\
+Konačno moramo da uračunamo ulazne parametre:
+$$\pmatrix{w_{0}\\ w_{1}\\ w_{2}\\ {.}\\ {.}\\ w_{j}} = -\gamma\sum_{i = 1}^{m}UpperLayer{'}{\times}\pmatrix{1 \\ x_{i, 0} \\ x_{i, 1} \\ {.} \\ {.} \\ x_{i, j}}$$
+Ovo moramo uraditi za svaki neuron ovog sloja.
