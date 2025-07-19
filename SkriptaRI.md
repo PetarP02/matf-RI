@@ -1364,7 +1364,7 @@ $$\frac{\partial MSE}{\partial w_{k}} = -\frac{2}{m}\sum_{i = 1}^{m}\pmatrix{{||
 | --------------------------------------- | ------------------------------- |
 | ![](slike/Neuroni/artificialNeuron.png) | ![](slike/Neuroni/BDiagram.png) |
 
-Sama vrednost izvoda funkcija se računa po prolasku kroz sam neuron za vreme feed-forward koraka, dok se za vreme backpropagation koraka ove vrednosti koriste.\
+Sama vrednost izvoda funkcija se računa po prolasku kroz sam neuron za vreme feed-forward koraka, dok se za vreme **backpropagation** koraka ove vrednosti koriste.\
 Kada minimizujemo bilo koju težinu, jasno je da ostaje samo vrednost ulaznog parametra, pošto važi:\
 $$\frac{\partial(w_1x_1 + w_2x_2 + b)}{\partial w_1} = x1 + 0 + 0$$\
 pa je rešenje samo množenje izvoda aktivacione funkcije sa vrednošću ulaznog parametra. Sličan je i u slučaju minimizacije pristrasnosti jer je vrednost ulaznog parametra jednaka 1.\
@@ -1381,6 +1381,8 @@ $$UpperLayer = \pmatrix{-{||o_{i} - t_{i}||}f^{'}x_{i, 1} & {0} & {.} & {.} & 0 
 Dalje u formulu moramo da uključimo izvod nelinearne funkcije ovog sloja, ali moramo imati na umu da je vrednost izvoda drugačija za svaki neuron. Za sloj sa kog smo sišli, jer smo gledali da ima samo jedan neuron o ovome nismo morali da razmisljamo:\
 $$UpperLayer{'} = g_{0}^{'}\pmatrix{-{||o_{i} - t_{i}||}f^{'}x_{i, 1} & {0} & {.} & {.} & 0 \\ 0 & -{||o_{i} - t_{i}||}f^{'}x_{i, 1} & {.} & {.} & 0 \\ {.} & {.} & {.} & {.} & 0 \\ {.} & {.} & {.} & {.} & {.} \\ 0 & 0 & {.} & {.} & -{||o_{i} - t_{i}||}f^{'}x_{i, 1}}$$
 \
+Treba imati na umu i činjenicu da kako se ovde bavimo potpuno povezanom neuronskom mrežom za jedan neuron moramo da izračunamo istu stvar sa svim izvodimo sloja iznad, odnosno vrednostima izvoda svakog neurona iznad.\
 Konačno moramo da uračunamo ulazne parametre:
 $$\pmatrix{w_{0}\\ w_{1}\\ w_{2}\\ {.}\\ {.}\\ w_{j}} = -\gamma\sum_{i = 1}^{m}UpperLayer{'}{\times}\pmatrix{1 \\ x_{i, 0} \\ x_{i, 1} \\ {.} \\ {.} \\ x_{i, j}}$$
-Ovo moramo uraditi za svaki neuron ovog sloja.
+Ovo moramo uraditi za svaki neuron ovog sloja.\
+	
