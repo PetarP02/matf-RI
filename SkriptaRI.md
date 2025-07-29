@@ -574,13 +574,92 @@ Uslov zaustavljanja je najčešće onda kada je razlika prethodne i sadašnje vr
 
 ### **Pseudokod Gradijentni spust:**
 - generišemo rešenje $x_i$
+- i = 0
 - **while** nije ispunjen uslov:
 	- descentVector = -gradientF($x_i$)
 	- $x_{i+1} = x_i + alpha(x_i){*}descentVector$
 	- i = i + 1
 - **end**
 
-Funkcija $alpha(x_i)$ računa $\frac{df(x_i + \alpha_i{*}descentVector)}{d\alpha_i} = 0$, minimum se traži korišćenjem nekih od tehnika koje se bave jednom promenljivom kao što je NM ili BM.
+Funkcija $alpha(x_i)$ računa $\frac{df(x_i + \alpha_i{*}descentVector)}{d\alpha_i} = 0$, minimum se traži korišćenjem nekih od tehnika koje se bave jednom promenljivom kao što je NM ili BM.Još jedno rešenje za $alpha(i)$ jeste da kroz iteracije vraća za iteraciju $i$ vrati $alpha(i) = const/i$. 
+
+### 8.3.1 Gradijentni spust sa momentumom:
+Neki od problema koji se javljaju kada koristimo gradijentni spust jeste problem **platoa**. U ovom slučaju funkcija je konstantna, ravna, na nekom delu i gradijent je 0 samim tim ne može više da se pomera.
+
+Gradijentni spust sa momentumom može da delimično reši ovaj problem, time što zadržava momentum prethodnog gradijenta. Čak i kad je novi gradijent 0 nastavlja se istraživanje prostora rešenja. U slučaju da krećemo iz položaja gde je gradijent 0 opet nastaje isti problem.
+
+Dakle ideja je da uzimamo u obzir šta se dešavalo pre trenutno izračunatog gradijenta. Prenos informacija prethodnih gradijenata postižemo dodavanjem inercije. Nalik prethodno množili smo gradijent sa alfa radi kontrolisanja koraka kroz iteracije, kako sada imamo i inerciju želimo i nju da smanjujemo vremenom (ne želimo da inercija sa početka ima istu snagu nakon n iteracija).
+
+### **Pseudokod Gradijentni spust sa momentumom:**
+- generišemo rešenje $x_i$
+- inertia, i = 0
+- **while** nije ispunjen uslov:
+	- inertia = beta\*inertia  + alpha\*gradientF($x_i$)
+	- $x_{i+1} = x_i - inertia
+	- i = i + 1
+- **end**
+
+### 8.3.2 Nestorov gradijentni spust:
+Nestorov gradijentni spust sličan je gradijentnom sa momentumom ali računa jedan korak unapred. Dakle ideja je da umesto da računamo prvo gradijent u trenutnoj tački i dodamo na to inerciju. Kako inerciju svakako dodajemo, što ne bi odmah izračunali gradijent u tački pomerenoj za inerciju i onda na to dodali inerciju? Ovim ubrzavamo konvergiranje ka rešenju.
+
+### **Pseudokod Nestorovog gradijentnog spusta:**
+- generišemo rešenje $x_i$
+- inertia, i = 0
+- **while** nije ispunjen uslov:
+	- inertia = beta\*inertia  + alpha\*gradientF($x_i$ - beta\*inertia)
+	- $x_{i+1} = x_i - inertia$
+	- i = i + 1
+- **end**
+
+### 8.3.3 Adam:
+Primetili smo da prethodne dve varijante gradijentnog spusta su imali tu ideju da koriste prethodno znanje radi boljeg istraživanja prostora u budućim iteracijama Adam produbljuje ovu ideju. 
+
+Adam je napravljen tako da se vremenom prilagođava na funkciju i time zna kad da uspori a kad da ubrza, smanji odnosno uveća, korak. Postižemo ovo koristeći prvi i drugi momenat. Prvi momenat je očekivanje od x ($E(x)$) a drugi momenat je očekivanje od $x^2$ (slično varijansi $E(x^2)$).
+
+Idejno prvi momenat (m) akumulira gradijente, ako se gradijent sve vreme kreće na desno onda će i prvi momenat da uzima to u obzir i povećavaće korak kroz iteracije. Drugi momenat (v) posmatra promene gradijenta u ovom primeru kako je gradijent sve vreme isao na desno drugi moemnat zaključuje da nema velike promene u gradijentu (primer kada bi se drugi moemant uvećavao bio bi kada bi konstantno preskakali minimum). 
+Kada inače računamo prosek to radimo tako što saberemo ceo niz vrednosti i podelimo sa brojem članova niza... Ovde mi nemamo ceo niz već u svakoj iteraciji imamo prethodni prosek i novi član niza:
+$$avg_{n} = \frac{\frac{\sum_{i=0}^{n-1}{x_i}}{n-1}{(n-1)} + x_n}{n}$$\
+$$avg_n = \frac{avg_{n-1}(n-1) + x_n}{n}$$\
+U našem slučaju mi stariji podaci su nam manje bitni pa želimo da eksponencijalno računamo naš prosek, a to koliko uzimamo u obzir prethodni prosek određujemo korišćenjem parametra $\alpha$:
+$$avg_n = \alpha{*}avg_{n-1} + (1-\alpha){*}avg_{n-1}$$\
+Prvi i drugi momentum računamo kao eksponencijalni pokretni prosek:
+$$m = \beta_1m + (1-\beta_1)grad$$\
+$$v = \beta_2v + (1-\beta_2)grad^{2}$$\
+
+Kako prvi momenat raste tako korak treba da raste ("prosek" gradijenata), a kako drugi momenat raste tako korak treba da opada. 
+
+Želimo da su naše ocene m i v nepristrasne. Želimo da:
+$$E(grad) = E(m)$$\
+Pravimo niz m-ova:
+$$m_0 = 0$$\
+$$m_1 = \beta_1m_0 + (1-\beta_1)grad_1 = (1-\beta_1)grad_1$$\
+$$m_2 = \beta_1m_1 + (1-\beta_1)grad_2 = \beta_1(1-\beta_1)grad_1 + (1-\beta_1)grad_2$$\
+$$m_2 = \beta_1^2(1-\beta_1)grad_1 + \beta_1(1-\beta_1)grad_2 + (1-\beta_1)grad_3$$\
+Malo sredimo formulu:
+$$m_2 = (1-\beta_1)\sum_{i=1}^{2}{(\beta_1^{2-i}g_i)}$$\
+Uopštenje:
+$$m_n = (1-\beta_1)\sum_{i=1}^{n}{(\beta_1^{n-i}g_i)}$$\
+Očekimanje za $m_n$:
+$$E(m_n) = E(g_n)(1-\beta_1)\sum_{i=1}^{n}\beta_1^{n-i} + error$$\
+Kako nije svuda isti gradijent moramo da dodamo grešku. Očigledno očekivanja nisu jednaka znači nije nepristrasno. Želimo da napravimo da bude nepristrasno, popravimo $m_n$:
+$$(1-\beta_1)\sum_{i=1}^{n}\beta_1^{n-i} = 1- \beta_1^n$$\
+$$\hat{m_n} = \frac{m_n}{1-\beta_1^n}$$\
+Ovim smo namestili da ocena bude nepristrasna. Isto radimo i sa drugim momentom.
+
+### **Pseudokod Adama:**
+- generišemo rešenje $x_i$
+- m, v, i = 1
+- **while** nije ispunjen uslov:
+	- descentVector = -gradientF($x_i$)
+	- m = beta1\*m + (1 - beta1)\*descentVector
+	- v = beta2\*v + (1 - beta2)\*descentVector\*\*2
+	- mhat = m / (1-beta1\*\*i)
+	- vhat = v / (1-beta2\*\*i)
+	- $x_{i+1} = x_i + alpha(x_i){*}{(mhat/(\sqrt(vhat) + delta))}$
+	- i = i + 1
+- **end**
+
+Kako drugi momentum može da bude 0 dodajemo delta koje je jako sitno (npr. 0.000001), ali as obezbeđuje da ne delimo sa nulom.
 
 ## 8.4 Njutnov metod za više promenljivih (Multiple variable NM):
 Kao i u njutnovoj metodi sa jednom promenljivom, koristimo Tejlorov razvoj za $f(x_k + \Delta x)$, gde je $\Delta x = x_{k+1} - x_k$ nepoznata promenljiva, njutnov korak. 
@@ -1385,4 +1464,3 @@ Treba imati na umu i činjenicu da kako se ovde bavimo potpuno povezanom neurons
 Konačno moramo da uračunamo ulazne parametre:
 $$\pmatrix{w_{0}\\ w_{1}\\ w_{2}\\ {.}\\ {.}\\ w_{j}} = -\gamma\sum_{i = 1}^{m}UpperLayer{'}{\times}\pmatrix{1 \\ x_{i, 0} \\ x_{i, 1} \\ {.} \\ {.} \\ x_{i, j}}$$
 Ovo moramo uraditi za svaki neuron ovog sloja.\
-	
