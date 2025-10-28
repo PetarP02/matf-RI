@@ -2,15 +2,15 @@
 
 Nalazimo se u vremenu velike količine podataka, sve te podatke čoveku je protrebno mnogo vremena da obradi, a sam proces pronalaženja nekog paterna, ili mesta za poboljšanje je težak posao koji zahteva velike količine analize...
 Danas imamo razne sisteme koji te podatke, uz smernice, brže obrade i sami nađu rešenja koja mogu biti pritom mnogo kvalitetnija od onih nađenih od strane čoveka.\
-Sama naziv ovog predmeta "Računarska inteligencija", kao i oblast kojima pripadaju sistemi koje obrađujemo na ovom predmetu "Veštačka inteligencija", pominju **inteligenciju** u svojim nazivima što stvara pogrešnu ideju.\
+Sam naziv ovog predmeta "Računarska inteligencija", kao i oblast kojima pripadaju sistemi koje obrađujemo na ovom predmetu "Veštačka inteligencija", pominju **inteligenciju** u svojim nazivima što stvara pogrešnu ideju.\
 Mada se kaže veštačka inteligencija, inteligencija nije stvarno ono što je u pozadini ovih sistema... naravno zavisi kako se na inteligenciju gleda, ali ono što najbolje predstavlja **inteligenciju**, kakvu mi ljudi posedujemo, jeste sposobnost da iz starog znanja gradimo novo znanje u vidu ideja, umetnosti i sl... Iz ove ideje je i sama oblast nastala, "posmatramo ljude kao mašine" i pokušamo da to rekreiramo. Postoje sistemi koji automacki dokazuju teoreme i rešavaju ih nalik čoveku, problem nastaje kod skalabilnosti zadataka, zbog čega se praktikuje drugačiji pristup.\
 Sami principi rada, mnogih algoritama koje obrađujemo, zasnovani su na **prirodnim pojavama**, kao što je kretanje mrava (ACO), organizovanost pčela (ABC), interakcija čestica (PSO) ili sama evolucija inspirišu ove algoritme. Sam princip rada ovih algoritama (**metaheuristika**) svodi se na istraživanju prostora rešenja, odnosno pronalaženju što optimalnijeg rešenja, koristeći heuristike kao "smernice".\
 Mašinsko učenje, inspirisano radom neurona, svodi se na izgradnju modela, koji su velike kompleksne funkcije koje posmatrajući podatke podešavaju težine parametara i konstante unutar svakog nerurona, ovi modeli se kasnije koriste za rešavanje problema nalik onim nad kojima su učeni. Za razliku od algoritama koji koriste logiku, heuristiku, kao glavni način pronalaženja rešenja, sistemi kao što je mašinsko učenje koriste se statistikom koju su stekli posmatranjem velikog broja podataka.\
-Za rad ovakvih sistema potrebna je dobra analiza podataka, zatim određuejmo kakav je problem, njegovu kompleksnost, način kako ćemo rešiti probleme i naravno koje alate koristimo. Nijedan probelm nije rešiv na jedan način i jednim algoritmom, svaki probelm možemo rešiti na više načina jedino je bitno naći onaj pristup koji najviše odgovara probelmu i koji daje najbolje rezultate.
+Za rad ovakvih sistema potrebna je dobra analiza podataka, zatim dobra obrada problem, njegovu kompleksnost, način kako ćemo rešiti probleme i naravno koje alate koristimo. Nijedan probelm nije rešiv na jedan način i jednim algoritmom, svaki probelm možemo rešiti na više načina jedino je bitno naći onaj pristup koji najviše odgovara probelmu i koji daje najbolje rezultate.
 
 ### Analitika:
 
-Analitika podataka predstavlja **istraživanje**, **interpretaciju** i **komunikaciju** izmežu podataka u cilju pronalaženja šablona u podacima. (prilikom istraživanja koristimo se statistikom)
+Analitika podataka predstavlja **istraživanje**, **interpretaciju** i **komunikaciju** između podataka u cilju pronalaženja šablona u podacima. (prilikom istraživanja koristimo se statistikom)
 Ono što analitika obuhvata jeste istraživanje starih podataka radi pronalaženja ***trendova***, kako bi se videla reakcija na odluke ili dešavanja. 
 Želimo da popravimo rezultate tako što učimo nad starim događajima.
 
@@ -54,7 +54,7 @@ Kako podaci postaju zastareli, zrelost modela opada što znači da modeli postaj
 Paradigme, u veštačkoj inteligencijij, možemo podeliti na one koje se koriste različitim heuristikama u cilju pronalaženja rezultata i one paradigme koje se koriste statistikama.\
 Oblast veštačke inteligencije je počela kao nauka zasnovana na algoritmima, koji oponašaju neke pojave u svetu oko nas. Pa tako svako otkriće u oblasti je bilo pronalaženje nove heuristike, algoritma koji bi proširio načine rešavanja problema.\
 Danas kada se kaže veštačka inteligencija uglavnom se misli na **velike jezičke modele** (**LLM** - Large Language Models), najpoznatiji je ChatGPT (OpenAI), po pisanju ove skripte veliku popularnost stiče i DeepSeek zbog ubedljivo manje uloženih novčanih sredstava za izgradnju samog modela, kao i činjenica da je open-source.\
-Ovakvi modeli rade po principu statistika, odnosno posmatrajući velike količine odabranih podataka grade svoje "znanje", što im omogućava razumevanje teksta kao i generisanje samog teksta. Kompanija OpenAI je izbacila i AI model Sora koji je trenutno predvodeći u generisanju videa.\
+Ovakvi modeli rade po principu statistika, odnosno posmatrajući velike količine odabranih podataka grade svoje "znanje", što im omogućava "razumevanje" teksta kao i generisanje samog teksta. Kompanija OpenAI je izbacila i AI model Sora koji je trenutno predvodeći u generisanju videa.\
 Ovakvi modeli, mada funkcionišu, ne doprinose preterano razvoju ove oblasti, za razliku od prethodno aktuelnih paradigmi koje su radile po principu algoritama, svakim nastankom novog LLM modela, ne nastaje nikakvo novo otkriće, pošto njihov kvalitet zavisi isključivo od količine i kvaliteta podataka koje su dostupne modelu prilikom njegovog razvića.  
 
 | ChatGPT                           | DeepSeek                           |
@@ -188,7 +188,7 @@ LLM i transformer se danas tretiraju kao sinonimi usled velike zasnovanosti LLM-
 # 4. Optimizacioni algoritmi:
 
 Veštačka inteligencija se najviše koristi kao alat za pronalaženje rešenja onih probleme koji imaju velike prostore pretrage, odnosno problemi koji poseduju veliki broj rešenja.\
-Kada kažemo da želimoda optimizujemo problem, mislimo na pronaženje njegovog minimuma odnosno maksimumu, tražimo najbolje rešenje našeg probelma.\
+Kada kažemo da želimo da optimizujemo problem, mislimo na pronaženje njegovog minimuma odnosno maksimumu, tražimo najbolje rešenje našeg probelma.\
 Pa možemo reći da je optimizacioni algoritam specifična vrsta algoritama koji pripadaju grupi pretrage, a njihov glavni cilj je da pronađu optimalno rešenje za datu ciljnu funkciju, koja može biti minimizacija ili maksimizacija, uz određeni skup ograničenja.
 
 ## 4.1 Uvod u optimizacione algoritme:
