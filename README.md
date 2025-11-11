@@ -1,5 +1,7 @@
 Nezvanični materijali za kurs Računarske inteligencije, četvrte godine Matematičkog fakulteta u Beogradu.
 
+#[Refaktorisana skripta (pdf)](RI_Skripta_2025.pdf):
+
 # [Skripta](SkriptaRI.md):
 [Skripta (pdf)](SkriptaRI.pdf)
 ## Trenutno obuhvaćene oblasti:
