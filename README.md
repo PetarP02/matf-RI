@@ -2,7 +2,7 @@ Nezvanični materijali za kurs Računarske inteligencije, četvrte godine Matema
 
 # Skripta (refaktorisana):
 [Refaktorisana skripta (pdf)](Refaktorisana_RI_Skripta_2025.pdf):
-Obuhvaćene oblasti bez ANN i LMM.
+Neobuhvaćene oblasti ANN i LMM.
 
 # [Skripta (prva verzija)](SkriptaRI.md):
 [Skripta (pdf) (prva verzija)](SkriptaRI.pdf)
