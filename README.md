@@ -1,9 +1,11 @@
 Nezvanični materijali za kurs Računarske inteligencije, četvrte godine Matematičkog fakulteta u Beogradu.
 
-# [Refaktorisana skripta (pdf)](Refaktorisana_RI_Skripta_2025.pdf):
+# Skripta (refaktorisana):
+[Refaktorisana skripta (pdf)](Refaktorisana_RI_Skripta_2025.pdf):
+Obuhvaćene oblasti bez ANN i LMM.
 
-# [Skripta](SkriptaRI.md):
-[Skripta (pdf)](SkriptaRI.pdf)
+# [Skripta (prva verzija)](SkriptaRI.md):
+[Skripta (pdf) (prva verzija)](SkriptaRI.pdf)
 ## Trenutno obuhvaćene oblasti:
 1. [Uvod](SkriptaRI.md/#1-uvod)
 2. [Paradigme u veštačkoj inteligenciji](SkriptaRI.md/#2-paradigme-u-veštačkoj-inteligenciji) - u izradi
